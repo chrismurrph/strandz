@@ -1,0 +1,134 @@
+<project name="supersix" default="ftp-app-linode" basedir=".">
+
+<property file="../../property-files/global.properties"/>
+<property file="init.properties"/>
+
+<target name="init-memory-linode">
+  <property file="linode.memory.build.properties"/>
+</target>   
+
+<target name="init-debian">
+  <property file="debian.build.properties"/>
+</target>   
+
+<target name="set-sensitive-properties">
+  <property file="build.properties"/>
+</target>   
+
+<target name="rm-all-jars" depends="init-memory-linode, set-sensitive-properties">
+  <echo>To remove supersix jars from ${webstart.jars.to.location}</echo>
+  <delete quiet="true">
+    <fileset dir="${webstart.jars.to.location}" includes="*.jar"/>  
+  </delete>
+  <delete quiet="true">
+    <fileset dir="${servlet.jars.to.location}" includes="*.jar"/>  
+  </delete>
+</target>
+
+<!--
+Don't get confused. Here are the application files, that will be needed by
+the webstart application. Together cpy-main, jar-sdz-dt-files, copy-memory-webstart-jars, 
+make up what is in the jnlp file.
+->ADD TO JNLP FILE WHEN ADD TO HERE
+->CLEAR THE CACHE OF THE CLIENT BROSWER ONCE HAVE DEPLOYED
+-->
+
+<target name="copy-memory-signed-jars">
+  <copy file="${signed.jars.from.location}/TableLayout.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/mail.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/activation.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/app-images.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/foxtrot.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/MDateSelector-mine.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/jh.jar" todir="${webstart.jars.to.location}"/>
+  <!--
+  <copy file="${signed.jars.from.location}/spring-remoting.jar" todir="${webstart.jars.to.location}"/>      
+  <copy file="${signed.jars.from.location}/spring-core.jar" todir="${webstart.jars.to.location}"/>      
+  <copy file="${signed.jars.from.location}/spring-beans.jar" todir="${webstart.jars.to.location}"/>    
+  <copy file="${signed.jars.from.location}/spring-context.jar" todir="${webstart.jars.to.location}"/>      
+  <copy file="${signed.jars.from.location}/spring-aop.jar" todir="${webstart.jars.to.location}"/>     
+  <copy file="${signed.jars.from.location}/commons-logging.jar" todir="${webstart.jars.to.location}"/>      
+  -->
+</target>
+
+<target name="copy-memory-app-jars">
+  <copy file="${external.jars.from.location}/ss-sdz-dt-files.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${external.jars.from.location}/ss-demo-properties.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${external.jars.from.location}/ss-help.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${strandz.jar.file}" todir="${webstart.jars.to.location}"/>
+</target>
+
+<!--
+webstart.jars.to.location is for webstart files
+servlet.jars.to.location  - need to put jars that contain servlets here
+
+Don't get confused - this is the minimalist stuff that the JDO servers will
+need
+-->
+<target name="cpy-servlets">
+  <copy file="${external.jars.from.location}/jnlp-servlet.jar" todir="${servlet.jars.to.location}"/>
+</target>
+
+<target name="cpy-main"
+        description="Create the main jar file">
+  <copy file="${main.jar.file}" todir="${webstart.jars.to.location}"/>
+</target>
+
+<target name="sign-memory-jars" 
+        depends="set-sensitive-properties, copy-memory-app-jars, cpy-main, sign-jars, copy-memory-signed-jars, cpy-servlets"
+        description="Sign jars">
+  <echo level="info">Signing JARS...</echo>
+</target>      
+
+<target name="sign-jars"> 
+  <signjar keystore="${home.path}/../../keystore.ks" alias="myalias2" storepass="${keypass}" keypass="${keypass}">   
+    <fileset dir="${webstart.jars.to.location}" includes="*.jar"/>
+  </signjar>  
+</target>
+
+<target name="war-memory-app" 
+        depends="init-memory-linode, rm-all-jars, sign-memory-jars"
+        description="Create a war for the application as a web start application (delete required)">
+  <delete file="../../in-out/${war.file}" quiet="true"/>
+  <war destfile="../../in-out/${war.file}" webxml="${home.path}/web.xml">
+    <zipfileset dir="${war.path}" includes="**/supersix-memory.jnlp"/>
+    <zipfileset dir="${war.path}" includes="**/*.jar"/>
+  </war>
+</target>  
+
+<target name="ftp-app"> 
+  <ftp server="${ftp.target.server}"
+       userid="${ftp.target.userid}"
+       password="${ftp.target.password}"
+       remotedir="scratch"
+       verbose="true"
+       passive="yes">
+    <fileset dir="../../in-out" includes="${war.file}" />
+  </ftp>    
+</target>  
+
+<target name="war-and-send" depends="war-memory-app, ftp-app"> 
+</target>  
+
+<!--
+Just sends the war file across, for debugging punching through
+the firewall
+-->
+<target name="ftp-to-linode" 
+        depends="init-memory-linode, ftp-app"
+        description="Ftp web start application to the linode machine"
+        >
+</target>  
+
+<target name="build-memory-war" 
+        depends="init-memory-linode, 
+                 rm-all-jars, 
+                 set-sensitive-properties, 
+                 cpy-servlets, 
+                 war-memory-app, 
+                 rm-all-jars"
+        description="Build war for SuperSix in-Memory"
+        >
+</target>  
+
+</project>

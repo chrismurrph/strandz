@@ -1,0 +1,276 @@
+<!-- run only with ANT 1.4 and above -->
+<!-- new set of zip files, 15-10-2008 -->
+<project name="export-src" default="export-src-on-server" basedir="../src">
+
+<property file="../property-files/global.properties"/>
+
+<property name="src.dir" value="${src.root}/org/strandz"/>
+<property name="src.export.root" value="../src"/>
+<property name="src.export.dir" value="${src.export.root}/org/strandz"/>
+<property name="zip.dir" value="../in-out"/>
+<property name="cayenne.web.service.root" value="../cayenne/teresa/war/WEB-INF"/>
+
+<property name="source.zip.file.name" value="strandzSource.zip"/>
+<property name="source.zip.file" value="${zip.dir}/${source.zip.file.name}"/>
+
+<property name="basic-theory.zip.file.name" value="basicTheory.zip"/>
+<property name="basic-theory.zip.file" value="${zip.dir}/${basic-theory.zip.file.name}"/>
+
+<property name="cayenne-remote-service.zip.file.name" value="cayenneRemoteServiceWebApp.zip"/>
+<property name="cayenne-remote-service.zip.file" value="${zip.dir}/${cayenne-remote-service.zip.file.name}"/>
+
+<property name="roster-app-jars.zip.file.name" value="rosterAppJars.zip"/>
+<property name="roster-app-jars.zip.file" value="${zip.dir}/${roster-app-jars.zip.file.name}"/>
+
+<property name="roster-app-source.zip.file.name" value="rosterAppSource.zip"/>
+<property name="roster-app-source.zip.file" value="${zip.dir}/${roster-app-source.zip.file.name}"/>
+
+<property name="teresa.zip.file.name" value="teresa.zip"/>
+<property name="teresa.zip.file" value="${zip.dir}/${teresa.zip.file.name}"/>
+
+<property file="export-src.build.properties"/>
+
+<!--
+send-it never works from ant ftp client
+-->
+<target name="export-src" depends="copy-src, clean-crlf-for-unix, zip-all-java-source">
+</target>        
+
+<target name="export-src-on-server" depends="clean-crlf-for-unix, zip-all-java-source">
+</target>        
+
+<!--
+Use test-rescue.bat to run this
+jarStrandz and jarWombat need be done first 
+send-test-rescue never works from ant ftp client,
+so leech the file across and put it in $WEBAPPS/downloads
+-->
+<!--
+<target name="test-rescue" depends="copy-src, clean-crlf-for-unix, zip-test-rescue">
+</target>          
+-->
+
+<target name="clean-crlf-for-unix"> 
+  <fixcrlf srcdir="${src.export.dir}"
+       eol="lf" eof="remove"
+       includes="**/*.java"
+  />
+  <fixcrlf srcdir="${src.export.root}"
+       eol="lf" eof="remove"
+       includes="LICENSE.txt"
+  />
+</target>  
+
+<target name="copy-src"> 
+  <delete quiet="true">
+    <fileset dir="${src.export.dir}" includes="**/*.java"/>  
+  </delete>
+  <copy todir="${src.export.dir}">
+    <fileset dir="${src.dir}" includes="**/*.java"/>
+  </copy>
+</target>  
+
+<!--
+ Does not duplicate, creates directories even when nothing, does not put
+ ordinary files in that might be lying around. Nothing in ant to easily
+ communicate with svn, so pre-deploy.sh, that calls this, does the
+ necessary mkdir and svn checkout to get ${src.export.root}/etc filled up
+ -->
+<target name="zip-all-java-source">
+  <delete file="${source.zip.file}" quiet="true"/>
+  <echo>src.export.root: ${src.export.root}</echo>
+  <mkdir dir="${src.export.root}/src"/>
+  <!-- We need the whole of sdz-zone in etc, so we will mkdir and svn checkout b4 doing this
+  <mkdir dir="${src.export.root}/etc/lib"/>
+  <mkdir dir="${src.export.root}/etc/bin"/>
+  -->
+  <zip destfile="${source.zip.file}" update="false" whenempty="create">
+    <zipfileset dir="${src.export.root}" includes="src"/>
+    <zipfileset dir="${src.export.root}" includes="etc/**"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/*.java" prefix="src"/>
+    <zipfileset dir="${src.export.root}" includes="LICENSE.txt" prefix="src"/>
+  </zip>
+  <delete dir="${src.export.root}/src"/>
+  <delete dir="${src.export.root}/etc"/>
+</target>  
+
+<target name="zip-basic-theory">
+  <copy file="../bin/basic-theory-build.xml" tofile="../build.xml" overwrite="true"/>
+  <delete file="${basic-theory.zip.file}" quiet="true"/>
+  <zip destfile="${basic-theory.zip.file}" update="false">
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/WorkerAppHelper.java" prefix="etc/src"/>
+    <!-- Might be in the html text, but we don't want anyone running it, as the DOs
+         are not enhanced
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/BasicTheorySdzExample0.java" prefix="etc/src"/>
+    -->
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/BasicTheorySdzExample1.java" prefix="etc/src"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/SimpleWorkerPanel.java" prefix="etc/src"/>
+    <zipfileset dir="${src.export.root}" includes="LICENSE.txt" prefix="etc/src"/>
+    <zipfileset dir=".." includes="lib-sdz/strandz.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib-sdz/wombat-pojo-panel.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/app-images.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/TableLayout.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/MDateSelector-mine.jar" prefix="etc"/>
+    <!-- new dependency -->
+    <zipfileset dir=".." includes="lib/foxtrot.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="build.xml" prefix="etc"/>
+  </zip>
+  <delete file="../build.xml" quiet="true"/>
+</target>  
+
+<target name="zip-cayenne-remote-service">
+  <delete file="${cayenne-remote-service.zip.file}" quiet="true"/>
+  <zip destfile="${cayenne-remote-service.zip.file}" update="false">
+    <zipfileset dir="${cayenne.web.service.root}" includes="**" prefix="cayenneRemoteService/WEB-INF"/>  
+  </zip>
+</target>  
+
+<target name="zip-roster-app-jars">
+  <delete file="${roster-app-jars.zip.file}" quiet="true"/>
+  <zip destfile="${roster-app-jars.zip.file}" update="false">
+    <zipfileset dir=".." includes="lib/ashwood-2.0.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/commons-codec-1.3.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/commons-collections-3.1.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/commons-lang-2.1.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/commons-logging.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/foxtrot.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/hessian-3.1.6.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/jdo2-api-2.0.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/jh.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/junit.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/mail.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/MDateSelector-mine.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/TableLayout.jar" prefix="etc"/>        
+  </zip>
+</target>  
+
+<target name="zip-teresa">
+  <delete file="${teresa.zip.file}" quiet="true"/>
+  <zip destfile="${teresa.zip.file}" update="false">
+    <zipfileset dir=".." includes="lib-sdz/teresa.jar" prefix="roster"/>        
+    <zipfileset dir=".." includes="lib-sdz/strandz.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/app-images.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/MDateSelector-mine.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/foxtrot.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/mail.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/activation.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/TableLayout.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/wr-prod-properties.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/wr-help.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/jh.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/spring-beans.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/acegi-security-1.0.7.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/spring.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/commons-logging.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/wr-spring-configs.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/commons-codec-1.3.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/servlet.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/wr-sdz-dt-files.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/jdo2-api-2.0.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/commons-lang-2.1.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/commons-collections-3.1.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/commons-pool.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/cayenne-server-3.0-SNAPSHOT.jar" prefix="roster"/>
+    <zipfileset dir=".." includes="lib/hessian-3.1.6.jar" prefix="roster"/>
+  </zip>
+</target>  
+
+<!--
+ Same file as entire source, but keep this way until article on cayenne/spring is integrated 
+  -->
+<target name="zip-roster-app-source">
+  <delete file="${roster-app-source.zip.file}" quiet="true"/>
+  <copy file="${source.zip.file}" tofile="${roster-app-source.zip.file}" overwrite="true"/>  
+</target>  
+
+<!--
+<target name="zip-test-rescue">
+  <delete file="${test-rescue.zip.file}" quiet="true"/>
+  <zip destfile="${test-rescue.zip.file}" update="false">
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/JDBCTableInfo.java" prefix="src"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/StartupLocalDemo.java" prefix="src"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/PopulateForDemo.java" prefix="src"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/PopulateUpdateLOV.java" prefix="src"/>
+    <zipfileset dir="${src.export.root}" includes="LICENSE.txt" prefix="src"/>
+    <zipfileset dir=".." includes="lib-sdz/strandz.jar"/>        
+    <zipfileset dir=".." includes="lib-sdz/wombat.jar"/>        
+    <zipfileset dir=".." includes="lib/wr-sdz-dt-files.jar"/>   
+    <zipfileset dir=".." includes="lib/wr-jdo-meta.jar"/>       
+    <zipfileset dir=".." includes="lib/wr-demo-properties.jar"/>
+    <zipfileset dir=".." includes="lib/jdo-config-local-demo-wombat-test-mysql.jar"/>
+    <zipfileset dir=".." includes="lib/app-images.jar"/>        
+    <zipfileset dir=".." includes="lib/TableLayout.jar"/>
+    <zipfileset dir=".." includes="lib/MDateSelector-mine.jar"/>
+    <zipfileset dir=".." includes="lib/foxtrot.jar"/>
+    <zipfileset dir=".." includes="lib/wr-help.jar"/>
+    <zipfileset dir=".." includes="lib/jh.jar"/>    
+    <zipfileset dir=".." includes="lib/log4j-*.jar"/>
+    <zipfileset dir=".." includes="bin/drop_tables.sql"/>
+    <zipfileset dir=".." includes="bin-jdo/jpox.lcf"/>
+  </zip>
+</target>  
+-->
+
+<!--
+<target name="zip-bare-bones">
+  <delete file="${bare-bones.compressed.file}" quiet="true"/>
+  <zip destfile="${bare-bones.compressed.file}" update="false">
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/JDBCTableInfo.java" prefix="etc/src"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/StartupLocalDemo.java" prefix="etc/src"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/PopulateForDemo.java" prefix="etc/src"/>
+    <zipfileset dir="${src.export.root}" includes="org/strandz/**/PopulateUpdateLOV.java" prefix="etc/src"/>
+    <zipfileset dir="${src.export.root}" includes="LICENSE.txt" prefix="etc/src"/>
+    <zipfileset dir=".." includes="lib-sdz/strandz.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib-sdz/wombat.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib-sdz/populateForDemo.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/wr-sdz-dt-files.jar" prefix="etc"/>   
+    <zipfileset dir=".." includes="lib/wr-jdo-meta.jar" prefix="etc"/>       
+    <zipfileset dir=".." includes="lib/wr-demo-properties.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/jdo-config-local-demo-wombat-test-mysql.jar" prefix="etc"/>    
+    <zipfileset dir=".." includes="lib/app-images.jar" prefix="etc"/>        
+    <zipfileset dir=".." includes="lib/TableLayout.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/MDateSelector-mine.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/foxtrot.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/log4j-*.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/jpox-1.*.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/mail.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/wr-help.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/jh.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="lib/mysql-connector-java-*-bin.jar" prefix="etc"/>
+    <zipfileset dir=".." includes="bin/drop_tables.sql" prefix="etc"/>
+    <zipfileset dir=".." includes="bin/runWombat.bat" prefix="etc"/>
+    <zipfileset dir=".." includes="bin/runWombat.sh" prefix="etc"/>
+    <zipfileset dir=".." includes="bin/runPopulateForDemo.bat" prefix="etc"/>
+    <zipfileset dir=".." includes="bin/runPopulateForDemo.sh" prefix="etc"/>
+    <zipfileset dir=".." includes="bin/jpox.lcf" prefix="etc"/>
+    <zipfileset dir=".." includes="bin-jdo/jpox.lcf" prefix="etc"/>
+  </zip>
+</target>  
+-->
+
+<!--
+<target name="send-test-rescue"> 
+  <ftp server="${ftp.target.server}"
+       userid="${ftp.target.userid}"
+       password="${ftp.target.password}"
+       remotedir="scratch"
+       verbose="true"
+       passive="yes">
+    <fileset dir="${zip.dir}" includes="${test-rescue.zip.file.name}" />
+  </ftp>    
+</target>  
+-->
+
+<target name="send-it"> 
+  <ftp server="${ftp.target.server}"
+       userid="${ftp.target.userid}"
+       password="${ftp.target.password}"
+       remotedir="scratch"
+       verbose="true"
+       passive="yes">
+    <fileset dir="${zip.dir}" includes="${zip.file.name}" />
+  </ftp>    
+</target>  
+
+</project>
+

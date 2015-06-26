@@ -1,0 +1,47 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jar_teresa_spring" default="jar_teresa_spring" basedir=".">
+
+<property file="../property-files/global.properties"/>
+
+<property name="out.root" value="${src.root}/classes"/>
+<property name="dist.dir" value="../lib-sdz"/>
+<property name="dist.file.name" value="teresaSpring.jar"/>
+<property name="dist.file" value="${dist.dir}/${dist.file.name}"/>
+
+<target name="jar_teresa_spring">
+  <delete file="${dist.file}" quiet="true"/>
+  <jar destfile="${dist.file}">
+    <fileset dir="${out.root}" includes="org/strandz/service/wombatrescue/ServerUserDetailsService.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/service/wombatrescue/ServerRosterService.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/service/wombatrescue/ServerUploadRosterService.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/service/wombatrescue/AuthenticationUserDetailsGetter*.class"/>
+    <!-- We will later include LocalServerUserDetailsService as well - it is the Spring configuration
+         files that determine what classes are actually used
+    -->
+    <manifest>
+      <attribute name="Built-By" value="${user.name}"/> 
+      <!-- Old versions of jar files - see a tomcat diry for what they should be
+      <attribute name="Main-Class" value="org.strandz.service.wombatrescue.ServerUserDetailsService"/>
+      <attribute name="Class-Path" value=
+        "../lib-sdz/strandz.jar
+         ../lib-sdz/wombat.jar
+         ../lib/kodo-jdo.jar
+         ../lib/jdo-1.0.2.jar
+         ../lib/wr-jdo-meta.jar
+         ../lib/jta-spec1_0_1.jar
+         ../lib/MDateSelector-mine.jar
+         ../lib/junit.jar
+         ../lib/jca1.0.jar
+         ../lib/mysql-connector-java-3.0.15-ga-bin.jar"
+         />
+      -->   
+      <!--
+         Just using local file:
+         ../lib/jdo-config-local-linode-teresa-prod-mysql.jar
+      <attribute name="Sealed" value="false"/>
+      -->
+    </manifest> 
+  </jar>
+</target>
+
+</project>

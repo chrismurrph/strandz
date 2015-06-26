@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_10" class="java.beans.XMLDecoder"> 
+ <object class="org.strandz.core.applichousing.SdzBag"> 
+  <void property="name"> 
+   <string>BuddyManager</string> 
+  </void> 
+  <void property="nodes"> 
+   <array class="org.strandz.core.interf.Node" length="1"> 
+    <void index="0"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell0" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>friDinnerWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager FriDinnerWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>friOvernightWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager FriOvernightWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>monDinnerWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager MonDinnerWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>monOvernightWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager MonOvernightWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>satDinnerWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager SatDinnerWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>satOvernightWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager SatOvernightWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>tueDinnerWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager TueDinnerWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>tueOvernightWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager TueOvernightWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>wedDinnerWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager WedDinnerWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>wedOvernightWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager WedOvernightWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>thuDinnerWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager ThuDinnerWker</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>thuOvernightWker</string> 
+           </void> 
+           <void property="name"> 
+            <string>ShiftManager ThuOvernightWker</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="12"> 
+          <void index="0"> 
+           <object id="Cell1" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox0" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbFriDinner</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>friDinnerWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray0" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray0"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>friDinnerWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>friDinnerWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="1"> 
+           <object id="Cell2" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell2"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox1" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbFriOvernight</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>friOvernightWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray1" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray1"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>friOvernightWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>friOvernightWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="2"> 
+           <object id="Cell3" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox2" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbMonDinner</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>monDinnerWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray2" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray2"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>monDinnerWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>monDinnerWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="3"> 
+           <object id="Cell4" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell4"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox3" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbMonOvernight</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>monOvernightWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray3" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray3"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>monOvernightWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>monOvernightWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="4"> 
+           <object id="Cell5" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell5"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox4" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbSatDinner</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>satDinnerWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray4" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray4"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>satDinnerWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>satDinnerWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="5"> 
+           <object id="Cell6" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell6"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox5" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbSatOvernight</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>satOvernightWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray5" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray5"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>satOvernightWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>satOvernightWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="6"> 
+           <object id="Cell7" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell7"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox6" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbTueDinner</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>tueDinnerWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray6" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray6"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>tueDinnerWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>tueDinnerWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="7"> 
+           <object id="Cell8" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell8"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox7" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbTueOvernight</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>tueOvernightWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray7" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray7"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>tueOvernightWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>tueOvernightWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="8"> 
+           <object id="Cell9" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell9"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox8" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbWedDinner</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>wedDinnerWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray8" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray8"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>wedDinnerWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>wedDinnerWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="9"> 
+           <object id="Cell10" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox9" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbWedOvernight</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>wedOvernightWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray9" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray9"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>wedOvernightWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>wedOvernightWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="10"> 
+           <object id="Cell11" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox10" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbThuDinner</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>thuDinnerWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray10" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray10"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>thuDinnerWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>thuDinnerWker</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="11"> 
+           <object id="Cell12" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell12"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>toShort</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox11" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbThuOvernight</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>thuOvernightWker To</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray11" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray11"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>thuOvernightWker Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>thuOvernightWker</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.wombatrescue.calculated.ShiftManagers</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>ShiftManager Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void id="IndependentArray0" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray0"/> 
+      </void> 
+      <void property="name"> 
+       <string>ShiftManager Node</string> 
+      </void> 
+      <void property="title"> 
+       <string>Shift Managers</string> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="panes"> 
+   <array class="javax.swing.JComponent" length="1"> 
+    <void index="0"> 
+     <object class="org.strandz.view.wombatrescue.ShiftManagersPanel"> 
+      <void method="add"> 
+       <object id="JLabel0" class="javax.swing.JLabel"> 
+        <void property="text"> 
+         <string>Shift Managers</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel1" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>0</int> 
+        </void> 
+        <void property="text"> 
+         <string>Dinner</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel2" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>0</int> 
+        </void> 
+        <void property="text"> 
+         <string>Overnight</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel3" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Mon</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox2"/> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox3"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel4" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Tue</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox6"/> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox7"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel5" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Wed</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox8"/> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox9"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel6" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Thu</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox10"/> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox11"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel7" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Fri</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox0"/> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox1"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel8" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Sat</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox4"/> 
+      </void> 
+      <void method="add"> 
+       <object idref="JComboBox5"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JButton0" class="javax.swing.JButton"> 
+        <string>Save Changes</string> 
+       </object> 
+      </void> 
+      <void property="BSave"> 
+       <object idref="JButton0"/> 
+      </void> 
+      <void property="border"> 
+       <object class="javax.swing.border.BevelBorder"> 
+        <int>1</int> 
+        <null/> 
+        <null/> 
+        <null/> 
+        <null/> 
+       </object> 
+      </void> 
+      <void property="layout"> 
+       <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+        <void property="column"> 
+         <array class="double" length="9"> 
+          <void index="0"> 
+           <double>20.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>0.2</double> 
+          </void> 
+          <void index="2"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>0.3</double> 
+          </void> 
+          <void index="4"> 
+           <double>7.0</double> 
+          </void> 
+          <void index="5"> 
+           <double>0.3</double> 
+          </void> 
+          <void index="6"> 
+           <double>7.0</double> 
+          </void> 
+          <void index="7"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="8"> 
+           <double>20.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="row"> 
+         <array class="double" length="17"> 
+          <void index="0"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="2"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="4"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="5"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="6"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="7"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="8"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="9"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="10"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="11"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="12"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="13"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="14"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="15"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="16"> 
+           <double>-1.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel1"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel2"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>5</int> 
+          <int>1</int> 
+          <int>5</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel3"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox2"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox3"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>5</int> 
+          <int>3</int> 
+          <int>5</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel4"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>5</int> 
+          <int>1</int> 
+          <int>5</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox6"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>5</int> 
+          <int>3</int> 
+          <int>5</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox7"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>5</int> 
+          <int>5</int> 
+          <int>5</int> 
+          <int>5</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel5"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>7</int> 
+          <int>1</int> 
+          <int>7</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox8"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>7</int> 
+          <int>3</int> 
+          <int>7</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox9"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>5</int> 
+          <int>7</int> 
+          <int>5</int> 
+          <int>7</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel6"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>9</int> 
+          <int>1</int> 
+          <int>9</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox10"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>9</int> 
+          <int>3</int> 
+          <int>9</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox11"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>5</int> 
+          <int>9</int> 
+          <int>5</int> 
+          <int>9</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel7"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>11</int> 
+          <int>1</int> 
+          <int>11</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>11</int> 
+          <int>3</int> 
+          <int>11</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox1"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>5</int> 
+          <int>11</int> 
+          <int>5</int> 
+          <int>11</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel8"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>13</int> 
+          <int>1</int> 
+          <int>13</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox4"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>13</int> 
+          <int>3</int> 
+          <int>13</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JComboBox5"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>5</int> 
+          <int>13</int> 
+          <int>5</int> 
+          <int>13</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JButton0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>7</int> 
+          <int>14</int> 
+          <int>7</int> 
+          <int>15</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="name"> 
+       <string>ShiftManagersPanel</string> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,48 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jar_populateForDemo" default="jar_populateForDemo" basedir=".">
+
+<property file="../property-files/global.properties"/>
+
+<property name="out.root" value="${src.root}/classes"/>
+<property name="dist.dir" value="../lib-sdz"/>
+<property name="dist.file" value="${dist.dir}/populateForDemo.jar"/>
+
+<!--
+jdo.jar no longer exists on the desktop as was for openaccess,
+but exists on the server as a copy of jdo2-api-2.0.jar, which
+exists as it is on the desktop
+-->
+<target name="jar_populateForDemo">
+  <tstamp>
+    <format property="TODAY" pattern="dd/MM/yyyy hh:mm aa" locale="au"/>
+  </tstamp>
+  <delete file="${dist.file}" quiet="true"/>
+  <jar destfile="${dist.file}">
+    <fileset dir="${out.root}" includes="org/strandz/task/data/wombatrescue/PopulateForDemo.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/task/data/wombatrescue/PopulateUpdateLOV.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/data/wombatrescue/**/*.class"/> 
+    <fileset dir="${out.root}" includes="org/strandz/lgpl/data/objects/**/*.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/lgpl/store/**/*.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/store/*.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/store/wombatrescue/**/*.class"/>   
+    <manifest>
+      <attribute name="Main-Class" value="org.strandz.task.data.wombatrescue.PopulateForDemo"/>
+      <attribute name="Date-Created" value="${TODAY}"/>
+      <attribute name="Class-Path" value=
+        "../lib-sdz/strandz.jar
+         ../lib/foxtrot.jar        
+         ../lib/jpox-1.1.3.jar
+         ../lib/jdo.jar
+         ../lib/jdo2-api-2.0.jar
+         ../lib/log4j-1.2.9.jar
+         ../lib/mysql-connector-java-3.0.15-ga-bin.jar
+         ../lib/mysql-connector-java-3.1.7-bin.jar
+         ../lib/wr-jdo-meta.jar
+         ../lib/jdo-config-local-demo-wombat-test-mysql.jar
+         ../lib/wr-demo-properties.jar"
+      />
+    </manifest> 
+  </jar>
+</target>
+
+</project>

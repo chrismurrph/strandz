@@ -1,0 +1,26 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jar_wombat_pojo" default="jar_wombat_pojo" basedir=".">
+
+<property file="../property-files/global.properties"/>
+
+<property name="out.root" value="${src.root}/classes"/>
+<property name="dist.dir" value="../lib-sdz"/>
+<property name="dist.file" value="${dist.dir}/wombat-pojo-panel.jar"/>
+
+<target name="jar_wombat_pojo">
+  <tstamp>
+    <format property="TODAY" pattern="dd/MM/yyyy hh:mm aa" locale="au"/>
+  </tstamp>
+  <delete file="${dist.file}" quiet="true"/>
+  <jar destfile="${dist.file}">
+    <fileset dir="${out.root}" includes="org/strandz/data/wombatrescue/**/*.class"/> 
+    <fileset dir="${out.root}" includes="org/strandz/view/wombatrescue/**/*.class"
+                               excludes="org/strandz/view/wombatrescue/**/SimpleWorkerPanel.class"
+    />       
+    <manifest>
+      <attribute name="Date-Created" value="${TODAY}"/>
+    </manifest> 
+  </jar>
+</target>
+
+</project>

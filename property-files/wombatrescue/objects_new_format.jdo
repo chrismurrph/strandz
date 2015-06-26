@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This one used by jdogenie/versant/openaccess (synonymns)
+-->
+<jdo>
+  <package name="org.strandz.data.wombatrescue.objects">
+    <class name="Worker">
+      <field name="rosterSlots" persistence-modifier="persistent">
+        <collection element-type="RosterSlot"/>
+      </field>            
+    </class>     
+    <class name="BuddyManager" />
+    <class name="RosterSlot" />
+    <!-- -->
+    <class name="WombatLookups" identity-type="datastore">
+      <field name="dayInWeeks" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="org.strandz.lgpl.data.objects.DayInWeek"/>
+      </field>            
+      <field name="flexibilities" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Flexibility"/>
+      </field>            
+      <field name="numDaysIntervals" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="NumDaysInterval"/>
+      </field>            
+      <field name="monthInYears" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="MonthInYear"/>
+      </field>            
+      <field name="overrides" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Override"/>
+      </field>            
+      <field name="seniorities" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Seniority"/>
+      </field>            
+      <field name="sexes" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Sex"/>
+      </field>            
+      <field name="weekInMonths" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="WeekInMonth"/>
+      </field>            
+      <field name="whichShifts" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="WhichShift"/>
+      </field>            
+    </class>    
+    <!-- -->
+    <!-- Lookup data  -->
+    <class name="Override" identity-type="application" objectid-class="Override$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>  
+    </class>    
+    <class name="NumDaysInterval" identity-type="application" objectid-class="NumDaysInterval$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>  
+    <class name="WhichShift" identity-type="application" objectid-class="WhichShift$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>  
+    <class name="WeekInMonth" identity-type="application" objectid-class="WeekInMonth$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>  
+    <class name="MonthInYear" identity-type="application" objectid-class="MonthInYear$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>
+    <class name="Sex" identity-type="application" objectid-class="Sex$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>
+    <class name="Seniority" identity-type="application" objectid-class="Seniority$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>
+    <class name="Flexibility" identity-type="application" objectid-class="Flexibility$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>
+  </package>
+  <package name="org.strandz.lgpl.data.objects">
+    <class name="DayInWeek" identity-type="application" objectid-class="DayInWeek$ID">
+      <field name="pkId" primary-key="true">
+        <extension vendor-name="versant" key="jdbc-column">
+          <extension vendor-name="versant" key="jdbc-type" value="SMALLINT" />
+        </extension>      
+      </field>      
+    </class>  
+  </package>  
+  <package name="org.strandz.lgpl.util">
+    <class name="UserDetails" />
+  </package>  
+</jdo>

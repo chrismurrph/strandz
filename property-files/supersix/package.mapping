@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+    <package name="org.strandz.data.supersix.objects">
+        <class name="Competition">
+            <jdbc-class-map type="base" table="COMPETITION1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="CompetitionSeason">
+            <jdbc-class-map type="base" pk-column="ID" table="COMPETITIONSEASON"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="competition">
+                <jdbc-field-map type="one-one" column.PKID="COMPETITION"/>
+            </field>
+            <field name="divisions">
+                <jdbc-field-map type="many-many" element-column.PKID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="COMPE_DIVISIONS"/>
+            </field>
+            <field name="dummy">
+                <jdbc-field-map type="value" column="DUMMY"/>
+            </field>
+            <field name="endDate">
+                <jdbc-field-map type="value" column="ENDDATE"/>
+            </field>
+            <field name="meets">
+                <jdbc-field-map type="one-many" order-column="ORDR" ref-element-column.ID="COMPETITIONSEASON"/>
+            </field>
+            <field name="seasonYear">
+                <jdbc-field-map type="one-one" column.PKID="SEASONYEAR"/>
+            </field>
+            <field name="startDate">
+                <jdbc-field-map type="value" column="STARTDATE"/>
+            </field>
+            <field name="teams">
+                <jdbc-field-map type="many-many" element-column.ID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="COMPE_TEAMS"/>
+            </field>
+        </class>
+        <class name="Division">
+            <jdbc-class-map type="base" table="DIVISION1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="Game">
+            <jdbc-class-map type="base" pk-column="ID" table="GAME1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="division">
+                <jdbc-field-map type="one-one" column.PKID="DIVISION"/>
+            </field>
+            <field name="dummy">
+                <jdbc-field-map type="value" column="DUMMY"/>
+            </field>
+            <field name="kickOffTime">
+                <jdbc-field-map type="one-one" column.PKID="KICKOFFTIME"/>
+            </field>
+            <field name="meet">
+                <jdbc-field-map type="one-one" column.ID="MEET"/>
+            </field>
+            <field name="pitch">
+                <jdbc-field-map type="one-one" column.PKID="PITCH"/>
+            </field>
+            <field name="teamOne">
+                <jdbc-field-map type="one-one" column.ID="TEAMONE"/>
+            </field>
+            <field name="teamOneGoals">
+                <jdbc-field-map type="value" column="TEAMONEGOALS"/>
+            </field>
+            <field name="teamTwo">
+                <jdbc-field-map type="one-one" column.ID="TEAMTWO"/>
+            </field>
+            <field name="teamTwoGoals">
+                <jdbc-field-map type="value" column="TEAMTWOGOALS"/>
+            </field>
+        </class>
+        <class name="Global">
+            <jdbc-class-map type="base" pk-column="ID" table="GLOBAL01"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="currentCompetition">
+                <jdbc-field-map type="one-one" column.PKID="CURRENTCOMPETITION"/>
+            </field>
+            <field name="currentSeasonYear">
+                <jdbc-field-map type="one-one" column.PKID="CURRENTSEASONYEAR"/>
+            </field>
+        </class>
+        <class name="KickOffTime">
+            <jdbc-class-map type="base" table="KICKOFFTIME1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="minutesFromStartOfDay">
+                <jdbc-field-map type="value" column="MINUTESFROMSTARTOFDAY"/>
+            </field>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="Meet">
+            <jdbc-class-map type="base" pk-column="ID" table="MEET1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="competitionSeason">
+                <jdbc-field-map type="one-one" column.ID="COMPETITIONSEASON"/>
+            </field>
+            <field name="date">
+                <jdbc-field-map type="value" column="DATE0"/>
+            </field>
+            <field name="dummy">
+                <jdbc-field-map type="value" column="DUMMY"/>
+            </field>
+            <field name="games">
+                <jdbc-field-map type="one-many" order-column="ORDR" ref-element-column.ID="MEET"/>
+            </field>
+            <field name="ordinal">
+                <jdbc-field-map type="value" column="ORDINAL"/>
+            </field>
+        </class>
+        <class name="Pitch">
+            <jdbc-class-map type="base" table="PITCH1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="Player">
+            <jdbc-class-map type="base" pk-column="ID" table="PLAYER1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="contactPhoneNumber">
+                <jdbc-field-map type="value" column="CONTACTPHONENUMBER"/>
+            </field>
+            <field name="dateOfBirth">
+                <jdbc-field-map type="value" column="DATEOFBIRTH"/>
+            </field>
+            <field name="dummy">
+                <jdbc-field-map type="value" column="DUMMY"/>
+            </field>
+            <field name="emailAddress">
+                <jdbc-field-map type="value" column="EMAILADDRESS"/>
+            </field>
+            <field name="firstName">
+                <jdbc-field-map type="value" column="FIRSTNAME"/>
+            </field>
+            <field name="homeAddress1">
+                <jdbc-field-map type="value" column="HOMEADDRESS1"/>
+            </field>
+            <field name="homeAddress2">
+                <jdbc-field-map type="value" column="HOMEADDRESS2"/>
+            </field>
+            <field name="ordinal">
+                <jdbc-field-map type="value" column="ORDINAL"/>
+            </field>
+            <field name="surname">
+                <jdbc-field-map type="value" column="SURNAME"/>
+            </field>
+            <field name="team">
+                <jdbc-field-map type="one-one" column.ID="TEAM"/>
+            </field>
+        </class>
+        <class name="Season">
+            <jdbc-class-map type="base" pk-column="jdoid" table="public.season"/>
+            <jdbc-version-ind type="version-number" column="jdoversion"/>
+            <jdbc-class-ind type="in-class-name" column="jdoclass"/>
+            <field name="competition">
+                <jdbc-field-map type="one-one" column.pkid="competition_pkid"/>
+            </field>
+            <field name="divisions">
+                <jdbc-field-map type="many-many" element-column.pkid="divisions_pkid" order-column="divisions_order" ref-column.jdoid="jdoid" table="public.seaso_divisions"/>
+            </field>
+            <field name="dummy">
+                <jdbc-field-map type="value" column="dummy"/>
+            </field>
+            <field name="endDate">
+                <jdbc-field-map type="value" column="enddate"/>
+            </field>
+            <field name="meets">
+                <jdbc-field-map type="one-many" order-column="meets_order" ref-element-column.jdoid="season_jdoid"/>
+            </field>
+            <field name="seasonYear">
+                <jdbc-field-map type="one-one" column.pkid="seasonyear_pkid"/>
+            </field>
+            <field name="startDate">
+                <jdbc-field-map type="value" column="startdate"/>
+            </field>
+            <field name="teams">
+                <jdbc-field-map type="many-many" element-column.jdoid="teams_jdoid" order-column="teams_order" ref-column.jdoid="jdoid" table="public.seaso_teams"/>
+            </field>
+        </class>
+        <class name="SeasonYear">
+            <jdbc-class-map type="base" table="SEASONYEAR1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="SuperSixLookups">
+            <jdbc-class-map type="base" pk-column="ID" table="SUPERSIXLOOKUPS1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="competitions">
+                <jdbc-field-map type="many-many" element-column.PKID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="SUPER_COMPETITIONS"/>
+            </field>
+            <field name="dayInWeeks">
+                <jdbc-field-map type="many-many" element-column.PKID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="SUPER_DAYINWEEKS1"/>
+            </field>
+            <field name="divisions">
+                <jdbc-field-map type="many-many" element-column.PKID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="SUPER_DIVISIONS1"/>
+            </field>
+            <field name="kickOffTimes">
+                <jdbc-field-map type="many-many" element-column.PKID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="SUPER_KICKOFFTIMES1"/>
+            </field>
+            <field name="pitches">
+                <jdbc-field-map type="many-many" element-column.PKID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="SUPER_PITCHES1"/>
+            </field>
+            <field name="seasonYears">
+                <jdbc-field-map type="many-many" element-column.PKID="ELEMENT" order-column="ORDR" ref-column.ID="ID" table="SUPER_SEASONYEARS1"/>
+            </field>
+        </class>
+        <class name="Team">
+            <jdbc-class-map type="base" pk-column="ID" table="TEAM1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="captain">
+                <jdbc-field-map type="one-one" column.ID="CAPTAIN"/>
+            </field>
+            <field name="division">
+                <jdbc-field-map type="one-one" column.PKID="DIVISION"/>
+            </field>
+            <field name="dummy">
+                <jdbc-field-map type="value" column="DUMMY"/>
+            </field>
+            <field name="matchesTeamOne">
+                <jdbc-field-map type="one-many" order-column="ORDR1" ref-element-column.ID="TEAMONE"/>
+            </field>
+            <field name="matchesTeamTwo">
+                <jdbc-field-map type="one-many" order-column="ORDR2" ref-element-column.ID="TEAMTWO"/>
+            </field>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="paidForCurrentSeasonYear">
+                <jdbc-field-map type="value" column="PAIDFORCURRENTSEASONYEAR"/>
+            </field>
+            <field name="players">
+                <jdbc-field-map type="one-many" order-column="ORDR" ref-element-column.ID="TEAM"/>
+            </field>
+            <field name="withdrawnFromDivision">
+                <jdbc-field-map type="value" column="WITHDRAWNFROMDIVISION"/>
+            </field>
+        </class>
+    </package>
+    <package name="org.strandz.lgpl.data.objects">
+        <class name="DayInWeek">
+            <jdbc-class-map type="base" table="DAYINWEEK1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+    </package>
+    <package name="org.strandz.lgpl.util">
+        <class name="UserDetails">
+            <jdbc-class-map type="base" pk-column="ID" table="USERDETAILS1"/>
+            <jdbc-version-ind type="version-number" column="VERSN"/>
+            <jdbc-class-ind type="in-class-name" column="TYP"/>
+            <field name="databasePassword">
+                <jdbc-field-map type="value" column="DATABASEPASSWORD"/>
+            </field>
+            <field name="databaseUsername">
+                <jdbc-field-map type="value" column="DATABASEUSERNAME"/>
+            </field>
+            <field name="password">
+                <jdbc-field-map type="value" column="PASSWORD"/>
+            </field>
+            <field name="username">
+                <jdbc-field-map type="value" column="USERNAME"/>
+            </field>
+        </class>
+    </package>
+</mapping>

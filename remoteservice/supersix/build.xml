@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<project name="supersixRemoteService" basedir="." default="deploy">
+    <property name="staging.lib" value="war/WEB-INF/lib"/>
+    <property environment="env"/>
+    <property name="appserver.home" location="${env.CATALINA_HOME}"/>
+    <property name="deploy.path" value="${appserver.home}/webapps"/>
+    <property name="sdz.zone" value="../.."/>
+
+    <property name="src.dir" value="src"/>
+    <property name="web.dir" value="war"/>
+    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
+    <property name="name" value="supersixRemoteService"/>
+    
+    <target name="delete-target" description="Delete target files">
+      <delete quiet="true">
+        <fileset dir="${deploy.path}/${name}" includes="**/*"/>  
+      </delete>
+    </target>
+    
+    <target name="copy-stable-jars">
+      <ant antfile="../copystablejars.xml">
+        <property name="destination" value="${staging.lib}"/>
+      </ant>
+    </target>    
+        
+    <target name="copy-unstable-jars">
+      <delete file="${staging.lib}/supersix.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib-sdz/supersix.jar" todir="${staging.lib}"/>
+      <delete file="${staging.lib}/strandz.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib-sdz/strandz.jar" todir="${staging.lib}"/>
+      <delete file="${staging.lib}/ss-jdo-meta.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/ss-jdo-meta.jar" todir="${staging.lib}"/>
+    </target>
+
+    <target name="copy-across" description="Deploy application">
+        <copy todir="${deploy.path}/${name}" preservelastmodified="true">
+            <fileset dir="${web.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="deploy" depends="copy-stable-jars, copy-unstable-jars, delete-target, copy-across">
+    </target>
+    
+
+</project>

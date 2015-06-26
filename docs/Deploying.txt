@@ -1,0 +1,37 @@
+Deploying production
+--------------------
+Commit and check emails to see all passed
+Follow instruction (3) from StartupCayenne.java
+Action / Clean DOs (cmd line from C:\sdz-zone-old\bin-jdo\clean.bat for old)
+Compile from IDE
+Action / Enhance DOs (cmd line C:\sdz-zone-old\bin-jdo\enhance.bat for old)
+Test it out if can
+ant -f jarStrandz.xml and jarWombat.xml (both from bin)
+ftp them across from %SDZ%/lib-sdz to ~chris/scratch
+- view-jar.sh wr-prod-properties.jar to make sure has right rosterer and right version (*)
+- OR commit and ant jar-kodo-property-files (from $SP/wombatrescue) if want version number updated
+$SDZ/bin/deployTeresaSpring.sh will collect them
+Test the PROD application
+
+(*)
+Commit everything on client b4 ant will give correct version number when ant in next step
+In $SP/wombatrescue chk wombat-prod.properties is what want then ant jar-kodo-property-files
+ie. ant jar-kodo-property-files (from $SP/wombatrescue) must be done - or else the past version number will be used!
+
+Deploying Memory
+----------------
+commit everything
+pre-deploy.sh
+all-sf.sh (all the calls to sf.sh can be commented out)
+Test the MEMORY application
+
+Deploying Memory - issue 1
+--------------------------
+Problem: Enhanced Worker.class making it thru
+Useful to check size and date of wombat-memory.war
+Can bring the war file onto the desktop to check if implements PersistentCapable
+$SDZ/in-out/wombat-memory.war s/be result of pre-deploy.sh
+Conclusion: Maybe chamges I made while looking at the problem fixed it - keep an eye...
+
+
+

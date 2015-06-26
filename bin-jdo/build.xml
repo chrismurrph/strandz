@@ -1,0 +1,771 @@
+<project name="wombat" basedir=".">
+
+    <property file="../property-files/global.properties"/>
+
+    <property name="src.wombat.data" value="org/strandz/data/wombatrescue/objects"/>    
+    <property name="src.supersix.data" value="org/strandz/data/supersix/objects"/>    
+    <property name="src.common.data" value="org/strandz/lgpl/data/objects"/>    
+    <property name="src.common" value="org/strandz/lgpl/util"/>    
+
+    <property name="out.path1" value="${out.root}/${src.wombat.data}"/>   
+    <property name="out.path2" value="${out.root}/${src.common.data}"/>   
+    <property name="out.path3" value="${out.root}/${src.supersix.data}"/>   
+    <property name="out.path4" value="${out.root}/${src.common}"/>   
+    
+    <property name="cwd" value="."/>   
+    <property name="app.lib" value="../lib"/>   
+    <property name="wombat.meta.loc" value="../property-files/wombatrescue"/>   
+    <property name="supersix.meta.loc" value="../property-files/supersix"/>   
+    <!--
+    Open Access's ant task cannot read from Open Access .properties files from jar files.
+    As these files also have to be on the CP, there are no paths required.
+    These files have to be in the output directory of jdo-enhance, so we 
+    copy them across and then delete them once jdo-enhance has finished.
+    These files get onto the CP with the pathelement directive.
+    -->
+    <property name="jdo.local.wombat.project" value="local_client_wombat_test_mysql.properties"/>
+    <property name="jdo.debian.prod.project" value="remote_debian_teresa_prod_mysql.properties"/>
+    <property name="jdo.for.enhance" value="local_client_teresa_prod_mysql.properties"/>
+    <property name="jdo.kodo.wombat" value="local_demo_wombat_kodo_mysql.properties"/>
+    <property name="jdo.kodo.supersix" value="supersix_kodo_postgres.properties"/>
+    <property name="jdo.jpox.wombat" value="local_client_wombat_test_mysql.jpox"/>
+    <property name="jdo.jpox.supersix" value="local_client_supersix_test_mysql.jpox"/>
+        
+    <property name="jdo.license.openaccess" value="${jdo.home.openaccess}/license"/>
+    <property name="jdo.lib.openaccess" value="${jdo.home.openaccess}/lib"/>
+    <property name="jdo.tools.openaccess" value="${jdo.home.openaccess}/tools"/>
+    <!-- -->
+    
+    <property name="reports.dir" value="../bin"/>
+    <property name="jdo.reports.dir" value="../bin-jdo"/>
+    <property name="DESTINATION" value="${javancss.dir}"/>
+    <property name="CLASSPATH"   value="${DESTINATION}/lib/ccl.jar:${DESTINATION}/lib/jhbasic.jar:${DESTINATION}/lib/javancss.jar"/>
+    <property name="log4j.config.file" value="file:${jdo.reports.dir}/jpox.lcf"/>
+
+    <!-- Everything s/come from a jar - can't do!
+    -->
+    <path id="cp-openaccess">
+      <pathelement path="${out.root}"/>    
+      <fileset dir="${app.lib}" includes="*.jar">
+        <exclude name="wombat*.jar"/>
+        <exclude name="teresa.jar"/>
+        <exclude name="wr-jdo-meta.jar"/>
+        <exclude name="ss-jdo-meta.jar"/>
+        <exclude name="jdo-meta.jar"/>
+      </fileset>  
+    </path>
+
+<!--
+Leaving this here to indicate that ant should throw a wobbly if it
+finds any non-third party jar files in lib. (config files are fine too)
+Need to have them being deleted at end, and checked that not there at begining.
+               excludes="wombat*.jar"
+-->
+
+    <path id="cp-jpox-wr">
+      <pathelement path="${out.root}"/>   
+      <!--
+      <pathelement path="${wombat.meta.loc}"/>    
+      -->
+      <fileset dir="${app.lib}" includes="*.jar">
+        <exclude name="openaccess.jar"/>
+        <exclude name="*linode*.jar"/>
+        <exclude name="kodo-jdo.jar"/>
+        <exclude name="jdo-1.0.2.jar"/>
+      </fileset>  
+    </path>
+    
+    <path id="cp-kodo-wr">
+      <pathelement path="${out.root}"/>    
+      <pathelement path="${wombat.meta.loc}"/>    
+      <fileset dir="${app.lib}" includes="*.jar">
+        <exclude name="openaccess.jar"/>
+        <exclude name="*linode*.jar"/>
+        <exclude name="wr-jdo-meta.jar"/>
+        <exclude name="ss-jdo-meta.jar"/>
+        <exclude name="jdo-meta.jar"/>
+      </fileset>  
+    </path>
+
+    <path id="cp-kodo-ss">
+      <pathelement path="${out.root}"/>    
+      <pathelement path="${supersix.meta.loc}"/>    
+      <fileset dir="${app.lib}" includes="*.jar">
+        <exclude name="openaccess.jar"/>
+        <exclude name="jdo.jar"/>
+        <exclude name="*linode*.jar"/>
+        <exclude name="wr-jdo-meta.jar"/>
+        <exclude name="ss-jdo-meta.jar"/>
+        <exclude name="jdo-meta.jar"/>
+      </fileset>  
+    </path>
+    
+    <path id="cp-kodo-wr-remoteservice">
+      <fileset dir="../remoteservice/teresa/war/WEB-INF/lib" includes="*.jar">
+      </fileset>  
+    </path>
+    
+
+    <!--
+    Particularly important to call this when one JDO implementation's
+    enhancement differs from another's. This CAN happen. Also happens
+    with different versions of JDO. The symptom will be unimplemented
+    methods. Clean here, then compile in your IDE, then enhance from
+    the relevant ant task here.
+    -->
+    <target name="clean" description="Remove all data object classes">
+      <delete quiet="true">
+        <fileset dir="${out.path1}" includes="*.class"/>  
+        <fileset dir="${out.path2}" includes="*.class"/>  
+        <fileset dir="${out.path3}" includes="*.class"/>  
+        <fileset dir="${out.path4}" includes="UserDetails.class"/>
+      </delete>
+      <echo>Done clean</echo>
+    </target>    
+    
+    <!-- It's only DOs!
+    <target name="clean" description="Remove all data object classes">
+      <echo>No longer doing clean - the server is suffering</echo>
+    </target>    
+    -->
+
+    <target name="init-jdo">
+        <!-- Define JDO Genie tasks (jdo-xxx) -->
+        <taskdef resource="versant.tasks">
+            <classpath>
+                <path refid="cp-openaccess"/>
+                <fileset dir="${jdo.tools.openaccess}" 
+                         includes="**/*.jar"/>
+                <fileset dir="${wombat.meta.loc}" includes="**/*.properties"/>
+            </classpath>
+        </taskdef>
+    </target>
+
+    <!--
+    <target name="init">
+      <classpath>
+        <path refid="cp"/>
+      </classpath>
+    </target>
+    -->
+
+    <target name="server-compile-only"
+            description="compile only on server - rm, compile-all"
+            depends="clean, compile-all">
+      <echo>Compile-only (no enhancement) has been done on the wombat/supersix/common classes</echo>        
+    </target>
+
+    <target name="compile-one">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/lgpl/util/**"/>
+      </javac>
+    </target>
+
+    <target name="compile-two">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/lgpl/**"/>
+        <exclude name="org/strandz/lgpl/util/**"/>
+      </javac>
+    </target>
+    
+    <target name="compile-three">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/core/relational/**"/>
+        <include name="org/strandz/core/visual/**"/>
+        <include name="org/strandz/core/widgets/**"/>
+      </javac>
+    </target>
+    
+    <target name="compile-four">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/core/**"/>
+        <exclude name="org/strandz/core/interf/**"/>
+        <exclude name="org/strandz/core/relational/**"/>
+        <exclude name="org/strandz/core/visual/**"/>
+        <exclude name="org/strandz/core/widgets/**"/>
+      </javac>
+    </target>    
+    
+    <target name="compile-five">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/core/interf/**"/>
+      </javac>
+    </target>
+    
+
+    <target name="compile-six">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/**"/>
+        <exclude name="org/strandz/core/**"/> <!--done already-->
+        <exclude name="org/strandz/lgpl/**"/> <!--done already-->
+        <exclude name="org/strandz/applic/**"/> <!--will do last-->     
+        <exclude name="org/strandz/task/**"/> <!--will do last-->     
+        <exclude name="org/strandz/test/**"/> <!--will do last-->     
+        <exclude name="org/strandz/data/**"/> <!--will do second last-->     
+      </javac>
+    </target>
+    
+    <target name="compile-seven">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/data/**"/>
+      </javac>
+    </target>    
+
+    <target name="compile-eight">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/task/**"/>      
+        <include name="org/strandz/test/**"/>      
+      </javac>
+    </target>
+
+    <target name="compile-nine">
+      <javac srcdir="${src.root}"
+             destdir="../classes"
+             classpathref="cp-jpox-wr"
+             debug="on"
+             source="1.5"
+             fork="yes">
+        <include name="org/strandz/applic/**"/>      
+      </javac>
+    </target>
+
+    <target name="compile-all" depends="compile-one, compile-two, compile-three, compile-four, compile-five, compile-six, compile-seven, compile-eight, compile-nine">
+    </target>
+        
+    <target name="kodo-product-definitions">
+      <java classname="org.apache.openjpa.lib.conf.ProductDerivations">
+        <classpath>
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+      </java>
+    </target>
+
+    <target name="kodo-sequence-table">
+      <java classname="org.apache.openjpa.jdbc.kernel.TableJDBCSeq">
+        <arg line="-action add"/>
+        <classpath>
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+      </java>
+    </target>    
+
+    <target name="remoteservice-product-definitions">
+      <java classname="org.apache.openjpa.lib.conf.ProductDerivations">
+        <classpath>
+          <path refid="cp-kodo-wr-remoteservice"/>
+        </classpath>
+      </java>
+    </target>
+        
+    <target name="enhance-wombat-kodo"
+            description="Enhance all Wombat Java DOs with BEA Kodo's enhancer">
+      <delete>
+        <fileset dir="${out.root}" includes="package.jdo"/>
+      </delete>
+      <taskdef name="jdoc" classname="kodo.ant.PCEnhancerTask">
+        <classpath>
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+      </taskdef>
+      <!-- old way
+      <taskdef name="jdoc" classname="kodo.ant.JDOEnhancerTask">
+        <classpath>
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+      </taskdef>      
+      -->
+      <delete file="${wombat.meta.loc}/package.jdo" quiet="true"/>
+      <copy file="${wombat.meta.loc}/package-kodo.orm" tofile="${wombat.meta.loc}/package.jdo"/>
+      <jdoc>
+        <!-- Just for the license -->
+        <config propertiesFile="${wombat.meta.loc}/${jdo.kodo.wombat}"/>
+        <classpath>
+          <!-- this cp is used to find classes that will be enhanced --> 
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+        <fileset dir="${wombat.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </jdoc>
+      <delete file="${wombat.meta.loc}/package.jdo" quiet="true"/>
+    </target>
+
+    <target name="enhance-supersix-kodo"
+            description="Enhance all SuperSix Java DOs with BEA Kodo's enhancer">
+      <delete>
+        <fileset dir="${out.root}" includes="package.jdo"/>
+      </delete>
+      <taskdef name="jdoc" classname="kodo.ant.PCEnhancerTask">
+        <classpath>
+          <path refid="cp-kodo-ss"/>
+        </classpath>
+      </taskdef>
+      <delete file="${supersix.meta.loc}/package.jdo" quiet="true"/>
+      <copy file="${supersix.meta.loc}/package-kodo.orm" tofile="${supersix.meta.loc}/package.jdo"/>
+      <jdoc>
+        <config propertiesFile="${supersix.meta.loc}/${jdo.kodo.supersix}"/>
+        <classpath>
+          <path refid="cp-kodo-ss"/>
+        </classpath>
+        <fileset dir="${supersix.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </jdoc>
+      <delete file="${supersix.meta.loc}/package.jdo" quiet="true"/>
+    </target>
+
+    <target name="create-db-kodo" depends="enhance-wombat-kodo, create-db-kodo-server"
+            description="Create WOMBAT database schema">
+    </target>        
+    
+    <target name="create-db-kodo-server"
+            description="Create KODO database schema">
+      <taskdef name="mappingtool" 
+               classname="kodo.jdbc.ant.MappingToolTask">
+        <!-- this cp is used solely to find MappingToolTask --> 
+        <classpath>
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+      </taskdef>         
+      <delete file="${wombat.meta.loc}/package.jdo" quiet="true"/>
+      <copy file="${wombat.meta.loc}/package-kodo.orm" tofile="${wombat.meta.loc}/package.jdo"/>
+      <mappingtool action="drop" 
+                   schemaAction="none">
+        <config propertiesFile="${wombat.meta.loc}/${jdo.kodo.wombat}"/>
+        <classpath>
+          <!-- this cp is used to find classes that will be mapped --> 
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+        <fileset dir="${wombat.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </mappingtool>      
+      <mappingtool action="refresh" 
+                   schemaAction="none">
+        <config propertiesFile="${wombat.meta.loc}/${jdo.kodo.wombat}"/>
+        <classpath>
+          <!-- this cp is used to find classes that will be mapped --> 
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+        <fileset dir="${wombat.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </mappingtool>      
+      <!-- Here is where you might change package.jdo (? package.mapping) to meet your needs -->
+      <mappingtool action="buildSchema" file="kodomappings.sql">
+        <config propertiesFile="${wombat.meta.loc}/${jdo.kodo.wombat}"/>
+        <classpath>
+          <!-- this cp is used to find classes that will be mapped --> 
+          <path refid="cp-kodo-wr"/>
+        </classpath>
+        <fileset dir="${wombat.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </mappingtool>      
+      <delete file="${wombat.meta.loc}/package.jdo" quiet="true"/>      
+    </target>  
+        
+    <target name="create-db-supersix-server"
+            description="Create SUPERSIX database schema on server (no enhancement)">
+      <taskdef name="mappingtool" 
+               classname="kodo.jdbc.ant.MappingToolTask">
+        <!-- this cp is used solely to find MappingToolTask --> 
+        <classpath>
+          <path refid="cp-kodo-ss"/>
+        </classpath>
+      </taskdef>         
+      <delete file="${supersix.meta.loc}/package.jdo" quiet="true"/>
+      <copy file="${supersix.meta.loc}/package-kodo.orm" tofile="${supersix.meta.loc}/package.jdo"/>
+      <mappingtool action="drop" 
+                   schemaAction="none">
+        <config propertiesFile="${supersix.meta.loc}/${jdo.kodo.supersix}"/>
+        <classpath>
+          <!-- this cp is used to find classes that will be mapped --> 
+          <path refid="cp-kodo-ss"/>
+        </classpath>
+        <fileset dir="${supersix.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </mappingtool>      
+      <mappingtool action="refresh" 
+                   schemaAction="none">
+        <config propertiesFile="${supersix.meta.loc}/${jdo.kodo.supersix}"/>
+        <classpath>
+          <!-- this cp is used to find classes that will be mapped --> 
+          <path refid="cp-kodo-ss"/>
+        </classpath>
+        <fileset dir="${supersix.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </mappingtool>      
+      <!-- Here is where you might change package.jdo to meet your needs -->
+      <mappingtool action="buildSchema">
+        <config propertiesFile="${supersix.meta.loc}/${jdo.kodo.supersix}"/>
+        <classpath>
+          <!-- this cp is used to find classes that will be mapped --> 
+          <path refid="cp-kodo-ss"/>
+        </classpath>
+        <fileset dir="${supersix.meta.loc}">
+          <include name="package.jdo" />
+        </fileset>
+      </mappingtool>      
+      <delete file="${supersix.meta.loc}/package.jdo" quiet="true"/>
+    </target>  
+            
+    <!-- Looked for an option so that program would
+         do it - no luck - JPOX better here
+         This never got to work!
+    -->     
+    <target name="migrate-linode-prod" depends="init-jdo"
+             description="Migrate database on Linode">
+        <copy todir="${out.root}">
+          <fileset dir="${wombat.meta.loc}" includes="*.properties"/>
+        </copy>
+        <jdo-migrate-db
+            project="${jdo.linode.prod.project}"
+            outputdir="${out1.path}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+        <jdo-migrate-db
+            project="${jdo.linode.prod.project}"
+            outputdir="${out2.path}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+        <delete>
+          <fileset dir="${out.root}" includes="*.properties"/>
+        </delete>
+    </target>        
+        
+    <target name="run-server"
+            description="Start remote server for 3-tier usage">
+        <java classname="data.wombatrescue.JDOTeresaData" classpathref="cp" fork="true">
+            <jvmarg value="-Djava.security.policy=./policy.all"/>
+        </java>
+    </target>
+
+    <target name="run-prod-server"
+            description="Start remote server for 3-tier usage">
+        <java classname="task.wombatrescue.JDOProdService" classpathref="cp" fork="true">
+            <jvmarg value="-Djava.security.policy=./policy.all"/>
+        </java>
+    </target>
+
+    <target name="run-dev-server"
+            description="Start remote server for 3-tier usage">
+        <java classname="org.strandz.task.wombatrescue.JDODevService" classpathref="cp" fork="true">
+            <jvmarg value="-Djava.security.policy=./policy.all"/>
+        </java>
+    </target>
+
+    <target name="run-back-server"
+            description="Start remote server for 3-tier usage">
+        <java classname="task.wombatrescue.JDOBackService" classpathref="cp" fork="true">
+            <jvmarg value="-Djava.security.policy=./policy.all"/>
+        </java>
+    </target>
+
+    <target name="run-prod-remote-nochk"
+            description="Run the application against a remote server (3-tier)">
+        <java classname="applic.wombatrescue.StartupProd" classpathref="cp" fork="true">
+            <jvmarg value="-Djava.security.policy=./policy.all"/>
+            <arg value="localhost"/>
+        </java>
+    </target>
+    
+    <target name="copy-dev-to-prod" depends="init-jdo" 
+            description="Copy DEV to PROD">
+      <jdo-copy-db project="${jdo.dev.project}" url="jdbc:hsqldb:hsql://localhost/wombat_prod" />
+    </target>    
+    
+    <target name="copy-dev-to-back" depends="init-jdo" 
+            description="Copy DEV to BACK">
+      <jdo-copy-db project="${jdo.dev.project}" url="jdbc:hsqldb:hsql://localhost/wombat_back" />
+    </target>    
+    
+    <target name="copy-prod-to-dev" depends="init-jdo" 
+            description="Copy PROD to DEV">
+      <jdo-copy-db project="${jdo.prod.project}" url="jdbc:hsqldb:hsql://localhost/wombat_dev" />
+    </target>  
+
+    <target name="copy-debian-dev-to-dev" depends="init-jdo" 
+            description="Copy DEBIAN_DEV to DEV">
+      <copy todir="${out.root}">
+        <fileset dir="${wombat.meta.loc}"/>
+      </copy>
+      <jdo-copy-db project="${jdo.debian.dev.project}" 
+                   url="jdbc:hsqldb:hsql://localhost/wombat_dev" 
+                   driver="org.hsqldb.jdbcDriver"
+                   db="hypersonic"
+                   user="sa" 
+                   password="" 
+      />
+      <delete>
+        <fileset dir="${out.root}" includes="*.openaccess"/>
+      </delete>
+    </target>  
+
+    <!--
+    Works fine but then would have to make target have all application identity
+    (
+     not sure about this statement - surely can do exactly the mapping you want
+     whether datastore or application identity - NO! - not for pks - hence when really
+     want control need to use application identity where you can decide the names of
+     your primary and foreign keys.
+    )
+    as different vendors have different O/R mapping 'assumptions'. Where use
+    different JDO vendors JDO versions the copy will have to be done at the DO
+    level, see the java file CopyTo<Whatever>.
+    -->
+    <target name="copy-debian-dev-to-local-wombat" depends="init-jdo" 
+            description="Copy DEBIAN_DEV to LOCAL_WOMBAT">
+      <copy todir="${out.root}">
+        <fileset dir="${wombat.meta.loc}"/>
+      </copy>
+      <jdo-copy-db project="${jdo.debian.dev.project}" 
+                   url="jdbc:mysql://localhost:3306/test"
+                   db="mysql"
+                   driver="com.mysql.jdbc.Driver"
+                   user="${general.username}" 
+                   password="${general.password}" 
+      />
+      <delete>
+        <fileset dir="${out.root}" includes="*.openaccess"/>
+      </delete>
+    </target>  
+    
+    
+    <target name="copy-prod-to-back" depends="init-jdo" 
+            description="Copy PROD to BACK">
+      <jdo-copy-db project="${jdo.prod.project}" url="jdbc:hsqldb:hsql://localhost/wombat_back" />
+    </target>  
+
+    <target name="copy-prod-to-debian-prod" depends="init-jdo" 
+            description="Copy PROD to DEBIAN PROD">
+      <jdo-copy-db project="${jdo.prod.project}" 
+                   url="jdbc:mysql://debian:3306/wombat_prod"
+                   db="mysql"
+                   driver="com.mysql.jdbc.Driver"
+                   user="${general.username}" 
+                   password="${general.password}" 
+      />
+    </target>  
+
+    <target name="copy-prod-to-debian-dev" depends="init-jdo" 
+            description="Copy PROD to DEBIAN DEV">
+      <jdo-copy-db project="${jdo.prod.project}" 
+                   url="jdbc:mysql://debian:3306/wombat_dev"
+                   db="mysql"
+                   driver="com.mysql.jdbc.Driver"
+                   user="${general.username}" 
+                   password="${general.password}" 
+      />
+    </target>  
+
+    <!-- Commented out to protect DEBIAN PROD
+    <target name="copy-debian-dev-to-debian-prod" depends="init-jdo" 
+            description="Copy DEBIAN DEV to DEBIAN PROD">
+      <jdo-copy-db project="${jdo.debian.dev.project}" 
+                   url="jdbc:mysql://debian:3306/teresa_prod"
+                   db="mysql"
+                   driver="com.mysql.jdbc.Driver"
+                   user="${general.username}" 
+                   password="${general.password}" 
+      />
+    </target>  
+    -->
+    
+    <target name="copy-debian-prod-to-debian-dev" depends="init-jdo" 
+            description="Copy DEBIAN PROD to DEBIAN DEV">
+        <copy todir="${out.root}">
+          <fileset dir="${wombat.meta.loc}"/>
+        </copy>
+        <jdo-copy-db project="${jdo.debian.prod.project}" 
+                     url="jdbc:mysql://debian:3306/teresa_dev"
+                     db="mysql"
+                     driver="com.mysql.jdbc.Driver"
+                     user="${general.username}" 
+                     password="${general.password}" 
+        />
+        <delete>
+          <fileset dir="${out.root}" includes="*.openaccess"/>
+        </delete>    
+    </target>  
+
+    <target name="copy-debian-prod-to-local-prod" depends="init-jdo" 
+            description="Copy DEBIAN PROD to LOCAL PROD">
+        <copy todir="${out.root}">
+          <fileset dir="${wombat.meta.loc}"/>
+        </copy>
+        <jdo-copy-db project="${jdo.debian.prod.project}" 
+                     url="jdbc:mysql://localhost:3306/teresa_prod"
+                     db="mysql"
+                     driver="com.mysql.jdbc.Driver"
+                     user="${rosterer.username}"  
+                     password="${rosterer.password}" 
+        />
+        <delete>
+          <fileset dir="${out.root}" includes="*.openaccess"/>
+        </delete>    
+    </target>  
+
+    <target name="copy-debian-prod-to-linode-prod" depends="init-jdo" 
+            description="Copy DEBIAN PROD to LINODE PROD">
+        <copy todir="${out.root}">
+          <fileset dir="${wombat.meta.loc}"/>
+        </copy>
+        <jdo-copy-db project="${jdo.debian.prod.project}" 
+                     url="jdbc:mysql://www.seaweedsoftware.com:3306/teresa_prod"
+                     db="mysql"
+                     driver="com.mysql.jdbc.Driver"
+                     user="${rosterer.username}"  
+                     password="${rosterer.password}" 
+        />
+        <delete>
+          <fileset dir="${out.root}" includes="*.openaccess"/>
+        </delete>    
+    </target>  
+
+    <target name="copy-back-to-dev" depends="init-jdo" 
+            description="Copy BACKUP to DEV">
+      <jdo-copy-db project="${jdo.back.project}" url="jdbc:hsqldb:hsql://localhost/wombat_dev" />
+    </target>  
+    
+    <!--
+    <taskdef name="javancss"
+            classname="javancss.JavancssAntTask"
+            classpath="${CLASSPATH}"/>
+
+    <target name="metrics"
+            description="Source code metrics">
+      <javancss srcdir="${src.root}"
+              includes="**/*.java"
+        excludes="*.java java/beans/**/*.java, javax/swing/**/*.java, dynamic/*.java"
+        generateReport="true"
+        outputfile="${reports.dir}/javancss_metrics.txt"
+      />
+    </target>      
+    -->
+    
+   <!--    
+   <taskdef name="javancss" 
+    classname="javancss.JavancssAntTask"
+    classpath="${CLASSPATH}"/>
+
+   <target name="javancss">
+      <javancss srcdir="src"
+                includes="**/*.java"
+                generateReport="yes"/>
+   </target>
+
+   <target name="update_manifest" >
+     <jar jarfile="lib/javancss.jar" update="true" >
+       <manifest>
+         <attribute name="Main-class" value="javancss.Main" />
+         <attribute name="Class-Path" value="jhbasic.jar ccl.jar" />
+       </manifest>
+     </jar>
+   </target>
+   --> 
+     
+    <!--
+            outputdir="${src.root}"    
+    -->
+    <target name="migrate-dev" depends="init-jdo"
+             description="Migrate database on DEV">
+        <jdo-migrate-db
+            project="${jdo.dev.project}"
+            outputdir="${out.path1}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+        <jdo-migrate-db
+            project="${jdo.dev.project}"
+            outputdir="${out.path3}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+    </target>    
+
+    <target name="migrate-debian-dev" depends="init-jdo"
+             description="Migrate database on DEV">
+        <jdo-migrate-db
+            project="${jdo.debian.dev.project}"
+            outputdir="${out.path1}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+        <jdo-migrate-db
+            project="${jdo.debian.dev.project}"
+            outputdir="${out.path3}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+    </target>    
+
+    <target name="migrate-debian-prod" depends="init-jdo"
+             description="Migrate database on PROD">
+        <jdo-migrate-db
+            project="${jdo.debian.prod.project}"
+            outputdir="${out.path1}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+        <jdo-migrate-db
+            project="${jdo.debian.prod.project}"
+            outputdir="${out.path3}"
+            checkConstraint="false"
+            direct="false">
+        </jdo-migrate-db>
+    </target>    
+
+
+    <target name="fix-crlf"
+             description="Fix CR/LF problem for unix target">
+   <fixcrlf srcdir="${upload.src.root}"
+        eol="lf" eof="remove"
+        includes="**/*"
+    />    
+    </target>    
+</project>

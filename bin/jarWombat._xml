@@ -1,0 +1,55 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jar_wombat" default="jar_wombat" basedir=".">
+
+<property file="../property-files/global.properties"/>
+
+<property name="out.root" value="${src.root}/classes"/>
+<property name="dist.dir" value="../lib-sdz"/>
+<property name="dist.file" value="${dist.dir}/wombat.jar"/>
+
+  
+
+<target name="jar_wombat">
+  <tstamp>
+    <format property="TODAY" pattern="dd/MM/yyyy hh:mm aa" locale="au"/>
+  </tstamp>
+  <delete file="${dist.file}" quiet="true"/>
+  <jar destfile="${dist.file}">
+    <fileset dir="${out.root}" includes="org/strandz/applic/wombatrescue/**/*.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/data/wombatrescue/**/*.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/store/wombatrescue/**/*.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/service/wombatrescue/**/*.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/view/wombatrescue/**/*.class"/>   
+    <fileset dir="${out.root}" includes="org/strandz/widgets/data/wombatrescue/**/*.class"/> 
+    <!--Needs to go in wombat as is required for a query: -->
+    <fileset dir="${out.root}" includes="com/seasoft/store/KodoJDOVendorOps.class"/>
+    <!-- Showing this to say DON'T put tasks in a jar! Either copy the file or have
+         the source in your IDE. 
+    fileset dir="${out.root}" includes="org/strandz/task/wombatrescue/**/*.class"
+    -->
+    <manifest>
+      <attribute name="Main-Class" value="org.strandz.applic.wombatrescue.StartupMemoryDemo"/>
+      <attribute name="Date-Created" value="${TODAY}"/>
+      <attribute name="Class-Path" value=
+        "../lib-sdz/strandz.jar
+         ../lib/app-images.jar
+         ../lib/MDateSelector-mine.jar
+         ../lib/foxtrot.jar
+         ../lib/jpox-1.1.3.jar
+         ../lib/log4j-1.2.9.jar
+         ../lib/mail.jar
+         ../lib/mysql-connector-java-3.0.15-ga-bin.jar
+         ../lib/mysql-connector-java-3.1.7-bin.jar         
+         ../lib/TableLayout.jar
+         ../lib/wr-demo-properties.jar
+         ../lib/wr-jdo-meta.jar
+         ../lib/wr-sdz-dt-files.jar
+         ../lib/wr-help.jar
+         ../lib/jh.jar
+         ../lib/jdo-config-local-demo-wombat-test-mysql.jar"
+      />
+    </manifest> 
+  </jar>
+</target>
+
+</project>

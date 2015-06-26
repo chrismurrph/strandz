@@ -1,0 +1,40 @@
+/*
+    Strandz LGPL - an API that matches the user to the data.
+    Copyright (C) 2007 Chris Murphy
+
+    Strandz LGPL is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+
+    The authors can be contacted via www.strandz.org
+*/
+package org.strandz.lgpl.extent;
+
+import org.strandz.lgpl.util.NamedI;
+
+import java.lang.reflect.Field;
+
+/**
+ * Used soley so can return from static method MethodTie.canCreate()
+ * <p/>
+ * On parent side also known as a collect relationship
+ * On child side known as a reference relationship
+ */
+class FieldDescriptor
+{
+    String strField;
+    NamedI parentObject, childObject;
+    int type; // whether field is on parent or child side, also error
+    Field field;
+}

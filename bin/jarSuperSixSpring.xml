@@ -1,0 +1,41 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jar_supersix_spring" default="jar_supersix_spring" basedir=".">
+
+<property file="../property-files/global.properties"/>
+
+<property name="out.root" value="${src.root}/classes"/>
+<property name="dist.dir" value="../lib-sdz"/>
+<property name="dist.file.name" value="superSixSpring.jar"/>
+<property name="dist.file" value="${dist.dir}/${dist.file.name}"/>
+
+<target name="jar_supersix_spring">
+  <delete file="${dist.file}" quiet="true"/>
+  <jar destfile="${dist.file}">
+    <!-- We will later include LocalServerUserDetailsService as well - it is the Spring configuration
+         files that determine what classes are actually used
+    -->
+    <fileset dir="${out.root}" includes="org/strandz/service/supersix/LocalServerUserDetailsService.class"/>
+    <manifest>
+      <attribute name="Built-By" value="${user.name}"/> 
+      <attribute name="Main-Class" value="org.strandz.service.supersix.LocalServerUserDetailsService"/>
+      <attribute name="Class-Path" value=
+        "../lib-sdz/strandz.jar
+         ../lib-sdz/supersix.jar
+         ../lib/kodo-jdo.jar
+         ../lib/jdo-1.0.2.jar
+         ../lib/ss-jdo-meta.jar
+         ../lib/jta-spec1_0_1.jar
+         ../lib/MDateSelector-mine.jar
+         ../lib/junit.jar
+         ../lib/jca1.0.jar
+         ../lib/mysql-connector-java-3.0.15-ga-bin.jar"/>
+      <!--
+         Just using local file:
+         ../lib/jdo-config-local-linode-teresa-prod-mysql.jar
+      <attribute name="Sealed" value="false"/>
+      -->
+    </manifest> 
+  </jar>
+</target>
+
+</project>

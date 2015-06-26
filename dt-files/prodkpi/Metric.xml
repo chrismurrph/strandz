@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_10" class="java.beans.XMLDecoder"> 
+ <object class="org.strandz.core.applichousing.SdzBag"> 
+  <void property="name"> 
+   <string>Metric</string> 
+  </void> 
+  <void property="nodes"> 
+   <array class="org.strandz.core.interf.Node" length="1"> 
+    <void index="0"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell0" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>graduations</string> 
+           </void> 
+           <void property="item"> 
+            <object id="ManyItemsControl0" class="org.strandz.lgpl.widgets.ManyItemsControl"> 
+             <void method="add"> 
+              <object id="JTextField0" class="javax.swing.JTextField"> 
+               <void property="name"> 
+                <string>tfManyItems item number 0</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object id="JTextField1" class="javax.swing.JTextField"> 
+               <void property="name"> 
+                <string>tfManyItems item number 1</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object id="JTextField2" class="javax.swing.JTextField"> 
+               <void property="name"> 
+                <string>tfManyItems item number 2</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object id="JTextField3" class="javax.swing.JTextField"> 
+               <void property="name"> 
+                <string>tfManyItems item number 3</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object id="JTextField4" class="javax.swing.JTextField"> 
+               <void property="name"> 
+                <string>tfManyItems item number 4</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object id="JTextField5" class="javax.swing.JTextField"> 
+               <void property="name"> 
+                <string>tfManyItems item number 5</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void property="layout"> 
+              <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+               <void property="column"> 
+                <array class="double" length="12"> 
+                 <void index="0"> 
+                  <double>30.0</double> 
+                 </void> 
+                 <void index="1"> 
+                  <double>7.0</double> 
+                 </void> 
+                 <void index="2"> 
+                  <double>30.0</double> 
+                 </void> 
+                 <void index="3"> 
+                  <double>7.0</double> 
+                 </void> 
+                 <void index="4"> 
+                  <double>30.0</double> 
+                 </void> 
+                 <void index="5"> 
+                  <double>7.0</double> 
+                 </void> 
+                 <void index="6"> 
+                  <double>30.0</double> 
+                 </void> 
+                 <void index="7"> 
+                  <double>7.0</double> 
+                 </void> 
+                 <void index="8"> 
+                  <double>30.0</double> 
+                 </void> 
+                 <void index="9"> 
+                  <double>7.0</double> 
+                 </void> 
+                 <void index="10"> 
+                  <double>30.0</double> 
+                 </void> 
+                 <void index="11"> 
+                  <double>7.0</double> 
+                 </void> 
+                </array> 
+               </void> 
+               <void property="row"> 
+                <array class="double" length="1"> 
+                 <void index="0"> 
+                  <double>-1.0</double> 
+                 </void> 
+                </array> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="JTextField0"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>0</int> 
+                 <int>0</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="JTextField1"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>2</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="JTextField2"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>4</int> 
+                 <int>0</int> 
+                 <int>4</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="JTextField3"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>6</int> 
+                 <int>0</int> 
+                 <int>6</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="JTextField4"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>8</int> 
+                 <int>0</int> 
+                 <int>8</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="JTextField5"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>10</int> 
+                 <int>0</int> 
+                 <int>10</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+              </object> 
+             </void> 
+             <void property="name"> 
+              <string>micGraduations</string> 
+             </void> 
+             <void property="textFields"> 
+              <array class="javax.swing.JTextField" length="6"> 
+               <void index="0"> 
+                <object idref="JTextField0"/> 
+               </void> 
+               <void index="1"> 
+                <object idref="JTextField1"/> 
+               </void> 
+               <void index="2"> 
+                <object idref="JTextField2"/> 
+               </void> 
+               <void index="3"> 
+                <object idref="JTextField3"/> 
+               </void> 
+               <void index="4"> 
+                <object idref="JTextField4"/> 
+               </void> 
+               <void index="5"> 
+                <object idref="JTextField5"/> 
+               </void> 
+              </array> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>metric graduations</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>id</string> 
+           </void> 
+           <void property="name"> 
+            <string>metric id</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>langParams</string> 
+           </void> 
+           <void property="name"> 
+            <string>metric langParams</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>name</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField6" class="javax.swing.JTextField"> 
+             <void property="name"> 
+              <string>tfName</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>metric name</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>rangeLabel</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField7" class="javax.swing.JTextField"> 
+             <void property="name"> 
+              <string>tfItemControl</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>metric rangeLabel</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>scriptText</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextArea0" class="javax.swing.JTextArea"> 
+             <void property="lineWrap"> 
+              <boolean>true</boolean> 
+             </void> 
+             <void property="name"> 
+              <string>taTextArea in MetricPanel</string> 
+             </void> 
+             <void property="wrapStyleWord"> 
+              <boolean>true</boolean> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>metric scriptText</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>displayName</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField8" class="javax.swing.JTextField"> 
+             <void property="name"> 
+              <string>tfDisplayName</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>metric displayName</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>longText</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField9" class="javax.swing.JTextField"> 
+             <void property="name"> 
+              <string>tfLongText</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>metric longText</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void id="CellArray0" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray0"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.prodkpi.objects.MetricI</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Metric Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void id="IndependentArray0" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray0"/> 
+      </void> 
+      <void property="name"> 
+       <string>Metric Node</string> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="panes"> 
+   <array class="javax.swing.JComponent" length="1"> 
+    <void index="0"> 
+     <object class="com.seasoft.view.prodkpi.EditMetricPanel"> 
+      <void method="add"> 
+       <object id="JPanel0" class="javax.swing.JPanel"> 
+        <void method="add"> 
+         <object id="MetricPanel0" class="com.seasoft.view.prodkpi.MetricPanel"> 
+          <void method="add"> 
+           <object id="JLabel0" class="javax.swing.JLabel"> 
+            <void property="horizontalAlignment"> 
+             <int>11</int> 
+            </void> 
+            <void property="name"> 
+             <string>lName</string> 
+            </void> 
+            <void property="text"> 
+             <string>Name</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void method="add"> 
+           <object idref="JTextField6"/> 
+          </void> 
+          <void method="add"> 
+           <object id="JLabel1" class="javax.swing.JLabel"> 
+            <void property="horizontalAlignment"> 
+             <int>11</int> 
+            </void> 
+            <void property="name"> 
+             <string>lDisplayName</string> 
+            </void> 
+            <void property="text"> 
+             <string>Display Name</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void method="add"> 
+           <object idref="JTextField8"/> 
+          </void> 
+          <void method="add"> 
+           <object id="JLabel2" class="javax.swing.JLabel"> 
+            <void property="horizontalAlignment"> 
+             <int>11</int> 
+            </void> 
+            <void property="name"> 
+             <string>lLongText</string> 
+            </void> 
+            <void property="text"> 
+             <string>Long Text</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void method="add"> 
+           <object idref="JTextField9"/> 
+          </void> 
+          <void method="add"> 
+           <object id="JLabel3" class="javax.swing.JLabel"> 
+            <void property="horizontalAlignment"> 
+             <int>11</int> 
+            </void> 
+            <void property="name"> 
+             <string>lRangeLabel</string> 
+            </void> 
+            <void property="text"> 
+             <string>Range Label</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void method="add"> 
+           <object id="OneItemControl0" class="org.strandz.lgpl.widgets.OneItemControl"> 
+            <void method="add"> 
+             <object idref="JTextField7"/> 
+            </void> 
+            <void property="layout"> 
+             <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+              <void property="column"> 
+               <array class="double" length="3"> 
+                <void index="0"> 
+                 <double>45.0</double> 
+                </void> 
+                <void index="1"> 
+                 <double>-1.0</double> 
+                </void> 
+                <void index="2"> 
+                 <double>15.0</double> 
+                </void> 
+               </array> 
+              </void> 
+              <void property="row"> 
+               <array class="double" length="1"> 
+                <void index="0"> 
+                 <double>-1.0</double> 
+                </void> 
+               </array> 
+              </void> 
+              <void method="addLayoutComponent"> 
+               <object idref="JTextField7"/> 
+               <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                <int>0</int> 
+                <int>0</int> 
+                <int>0</int> 
+                <int>0</int> 
+                <int>2</int> 
+                <int>2</int> 
+               </object> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>tfRangeLabel</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void method="add"> 
+           <object id="JLabel4" class="javax.swing.JLabel"> 
+            <void property="horizontalAlignment"> 
+             <int>11</int> 
+            </void> 
+            <void property="name"> 
+             <string>lGraduations</string> 
+            </void> 
+            <void property="text"> 
+             <string>Graduations</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void method="add"> 
+           <object idref="ManyItemsControl0"/> 
+          </void> 
+          <void method="add"> 
+           <object id="TextAreaPanel0" class="org.strandz.lgpl.view.TextAreaPanel"> 
+            <void method="add"> 
+             <object idref="JTextArea0"/> 
+             <string>Center</string> 
+            </void> 
+            <void property="border"> 
+             <object class="javax.swing.border.CompoundBorder"> 
+              <object class="javax.swing.border.BevelBorder"> 
+               <int>0</int> 
+               <null/> 
+               <null/> 
+               <null/> 
+               <null/> 
+              </object> 
+              <object class="javax.swing.border.BevelBorder"> 
+               <int>1</int> 
+               <null/> 
+               <null/> 
+               <null/> 
+               <null/> 
+              </object> 
+             </object> 
+            </void> 
+            <void property="layout"> 
+             <object class="java.awt.BorderLayout"> 
+              <void method="addLayoutComponent"> 
+               <object idref="JTextArea0"/> 
+               <string>Center</string> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>taCalculationScript</string> 
+            </void> 
+            <void property="textArea"> 
+             <object idref="JTextArea0"/> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="layout"> 
+           <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+            <void property="column"> 
+             <array class="double" length="5"> 
+              <void index="0"> 
+               <double>15.0</double> 
+              </void> 
+              <void index="1"> 
+               <double>80.0</double> 
+              </void> 
+              <void index="2"> 
+               <double>10.0</double> 
+              </void> 
+              <void index="3"> 
+               <double>-1.0</double> 
+              </void> 
+              <void index="4"> 
+               <double>15.0</double> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="row"> 
+             <array class="double" length="12"> 
+              <void index="0"> 
+               <double>15.0</double> 
+              </void> 
+              <void index="1"> 
+               <double>23.0</double> 
+              </void> 
+              <void index="2"> 
+               <double>7.0</double> 
+              </void> 
+              <void index="3"> 
+               <double>23.0</double> 
+              </void> 
+              <void index="4"> 
+               <double>7.0</double> 
+              </void> 
+              <void index="5"> 
+               <double>23.0</double> 
+              </void> 
+              <void index="6"> 
+               <double>7.0</double> 
+              </void> 
+              <void index="7"> 
+               <double>23.0</double> 
+              </void> 
+              <void index="8"> 
+               <double>7.0</double> 
+              </void> 
+              <void index="9"> 
+               <double>23.0</double> 
+              </void> 
+              <void index="10"> 
+               <double>7.0</double> 
+              </void> 
+              <void index="11"> 
+               <double>-1.0</double> 
+              </void> 
+             </array> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JLabel0"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>1</int> 
+              <int>1</int> 
+              <int>1</int> 
+              <int>1</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JTextField6"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>3</int> 
+              <int>1</int> 
+              <int>3</int> 
+              <int>1</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JLabel1"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>1</int> 
+              <int>3</int> 
+              <int>1</int> 
+              <int>3</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JTextField8"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>3</int> 
+              <int>3</int> 
+              <int>3</int> 
+              <int>3</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JLabel2"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>1</int> 
+              <int>5</int> 
+              <int>1</int> 
+              <int>5</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JTextField9"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>3</int> 
+              <int>5</int> 
+              <int>3</int> 
+              <int>5</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JLabel3"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>1</int> 
+              <int>7</int> 
+              <int>1</int> 
+              <int>7</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="OneItemControl0"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>3</int> 
+              <int>7</int> 
+              <int>3</int> 
+              <int>7</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="JLabel4"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>1</int> 
+              <int>9</int> 
+              <int>1</int> 
+              <int>9</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="ManyItemsControl0"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>3</int> 
+              <int>9</int> 
+              <int>3</int> 
+              <int>9</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+            <void method="addLayoutComponent"> 
+             <object idref="TextAreaPanel0"/> 
+             <object class="info.clearthought.layout.TableLayoutConstraints"> 
+              <int>1</int> 
+              <int>11</int> 
+              <int>3</int> 
+              <int>11</int> 
+              <int>2</int> 
+              <int>2</int> 
+             </object> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="name"> 
+           <string>MetricPanel</string> 
+          </void> 
+         </object> 
+         <string>Center</string> 
+        </void> 
+        <void property="layout"> 
+         <object class="java.awt.BorderLayout"> 
+          <void method="addLayoutComponent"> 
+           <object idref="MetricPanel0"/> 
+           <string>Center</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>fillerPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="TwoButtonPanel0" class="org.strandz.lgpl.view.TwoButtonPanel"> 
+        <void method="add"> 
+         <object id="JButton0" class="javax.swing.JButton"> 
+          <string>OK</string> 
+          <void property="name"> 
+           <string>bOne</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object id="JButton1" class="javax.swing.JButton"> 
+          <string>Cancel</string> 
+          <void property="name"> 
+           <string>bTwo</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="BOne"> 
+         <object idref="JButton0"/> 
+        </void> 
+        <void property="BTwo"> 
+         <object idref="JButton1"/> 
+        </void> 
+        <void property="buttonWidth"> 
+         <int>90</int> 
+        </void> 
+        <void property="layout"> 
+         <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+          <void property="column"> 
+           <array class="double" length="7"> 
+            <void index="0"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="2"> 
+             <double>90.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="4"> 
+             <double>90.0</double> 
+            </void> 
+            <void index="5"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="6"> 
+             <double>-1.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void property="row"> 
+           <array class="double" length="3"> 
+            <void index="0"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="2"> 
+             <double>-1.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JButton0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>2</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JButton1"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>4</int> 
+            <int>1</int> 
+            <int>4</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>TwoButtonPanel</string> 
+        </void> 
+        <void property="titles"> 
+         <array class="java.lang.String" length="2"> 
+          <void index="0"> 
+           <string>OK</string> 
+          </void> 
+          <void index="1"> 
+           <string>Cancel</string> 
+          </void> 
+         </array> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="fillerPanel"> 
+       <object idref="JPanel0"/> 
+      </void> 
+      <void property="layout"> 
+       <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+        <void property="column"> 
+         <array class="double" length="1"> 
+          <void index="0"> 
+           <double>-1.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="row"> 
+         <array class="double" length="2"> 
+          <void index="0"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>35.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JPanel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="TwoButtonPanel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>0</int> 
+          <int>1</int> 
+          <int>0</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="metricPanel"> 
+       <object idref="MetricPanel0"/> 
+      </void> 
+      <void property="name"> 
+       <string>TwoButtonWrapperPanel</string> 
+      </void> 
+      <void property="twoButton"> 
+       <object idref="TwoButtonPanel0"/> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="physicalController"> 
+   <object class="org.strandz.core.applichousing.PictToolBarController"/> 
+  </void> 
+  <void property="statusBar"> 
+   <object class="org.strandz.core.applichousing.NodeStatusBar"/> 
+  </void> 
+ </object> 
+</java> 

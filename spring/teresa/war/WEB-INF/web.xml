@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <!-- To test on local machine:
+    http://127.0.0.1:8080/cayenneRemoteService/rosterService
+         When service on Linode:
+    http://www.strandz.org/cayenneRemoteService/rosterService
+    -->
+    
+    <display-name>
+      HTTP Remoting of services that rosterer provides
+    </display-name>
+
+    <description>
+      cayenne-service can be used by a client
+    </description>        
+
+    <servlet>
+        <servlet-name>cayenne-service</servlet-name>
+        <servlet-class>org.apache.cayenne.remote.hessian.service.HessianServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>cayenne-service</servlet-name>
+        <url-pattern>/cayenne-service</url-pattern>
+    </servlet-mapping>
+    
+    <!-- minutes till timeout -->
+    <session-config>
+	<session-timeout>180</session-timeout>
+    </session-config>
+
+    <!--
+    All requests (that start with /cayenneRemoteService) will go thru this filter.
+    Thus all code behind these requests will be able to call DataContext.getThreadDataContext();
+    This means that the one DataContext can be shared with session scope.
+     -->
+    <!-- Causes loads of DataContexts to be created so don't use     
+    <filter>  
+        <filter-name>CayenneFilter</filter-name>  
+        <filter-class>org.apache.cayenne.conf.WebApplicationContextFilter</filter-class>  
+    </filter>  
+    <filter-mapping>  
+        <filter-name>CayenneFilter</filter-name>  
+        <url-pattern>/*</url-pattern>  
+    </filter-mapping>     
+    -->
+    
+  <!--
+    - Location of the XML file that defines the root application context
+    - Applied by ContextLoaderListener.
+    -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      /WEB-INF/spring-http-config.xml
+      /WEB-INF/applicationContext-security.xml
+    </param-value>
+  </context-param>
+
+  <!-- Security on the server -->
+  <filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- -->
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!--
+    - Provides web services endpoint. See remoting-servlet.xml.
+    -->
+  <servlet>
+    <servlet-name>remoting</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>remoting</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- Don't seem to be required anymore
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>teresa</realm-name>
+  </login-config>
+
+  <security-role>
+    <role-name>manager</role-name>
+  </security-role>
+  -->
+    
+</web-app>

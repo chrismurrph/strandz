@@ -1,0 +1,53 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="create_strandz" default="create_strandz" basedir=".">
+
+<property file="../property-files/global.properties"/>
+
+<property name="out.root" value="${src.root}/classes"/>
+<property name="dist.dir" value="../lib-sdz"/>
+<property name="dist.file.name" value="strandz.jar"/>
+<property name="dist.file" value="${dist.dir}/${dist.file.name}"/>
+
+<!-- Happy to have manually done this beforehand, as s/be very stable
+<property name="jdo-meta.file" value="objects_new_format.jdo"/>
+<property name="jdo-meta.jar.file.name" value="jdo-meta.jar"/>
+<property name="jdo-meta.jar.file" value="${dist.dir}/${jdo-meta.jar.file.name}"/>
+<target name="jar-jdo-meta">
+  <delete file="${jdo-meta.jar.file}" quiet="true"/>
+  <jar destfile="${jdo-meta.jar.file}">
+    <fileset dir="${out.root}" includes="${jdo-meta.file}"/>
+  </jar>
+</target>
+-->
+
+<!--
+NOTE - classes that need to be enhanced s/not go in here. Thus supersix.jar
+will contain all the enhancement info - can can enhance on client. strandz.jar
+will frequently be being remade on the server
+
+Sometime have a look at which strandz/*/util classes ought to go under lgpl
+- meaning that it could legitimately be used by non-Strandz applications,
+for example ServiceI from .../strandz/service/util
+-->
+<target name="create_strandz">
+  <tstamp>
+    <format property="TODAY" pattern="dd/MM/yyyy hh:mm aa" locale="au"/>
+  </tstamp>
+  <delete file="${dist.file}" quiet="true"/>
+  <jar destfile="${dist.file}">
+    <fileset dir="${out.root}" includes="org/strandz/core/**/*.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/view/*.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/applic/util/**/*.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/view/util/**/*.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/widgets/data/**/*.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/data/util/*.class"/>
+    <fileset dir="${out.root}" includes="org/strandz/service/util/*.class"/>
+    <fileset dir="${out.root}" includes="com/seasoft/note/*.class"/>            
+    <fileset dir="${out.root}" includes="org/strandz/lgpl/**/*.class"/>
+    <manifest>
+      <attribute name="Date-Created" value="${TODAY}"/>
+    </manifest>     
+  </jar>
+</target>
+
+</project>

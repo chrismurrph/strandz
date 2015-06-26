@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!-- This one used by KODO
+-->
+<jdo>
+  <package name="org.strandz.data.wombatrescue.objects">    
+    <class name="RosterSlot" identity-type="datastore">
+      <field name="notInMonth" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="onlyInMonth" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="overridesOthers" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="weekInMonth" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="numDaysInterval" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="startDate" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="notAvailable" persistence-modifier="persistent" default-fetch-group="true"/>
+    </class>
+    <class name="BuddyManager" identity-type="datastore">
+    </class>
+    <class name="Worker" identity-type="datastore">
+      <field name="rosterSlots" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="RosterSlot"/>
+      </field>            
+      <field name="belongsToGroup" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="seniority" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="sex" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="flexibility" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="shiftPreference" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="email2" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="birthday" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="away1Start" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="away1End" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="away2Start" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="away2End" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="homePhone" persistence-modifier="persistent" default-fetch-group="true"/>
+    </class>
+    <class name="WombatLookups" identity-type="datastore">
+      <field name="dayInWeeks" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="org.strandz.lgpl.data.objects.DayInWeek"/>
+      </field>            
+      <field name="flexibilities" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Flexibility"/>
+      </field>            
+      <field name="numDaysIntervals" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="NumDaysInterval"/>
+      </field>            
+      <field name="monthInYears" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="MonthInYear"/>
+      </field>            
+      <field name="overrides" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Override"/>
+      </field>            
+      <field name="seniorities" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Seniority"/>
+      </field>            
+      <field name="sexes" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Sex"/>
+      </field>            
+      <field name="weekInMonths" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="WeekInMonth"/>
+      </field>            
+      <field name="whichShifts" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="WhichShift"/>
+      </field>            
+    </class>
+    <class name="Flexibility" objectid-class="Flexibility$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+    <class name="MonthInYear" objectid-class="MonthInYear$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+    <class name="NumDaysInterval" objectid-class="NumDaysInterval$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+    <class name="Override" objectid-class="Override$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+    <class name="Seniority" objectid-class="Seniority$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+    <class name="Sex" objectid-class="Sex$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+    <class name="WeekInMonth" objectid-class="WeekInMonth$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+    <class name="WhichShift" objectid-class="WhichShift$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+  </package>
+  <package name="org.strandz.lgpl.data.objects">
+    <class name="DayInWeek" objectid-class="DayInWeek$ID">
+      <field name="pkId" primary-key="true"/>
+      <field name="name" default-fetch-group="true"/>
+    </class>
+  </package>
+  <package name="org.strandz.lgpl.util">
+    <class name="UserDetails" identity-type="datastore">
+    </class>
+  </package>
+</jdo>

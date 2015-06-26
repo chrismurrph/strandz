@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ Don't want all-permissions, just want to be able to Beans.setDesignTime()
+-->
+<jnlp spec="1.0+" codebase="$$codebase">
+   <security>
+      <all-permissions/>
+   </security>   
+   <information>
+      <title>Super Six Administrator</title>
+      <vendor>Seaweed Software</vendor>
+      <homepage href="http://strandz.org/index.html"/>
+   </information>
+   <resources>
+      <property name="jnlp.publish-url" value="$$context/publish"/>
+      <property name="user.timezone" value="Australia/Sydney"/>
+      <!-- http://java.sun.com/j2se/1.5.0/docs/guide/javaws/developersguide/faq.html#304 -->
+      <j2se version="1.5+" href="http://java.sun.com/products/autodl/j2se"/>
+      <jar href="lib/supersix.jar" main="true" />
+      <jar href="lib/strandz.jar" download="eager" />
+      <jar href="lib/ss-sdz-dt-files.jar" download="lazy" />
+      <jar href="lib/TableLayout.jar" download="lazy" />
+      <jar href="lib/activation.jar" download="lazy" />
+      <jar href="lib/mail.jar" download="lazy" />
+      <jar href="lib/app-images.jar" download="lazy" />
+      <jar href="lib/ss-demo-properties.jar" download="lazy" /> 
+      <jar href="lib/foxtrot.jar" download="lazy" /> 
+      <jar href="lib/MDateSelector.jar" download="lazy" /> 
+      <jar href="lib/ss-help.jar" download="lazy" /> 
+      <jar href="lib/jh.jar" download="lazy" />      
+      <!--
+      <jar href="lib/spring-remoting.jar" download="lazy" />      
+      <jar href="lib/spring-core.jar" download="lazy" />      
+      <jar href="lib/spring-beans.jar" download="lazy" />      
+      <jar href="lib/spring-context.jar" download="lazy" />      
+      <jar href="lib/spring-aop.jar" download="lazy" />      
+      <jar href="lib/commons-logging.jar" download="lazy" />    
+      -->
+      <!-- couldn't work out how to unenhance - so this in is a hack -->
+      <!--
+      <jar href="lib/jpox-1.1.0-beta-2.jar" download="lazy" />
+      -->
+   </resources>
+   <application-desc main-class="org.strandz.applic.supersix.StartupMemoryDemo"/>
+</jnlp>

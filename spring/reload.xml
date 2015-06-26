@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<project name="reload" basedir="." default="reload">
+
+    <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="reload" description="Reload application in Tomcat">
+        <reload url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${current.app}"/>
+    </target>
+
+<!-- End Tomcat tasks -->
+
+</project>

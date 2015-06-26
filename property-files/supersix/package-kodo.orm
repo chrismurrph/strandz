@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!-- This one used by KODO
+-->
+<jdo>
+  <package name="org.strandz.data.supersix.objects">        
+    <class name="Global" identity-type="datastore">
+      <field name="currentSeasonYear" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="currentCompetition" persistence-modifier="persistent" default-fetch-group="true"/>
+    </class>
+    <class name="Game" identity-type="datastore">
+      <field name="teamOne" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="teamTwo" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="division" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="meet" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="kickOffTime" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="pitch" persistence-modifier="persistent" default-fetch-group="true"/>
+    </class>
+    <class name="Player" identity-type="datastore">
+      <field name="teamCompetitionSeason" persistence-modifier="persistent" default-fetch-group="true"/>
+    </class>
+    <class name="Meet" identity-type="datastore">
+      <field name="games" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Game"/>
+        <extension vendor-name="kodo" key="inverse-owner" value="meet"/>
+      </field>            
+      <field name="competitionSeason" persistence-modifier="persistent" default-fetch-group="true"/>      
+    </class>
+    <class name="CompetitionSeason" identity-type="datastore">
+      <field name="meets" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Meet"/>
+        <extension vendor-name="kodo" key="inverse-owner" value="competitionSeason"/>
+      </field>            
+      <!-- Is not bi-directional, and Kodo creates a M:M table
+        -->
+      <field name="teamCompetitionSeasons" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Team"/>
+      </field>            
+      <!-- as above
+        -->
+      <field name="divisions" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Division"/>
+      </field>            
+      <field name="seasonYear" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="competition" persistence-modifier="persistent" default-fetch-group="true"/>
+    </class>
+    <class name="TeamCompetitionSeason" identity-type="datastore">
+      <field name="players" persistence-modifier="persistent">
+        <collection element-type="Player"/>
+        <extension vendor-name="kodo" key="inverse-owner" value="team"/>
+      </field>            
+      <field name="matchesTeamOne" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Game"/>
+        <extension vendor-name="kodo" key="inverse-owner" value="teamOne"/>
+      </field>            
+      <field name="matchesTeamTwo" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Game"/>
+        <extension vendor-name="kodo" key="inverse-owner" value="teamTwo"/>
+      </field>                  
+      <field name="division" persistence-modifier="persistent" default-fetch-group="true"/>
+      <field name="captain" persistence-modifier="persistent" default-fetch-group="true"/>
+    </class>
+    
+    <class name="SuperSixLookups" identity-type="datastore">
+      <field name="pitches" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Pitch"/>
+      </field>            
+      <field name="kickOffTimes" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="KickOffTime"/>
+      </field>            
+      <field name="seasonYears" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="SeasonYear"/>
+      </field>            
+      <field name="divisions" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Division"/>
+      </field>            
+      <field name="dayInWeeks" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="org.strandz.lgpl.data.objects.DayInWeek"/>
+      </field>            
+      <field name="competitions" persistence-modifier="persistent" default-fetch-group="true">
+        <collection element-type="Competition"/>
+      </field>            
+    </class>
+    
+    <class name="Pitch" objectid-class="Pitch$ID">
+      <field name="pkId" primary-key="true"/>
+    </class>
+    <class name="KickOffTime" objectid-class="KickOffTime$ID">
+      <field name="pkId" primary-key="true"/>
+    </class>
+    <class name="SeasonYear" objectid-class="SeasonYear$ID">
+      <field name="pkId" primary-key="true"/>
+    </class>
+    <class name="Division" objectid-class="Division$ID">
+      <field name="pkId" primary-key="true"/>
+    </class>
+    <class name="Competition" objectid-class="Competition$ID">
+      <field name="pkId" primary-key="true"/>
+    </class>
+  </package>
+  
+  <package name="org.strandz.lgpl.data.objects">
+    <class name="DayInWeek" objectid-class="DayInWeek$ID">
+      <field name="pkId" primary-key="true"/>
+    </class>
+  </package>
+  
+  <package name="org.strandz.lgpl.util">
+    <class name="UserDetails" identity-type="datastore">
+    </class>
+  </package>
+</jdo>

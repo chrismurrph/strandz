@@ -1,0 +1,118 @@
+<project name="jar_property_files" default="jar-jpox-kodo-property-files" basedir=".">
+
+<property file="../global.properties"/>
+
+<property name="jar.directory" value="../../lib"/>
+
+
+<property name="jpox-meta.file" value="package-jpox.orm"/>
+<property name="kodo-meta.file" value="package-kodo.orm"/>
+<property name="generic-meta.file" value="package.jdo"/>
+<property name="mapping-meta.file" value="package.mapping"/>
+<property name="jdo-meta.jar.file" value="${jar.directory}/ss-jdo-meta.jar"/>
+<property name="generic.jdo-meta.jar.file" value="${jar.directory}/jdo-meta.jar"/>
+
+<property name="app-props.file" value="supersix"/>
+<property name="app-props.jar.file" value="${jar.directory}/${ss.properties.jar}"/>
+<property name="spring-configs.jar.file" value="${jar.directory}/ss-spring-configs.jar"/>
+
+<!--
+Made JPOX and Kodo Mutually exclusive
+-->
+<target name="jar-kodo-jdo-meta">
+  <delete file="${generic-meta.file}" quiet="true"/>
+  <copy file="${kodo-meta.file}" tofile="${generic-meta.file}"/>
+  <delete file="${jdo-meta.jar.file}" quiet="true"/>
+  <jar destfile="${jdo-meta.jar.file}">
+  
+    <zipfileset dir="." includes="${generic-meta.file}" />
+    <zipfileset dir="." includes="${mapping-meta.file}" />
+  </jar>
+  <delete file="${generic-meta.file}" quiet="true"/>  
+  <delete file="${generic.jdo-meta.jar.file}" quiet="true"/>
+  <copy file="${jdo-meta.jar.file}" tofile="${generic.jdo-meta.jar.file}"/>
+</target>
+
+<!-- There is only one package.jdo, so on client we have only one jar. On server
+     we are more precise about packaging applications, so there is no need to ever
+     have jdo-meta.jar around, so we delete it here
+-->
+<target name="server-jar-kodo-jdo-meta" depends="jar-kodo-jdo-meta">
+  <delete file="${generic.jdo-meta.jar.file}" quiet="true"/>  
+  <echo>Should now have a file called ${jdo-meta.jar.file}, containing kodo mappings for a wombat application</echo>
+</target>
+
+<target name="jar-spring-client-configs">
+  <delete file="${spring-configs.jar.file}" quiet="true"/>
+  <jar destfile="${spring-configs.jar.file}">
+    <zipfileset dir="." includes="clientContext.xml" prefix="supersix/spring"/>
+    <zipfileset dir="." includes="clientforremote.properties" prefix="supersix/spring"/>
+    <zipfileset dir="." includes="clientforlocal.properties" prefix="supersix/spring"/>
+  </jar>
+</target>
+
+<target name="jar-jpox-jdo-meta">
+  <echo>jar-jpox-jdo-meta not yet implemented - will only need when have SuperSix unit tests</echo>
+</target>
+
+<!--
+** jar-passwords-etc **
+
+The file supersix will do into ss-dev-properties.jar, 
+ss-prod-properties.jar, ss-demo-properties.jar
+As we could be dealing with sensitive information, we really do do this one half-manually.
+So invoke this target from the command line only.
+
+Got round this by never putting supersix into version control, and having the name of the jar
+file in global.properties (ss.properties.jar in app-props.jar.file defined above). 
+Thus will be called automatically on the server
+
+Trouble is will have to change global.properties whenever are doing a prod/demo deploy. Orig
+theory that it depends on the server you are on no longer holds. Will soon have jar-demo-passwords
+and jar-prod-passwords. As the jar files have different names we can just create both.
+
+-->
+<target name="jar-passwords-etc">
+  <delete file="${app-props.jar.file}" quiet="true"/>
+  <jar destfile="${app-props.jar.file}">
+    <zipfileset dir="." includes="${app-props.file}" prefix="property-files"/>
+  </jar>
+</target>
+
+<target name="copy-prod-file">
+  <delete file="${app-props.file}" quiet="true"/>
+  <copy file="supersix-prod.properties" tofile="${app-props.file}"/>
+</target>
+
+<target name="copy-demo-file">
+  <delete file="${app-props.file}" quiet="true"/>
+  <copy file="supersix-demo.properties" tofile="${app-props.file}"/>
+</target>
+
+<target name="jar-jdo-configs">
+  <echo>Not implemented jar-jdo-configs for supersix (as we are reading directly from property files)</echo>
+</target>
+
+<target name="server-jar-jdo-configs">
+  <echo>Not implemented server-jar-jdo-configs for supersix</echo>
+</target>
+
+<target name="jar-jpox-kodo-property-files">
+  <echo>jar-jpox-kodo-property-files is a fiction - does nothing - pick one or the other</echo>
+</target>
+
+<target name="jar-jpox-property-files" depends="copy-demo-file, jar-passwords-etc, jar-jpox-jdo-meta, jar-jdo-configs">
+</target>
+
+<target name="jar-kodo-property-files" depends="copy-prod-file, jar-passwords-etc, jar-kodo-jdo-meta, jar-spring-client-configs, jar-jdo-configs">
+</target>
+
+<!-- shortcut -->
+<target name="jar-kodo" depends="jar-kodo-property-files">
+</target>
+
+<target name="server-jar-demo-property-files" 
+        depends="server-jar-jdo-configs, copy-demo-file, jar-passwords-etc">
+</target>
+
+</project>

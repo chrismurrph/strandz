@@ -1,0 +1,64 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jUnit" default="jUnit" basedir=".">
+
+  <property file="../property-files/global.properties"/>
+
+  <property name="out.root" value="${src.root}/classes"/>
+  
+  <target name="jUnit">
+    <junit printsummary="yes" haltonfailure="no" fork="true">
+      <!-- May not need, have debug="on" for compilation -->
+      <jvmarg value="-Djava.compiler=NONE"/>
+      <jvmarg value="-Dlog4j.configuration=file:../bin-jdo/jpox.lcf"/>
+      <jvmarg value="-Djava.awt.headless=true"/>
+      <classpath>
+        <pathelement location="${out.root}"/>
+        <fileset dir="../lib" includes="*.jar">
+          <exclude name="openaccess.jar"/>
+        </fileset>          
+      </classpath>
+
+      <formatter type="plain"/>
+
+      <batchtest todir="../docs">
+        <fileset dir="${src.root}">
+          <include name="**/*Test*.java"/>
+          <exclude name="com/**/*Test*.java"/>
+          <!-- Only reason not having TestTable is that it stuffs up writing to
+               the screen - perhaps it is doing something strange with stderr ?
+               Tested this and result -ive, thus gave up for now.
+               18/Oct/08 Now changed type of table (although not using table) and hard ones 
+               in TestTableDifficults. So can one by one go across to using the new table...
+          -->
+          <exclude name="**/TestTableDifficults.java"/>
+          <!-- Could not get headless to work on server even thou have set property
+               above, and all the X libs were put there to get mvnforum working, thus
+               for now anyway let's not test them. (Expect problem with TestTie.java,
+               so when don't get the problem, remove the other exclusions too)
+               16/05/06 - Fixed headless problem by making it use a non-visual comp
+          <exclude name="org/**/TestTie.java"/>
+          -->
+          <exclude name="org/**/TestTableLowlevel.java"/>
+          <!-- Out for now, will be interesting to fix, see the testNotBlankAfterInsert 
+               for details. After this working same on client as linode then take another
+               look at TestRoster
+          -->
+          <exclude name="org/**/VisualTestRoster.java"/>
+          <exclude name="org/**/VisualTestTheRoster.java"/>
+          <exclude name="org/**/FocusValidationTestRoster.java"/>
+          <exclude name="org/**/VisualTwoStrandTestRoster.java"/>
+          <!-- Laziness - would have to have a special file on the server
+               in a special directory
+          -->
+          <exclude name="org/**/TestClassLoading.java"/>
+          <!-- Works fine on Desktop but on server stuffs up the DB
+               As both tests have always been failing lets give up 
+               testing
+          -->
+          <exclude name="org/**/TestActualRoster.java"/>
+        </fileset>
+      </batchtest>
+    </junit>  
+  </target>
+
+</project>

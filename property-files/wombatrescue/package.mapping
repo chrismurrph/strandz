@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+    <package name="org.strandz.data.wombatrescue.objects">
+        <class name="BuddyManager">
+            <jdbc-class-map type="base" pk-column="JDOID" table="buddymanager"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="dayInWeek">
+                <jdbc-field-map type="one-one" column.PKID="DAYINWEEK_PKID"/>
+            </field>
+            <field name="whichShift">
+                <jdbc-field-map type="one-one" column.PKID="WHICHSHIFT_PKID"/>
+            </field>
+            <field name="worker">
+                <jdbc-field-map type="one-one" column.JDOID="WORKER_JDOID"/>
+            </field>
+        </class>
+        <class name="Flexibility">
+            <jdbc-class-map type="base" table="flexibility"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="MonthInYear">
+            <jdbc-class-map type="base" table="monthinyear"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="ordinal">
+                <jdbc-field-map type="value" column="ORDINAL"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="NumDaysInterval">
+            <jdbc-class-map type="base" table="numdaysinterval"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="days">
+                <jdbc-field-map type="value" column="DAYS"/>
+            </field>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="Override">
+            <jdbc-class-map type="base" table="override"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="RosterSlot">
+            <jdbc-class-map type="base" pk-column="JDOID" table="rosterslot"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="dayInWeek">
+                <jdbc-field-map type="one-one" column.PKID="DAYINWEEK_PKID"/>
+            </field>
+            <field name="disabled">
+                <jdbc-field-map type="value" column="DISABLED"/>
+            </field>
+            <field name="monthlyRestart">
+                <jdbc-field-map type="value" column="MONTHLYRESTART"/>
+            </field>
+            <field name="notAvailable">
+                <jdbc-field-map type="value" column="NOTAVAILABLE"/>
+            </field>
+            <field name="notInMonth">
+                <jdbc-field-map type="one-one" column.PKID="NOTINMONTH_PKID"/>
+            </field>
+            <field name="numDaysInterval">
+                <jdbc-field-map type="one-one" column.PKID="NUMDAYSINTERVAL_PKID"/>
+            </field>
+            <field name="onlyInMonth">
+                <jdbc-field-map type="one-one" column.PKID="ONLYINMONTH_PKID"/>
+            </field>
+            <field name="overridesOthers">
+                <jdbc-field-map type="one-one" column.PKID="OVERRIDESOTHERS_PKID"/>
+            </field>
+            <field name="specificDate">
+                <jdbc-field-map type="value" column="SPECIFICDATE"/>
+            </field>
+            <field name="startDate">
+                <jdbc-field-map type="value" column="STARTDATE"/>
+            </field>
+            <field name="weekInMonth">
+                <jdbc-field-map type="one-one" column.PKID="WEEKINMONTH_PKID"/>
+            </field>
+            <field name="whichShift">
+                <jdbc-field-map type="one-one" column.PKID="WHICHSHIFT_PKID"/>
+            </field>
+            <field name="worker">
+                <jdbc-field-map type="one-one" column.JDOID="WORKER_JDOID"/>
+            </field>
+        </class>
+        <class name="Seniority">
+            <jdbc-class-map type="base" table="seniority"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="Sex">
+            <jdbc-class-map type="base" table="sex"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="WeekInMonth">
+            <jdbc-class-map type="base" table="weekinmonth"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="WhichShift">
+            <jdbc-class-map type="base" table="whichshift"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+        <class name="WombatLookups">
+            <jdbc-class-map type="base" pk-column="JDOID" table="wombatlookups"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="dayInWeeks">
+                <jdbc-field-map type="many-many" element-column.PKID="DAYINWEEKS_PKID" order-column="DAYINWEEKS_ORDER" ref-column.JDOID="JDOID" table="womba_dayinweeks"/>
+            </field>
+            <field name="flexibilities">
+                <jdbc-field-map type="many-many" element-column.PKID="FLEXIBILITIES_PKID" order-column="FLEXIBILITIES_ORDER" ref-column.JDOID="JDOID" table="womba_flexibilities"/>
+            </field>
+            <field name="monthInYears">
+                <jdbc-field-map type="many-many" element-column.PKID="MONTHINYEARS_PKID" order-column="MONTHINYEARS_ORDER" ref-column.JDOID="JDOID" table="womba_monthinyears"/>
+            </field>
+            <field name="numDaysIntervals">
+                <jdbc-field-map type="many-many" element-column.PKID="NUMDAYSINTERVALS_PKID" order-column="NUMDAYSINTERVALS_ORDER" ref-column.JDOID="JDOID" table="womba_numdaysintervals"/>
+            </field>
+            <field name="overrides">
+                <jdbc-field-map type="many-many" element-column.PKID="OVERRIDES_PKID" order-column="OVERRIDES_ORDER" ref-column.JDOID="JDOID" table="womba_overrides"/>
+            </field>
+            <field name="seniorities">
+                <jdbc-field-map type="many-many" element-column.PKID="SENIORITIES_PKID" order-column="SENIORITIES_ORDER" ref-column.JDOID="JDOID" table="womba_seniorities"/>
+            </field>
+            <field name="sexes">
+                <jdbc-field-map type="many-many" element-column.PKID="SEXES_PKID" order-column="SEXES_ORDER" ref-column.JDOID="JDOID" table="womba_sexes"/>
+            </field>
+            <field name="weekInMonths">
+                <jdbc-field-map type="many-many" element-column.PKID="WEEKINMONTHS_PKID" order-column="WEEKINMONTHS_ORDER" ref-column.JDOID="JDOID" table="womba_weekinmonths"/>
+            </field>
+            <field name="whichShifts">
+                <jdbc-field-map type="many-many" element-column.PKID="WHICHSHIFTS_PKID" order-column="WHICHSHIFTS_ORDER" ref-column.JDOID="JDOID" table="womba_whichshifts"/>
+            </field>
+        </class>
+        <class name="Worker">
+            <jdbc-class-map type="base" pk-column="JDOID" table="worker"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="away1End">
+                <jdbc-field-map type="value" column="AWAY1END"/>
+            </field>
+            <field name="away1Start">
+                <jdbc-field-map type="value" column="AWAY1START"/>
+            </field>
+            <field name="away2End">
+                <jdbc-field-map type="value" column="AWAY2END"/>
+            </field>
+            <field name="away2Start">
+                <jdbc-field-map type="value" column="AWAY2START"/>
+            </field>
+            <field name="belongsToGroup">
+                <jdbc-field-map type="one-one" column.JDOID="BELONGSTOGROUP_JDOID"/>
+            </field>
+            <field name="birthday">
+                <jdbc-field-map type="value" column="BIRTHDAY"/>
+            </field>
+            <field name="christianName">
+                <jdbc-field-map type="value" column="CHRISTIANNAME"/>
+            </field>
+            <field name="comments">
+                <jdbc-field-map type="value" column="COMMENTS"/>
+            </field>
+            <field name="contactName">
+                <jdbc-field-map type="value" column="CONTACTNAME"/>
+            </field>
+            <field name="dummy">
+                <jdbc-field-map type="value" column="DUMMY"/>
+            </field>
+            <field name="email1">
+                <jdbc-field-map type="value" column="EMAIL1"/>
+            </field>
+            <field name="email2">
+                <jdbc-field-map type="value" column="EMAIL2"/>
+            </field>
+            <field name="flexibility">
+                <jdbc-field-map type="one-one" column.PKID="FLEXIBILITY_PKID"/>
+            </field>
+            <field name="groupContactPerson">
+                <jdbc-field-map type="value" column="GROUPCONTACTPERSON"/>
+            </field>
+            <field name="groupName">
+                <jdbc-field-map type="value" column="GROUPNAME"/>
+            </field>
+            <field name="homePhone">
+                <jdbc-field-map type="value" column="HOMEPHONE"/>
+            </field>
+            <field name="mobilePhone">
+                <jdbc-field-map type="value" column="MOBILEPHONE"/>
+            </field>
+            <field name="postcode">
+                <jdbc-field-map type="value" column="POSTCODE"/>
+            </field>
+            <field name="rosterSlots">
+                <jdbc-field-map type="many-many" element-column.JDOID="ROSTERSLOTS_JDOID" order-column="ROSTERSLOTS_ORDER" ref-column.JDOID="JDOID" table="worke_rosterslots"/>
+            </field>
+            <field name="seniority">
+                <jdbc-field-map type="one-one" column.PKID="SENIORITY_PKID"/>
+            </field>
+            <field name="sex">
+                <jdbc-field-map type="one-one" column.PKID="SEX_PKID"/>
+            </field>
+            <field name="shiftPreference">
+                <jdbc-field-map type="one-one" column.PKID="SHIFTPREFERENCE_PKID"/>
+            </field>
+            <field name="street">
+                <jdbc-field-map type="value" column="STREET"/>
+            </field>
+            <field name="suburb">
+                <jdbc-field-map type="value" column="SUBURB"/>
+            </field>
+            <field name="surname">
+                <jdbc-field-map type="value" column="SURNAME"/>
+            </field>
+            <field name="unknown">
+                <jdbc-field-map type="value" column="UNKNOWN0"/>
+            </field>
+            <field name="workPhone">
+                <jdbc-field-map type="value" column="WORKPHONE"/>
+            </field>
+        </class>
+    </package>
+    <package name="org.strandz.lgpl.data.objects">
+        <class name="DayInWeek">
+            <jdbc-class-map type="base" table="dayinweek"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="name">
+                <jdbc-field-map type="value" column="NAME0"/>
+            </field>
+            <field name="pkId">
+                <jdbc-field-map type="value" column="PKID"/>
+            </field>
+        </class>
+    </package>
+    <package name="org.strandz.lgpl.util">
+        <class name="UserDetails">
+            <jdbc-class-map type="base" pk-column="JDOID" table="userdetails"/>
+            <jdbc-version-ind type="version-number" column="JDOVERSION"/>
+            <jdbc-class-ind type="in-class-name" column="JDOCLASS"/>
+            <field name="databasePassword">
+                <jdbc-field-map type="value" column="DATABASEPASSWORD"/>
+            </field>
+            <field name="databaseUsername">
+                <jdbc-field-map type="value" column="DATABASEUSERNAME"/>
+            </field>
+            <field name="emailAddress">
+                <jdbc-field-map type="value" column="EMAILADDRESS"/>
+            </field>
+            <field name="password">
+                <jdbc-field-map type="value" column="PASSWORD"/>
+            </field>
+            <field name="readOnly">
+                <jdbc-field-map type="value" column="READONLY"/>
+            </field>
+            <field name="username">
+                <jdbc-field-map type="value" column="USERNAME"/>
+            </field>
+        </class>
+    </package>
+</mapping>

@@ -1,0 +1,5 @@
+Metadata file
+Mapping file
+Bring across to server
+Jar the properties file on the server
+Will have to update the DB with the new filename (JDOCLASS column on KODO)

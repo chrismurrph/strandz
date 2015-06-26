@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+
+<project name="copystablejars" basedir="." default="copystablejars">
+
+    <target name="copystablejars" description="Copy the stable jars required by every Spring Service">
+      <delete file="${destination}/acegi-security-1.0.1.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/acegi-security-1.0.1.jar" todir="${destination}"/>
+
+      <delete file="${destination}/commons-codec-1.3.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/commons-codec-1.3.jar" todir="${destination}"/>
+
+      <delete file="${destination}/commons-collections-3.1.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/commons-collections-3.1.jar" todir="${destination}"/>
+
+      <delete file="${destination}/commons-lang-2.1.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/commons-lang-2.1.jar" todir="${destination}"/>
+
+      <delete file="${destination}/ehcache-1.1.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/ehcache-1.1.jar" todir="${destination}"/>
+
+      <delete file="${destination}/foxtrot.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/foxtrot.jar" todir="${destination}"/>
+
+      <delete file="${destination}/jca1.0.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/jca1.0.jar" todir="${destination}"/>
+
+      <delete file="${destination}/jta-spec1_0_1.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/jta-spec1_0_1.jar" todir="${destination}"/>
+
+      <delete file="${destination}/mysql-connector-java-3.0.15-ga-bin.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/mysql-connector-java-3.0.15-ga-bin.jar" todir="${destination}"/>
+
+      <delete file="${destination}/postgresql-8.1-405.jdbc2.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/postgresql-8.1-405.jdbc2.jar" todir="${destination}"/>
+
+      <delete file="${destination}/oro-2.0.8.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/oro-2.0.8.jar" todir="${destination}"/>
+
+      <delete file="${destination}/spring.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/spring.jar" todir="${destination}" failonerror="false"/>
+      <copy file="${sdz.zone}/lib/spring._jar" tofile="${destination}/spring.jar" failonerror="false"/>
+
+      <delete file="${destination}/jdo2-api-2.0.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/jdo2-api-2.0.jar" todir="${destination}" failonerror="false"/>
+      <copy file="${sdz.zone}/lib/jdo2-api-2.0._jar" tofile="${destination}/jdo2-api-2.0.jar" failonerror="false"/>
+
+      <delete file="${destination}/kodo.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/kodo.jar" todir="${destination}" failonerror="false"/>
+      <copy file="${sdz.zone}/lib/kodo._jar" tofile="${destination}/kodo.jar" failonerror="false"/>      
+      
+      <delete file="${destination}/openjpa.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/openjpa.jar" todir="${destination}"/>
+
+      <delete file="${destination}/commons-lang-2.1.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/commons-lang-2.1.jar" todir="${destination}"/>
+
+      <delete file="${destination}/commons-collections-3.1.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/commons-collections-3.1.jar" todir="${destination}"/>
+
+      <delete file="${destination}/commons-pool.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/commons-pool.jar" todir="${destination}"/>
+
+      <delete file="${destination}/serp-1.11.0.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/serp-1.11.0.jar" todir="${destination}"/>
+      
+      <delete file="${destination}/toplink-essentials.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/toplink-essentials.jar" todir="${destination}"/>      
+      
+    </target>
+
+</project>

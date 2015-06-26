@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map xmlns="http://cayenne.apache.org/schema/3.0/modelMap"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://cayenne.apache.org/schema/3.0/modelMap http://cayenne.apache.org/schema/3.0/modelMap.xsd"
+  project-version="3.0.0.1">
+	<property name="defaultPackage" value="org.strandz.data.wombatrescue.objects.cayenne"/>
+	<property name="clientSupported" value="true"/>
+	<property name="defaultClientPackage" value="org.strandz.data.wombatrescue.objects.cayenne.client"/>
+	<db-entity name="buddymanager" catalog="test">
+		<db-attribute name="DAYINWEEK_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="WHICHSHIFT_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="WORKER_JDOID" type="BIGINT" length="20"/>
+	</db-entity>
+	<db-entity name="dayinweek" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="flexibility" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="jdo_sequence" catalog="test">
+		<db-attribute name="ID" type="TINYINT" isPrimaryKey="true" isMandatory="true" length="4"/>
+		<db-attribute name="SEQUENCE_VALUE" type="BIGINT" length="20"/>
+	</db-entity>
+	<db-entity name="monthinyear" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="ORDINAL" type="INTEGER" length="11"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="numdaysinterval" catalog="test">
+		<db-attribute name="DAYS" type="INTEGER" length="11"/>
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="override" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="rosterslot" catalog="test">
+		<db-attribute name="DAYINWEEK_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="DISABLED" type="TINYINT" length="1"/>
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="MONTHLYRESTART" type="TINYINT" length="1"/>
+		<db-attribute name="NOTAVAILABLE" type="TINYINT" length="1"/>
+		<db-attribute name="NOTINMONTH_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="NUMDAYSINTERVAL_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="ONLYINMONTH_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="OVERRIDESOTHERS_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="SPECIFICDATE" type="TIMESTAMP" length="19"/>
+		<db-attribute name="STARTDATE" type="TIMESTAMP" length="19"/>
+		<db-attribute name="WEEKINMONTH_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="WHICHSHIFT_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="WORKER_JDOID" type="BIGINT" length="20"/>
+	</db-entity>
+	<db-entity name="seniority" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="sex" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="userdetails" catalog="test">
+		<db-attribute name="DATABASEPASSWORD" type="VARCHAR" length="255"/>
+		<db-attribute name="DATABASEUSERNAME" type="VARCHAR" length="255"/>
+		<db-attribute name="EMAILADDRESS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="PASSWORD" type="VARCHAR" length="255"/>
+		<db-attribute name="READONLY" type="TINYINT" length="1"/>
+		<db-attribute name="USERNAME" type="VARCHAR" length="255"/>
+	</db-entity>
+	<db-entity name="weekinmonth" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="whichshift" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="NAME0" type="VARCHAR" length="255"/>
+		<db-attribute name="PKID" type="INTEGER" isPrimaryKey="true" isMandatory="true" length="11"/>
+	</db-entity>
+	<db-entity name="womba_dayinweeks" catalog="test">
+		<db-attribute name="DAYINWEEKS_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="DAYINWEEKS_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+	</db-entity>
+	<db-entity name="womba_flexibilities" catalog="test">
+		<db-attribute name="FLEXIBILITIES_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="FLEXIBILITIES_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+	</db-entity>
+	<db-entity name="womba_monthinyears" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="MONTHINYEARS_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="MONTHINYEARS_PKID" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="womba_numdaysintervals" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="NUMDAYSINTERVALS_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="NUMDAYSINTERVALS_PKID" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="womba_overrides" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="OVERRIDES_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="OVERRIDES_PKID" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="womba_seniorities" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="SENIORITIES_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="SENIORITIES_PKID" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="womba_sexes" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="SEXES_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="SEXES_PKID" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="womba_weekinmonths" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="WEEKINMONTHS_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="WEEKINMONTHS_PKID" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="womba_whichshifts" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="WHICHSHIFTS_ORDER" type="INTEGER" length="11"/>
+		<db-attribute name="WHICHSHIFTS_PKID" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="wombatlookups" catalog="test">
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="worke_rosterslots" catalog="test">
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="ROSTERSLOTS_JDOID" type="BIGINT" length="20"/>
+		<db-attribute name="ROSTERSLOTS_ORDER" type="INTEGER" length="11"/>
+	</db-entity>
+	<db-entity name="worker" catalog="test">
+		<db-attribute name="AWAY1END" type="TIMESTAMP" length="19"/>
+		<db-attribute name="AWAY1START" type="TIMESTAMP" length="19"/>
+		<db-attribute name="AWAY2END" type="TIMESTAMP" length="19"/>
+		<db-attribute name="AWAY2START" type="TIMESTAMP" length="19"/>
+		<db-attribute name="BELONGSTOGROUP_JDOID" type="BIGINT" length="20"/>
+		<db-attribute name="BIRTHDAY" type="TIMESTAMP" length="19"/>
+		<db-attribute name="CHRISTIANNAME" type="VARCHAR" length="255"/>
+		<db-attribute name="COMMENTS" type="VARCHAR" length="255"/>
+		<db-attribute name="CONTACTNAME" type="VARCHAR" length="255"/>
+		<db-attribute name="DUMMY" type="TINYINT" length="1"/>
+		<db-attribute name="EMAIL1" type="VARCHAR" length="255"/>
+		<db-attribute name="EMAIL2" type="VARCHAR" length="255"/>
+		<db-attribute name="FLEXIBILITY_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="GROUPCONTACTPERSON" type="TINYINT" length="1"/>
+		<db-attribute name="GROUPNAME" type="VARCHAR" length="255"/>
+		<db-attribute name="HOMEPHONE" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOCLASS" type="VARCHAR" length="255"/>
+		<db-attribute name="JDOID" type="BIGINT" isPrimaryKey="true" isMandatory="true" length="20"/>
+		<db-attribute name="JDOVERSION" type="INTEGER" length="11"/>
+		<db-attribute name="MOBILEPHONE" type="VARCHAR" length="255"/>
+		<db-attribute name="POSTCODE" type="VARCHAR" length="255"/>
+		<db-attribute name="SENIORITY_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="SEX_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="SHIFTPREFERENCE_PKID" type="INTEGER" length="11"/>
+		<db-attribute name="STREET" type="VARCHAR" length="255"/>
+		<db-attribute name="SUBURB" type="VARCHAR" length="255"/>
+		<db-attribute name="SURNAME" type="VARCHAR" length="255"/>
+		<db-attribute name="UNKNOWN0" type="TINYINT" length="1"/>
+		<db-attribute name="WORKPHONE" type="VARCHAR" length="255"/>
+	</db-entity>
+	<obj-entity name="BuddyManager" className="org.strandz.data.wombatrescue.objects.cayenne.BuddyManager" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.BuddyManager" dbEntityName="buddymanager">
+		<obj-attribute name="dayinweekPkid" type="java.lang.Integer" db-attribute-path="DAYINWEEK_PKID"/>
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="whichshiftPkid" type="java.lang.Integer" db-attribute-path="WHICHSHIFT_PKID"/>
+		<obj-attribute name="workerJdoid" type="java.lang.Long" db-attribute-path="WORKER_JDOID"/>
+	</obj-entity>
+	<obj-entity name="DayInWeek" className="org.strandz.data.wombatrescue.objects.cayenne.DayInWeek" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.DayInWeek" dbEntityName="dayinweek">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="Flexibility" className="org.strandz.data.wombatrescue.objects.cayenne.Flexibility" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.Flexibility" dbEntityName="flexibility">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="MonthInYear" className="org.strandz.data.wombatrescue.objects.cayenne.MonthInYear" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.MonthInYear" dbEntityName="monthinyear">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+		<obj-attribute name="ordinal" type="java.lang.Integer" db-attribute-path="ORDINAL"/>
+	</obj-entity>
+	<obj-entity name="NumDaysInterval" className="org.strandz.data.wombatrescue.objects.cayenne.NumDaysInterval" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.NumDaysInterval" dbEntityName="numdaysinterval">
+		<obj-attribute name="actualDays" type="java.lang.Integer" db-attribute-path="DAYS"/>
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="Override" className="org.strandz.data.wombatrescue.objects.cayenne.Override" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.Override" dbEntityName="override">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="RosterSlot" className="org.strandz.data.wombatrescue.objects.cayenne.RosterSlot" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.RosterSlot" dbEntityName="rosterslot">
+		<obj-attribute name="disabled" type="boolean" db-attribute-path="DISABLED"/>
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="monthlyRestart" type="boolean" db-attribute-path="MONTHLYRESTART"/>
+		<obj-attribute name="notAvailable" type="boolean" db-attribute-path="NOTAVAILABLE"/>
+		<obj-attribute name="specificDate" type="java.util.Date" db-attribute-path="SPECIFICDATE"/>
+		<obj-attribute name="startDate" type="java.util.Date" db-attribute-path="STARTDATE"/>
+	</obj-entity>
+	<obj-entity name="Seniority" className="org.strandz.data.wombatrescue.objects.cayenne.Seniority" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.Seniority" dbEntityName="seniority">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="Sex" className="org.strandz.data.wombatrescue.objects.cayenne.Sex" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.Sex" dbEntityName="sex">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="UserDetails" className="org.strandz.data.wombatrescue.objects.cayenne.UserDetails" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.UserDetails" dbEntityName="userdetails">
+		<obj-attribute name="databasepassword" type="java.lang.String" db-attribute-path="DATABASEPASSWORD"/>
+		<obj-attribute name="databaseusername" type="java.lang.String" db-attribute-path="DATABASEUSERNAME"/>
+		<obj-attribute name="emailaddress" type="java.lang.String" db-attribute-path="EMAILADDRESS"/>
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="password" type="java.lang.String" db-attribute-path="PASSWORD"/>
+		<obj-attribute name="readonly" type="java.lang.Byte" db-attribute-path="READONLY"/>
+		<obj-attribute name="username" type="java.lang.String" db-attribute-path="USERNAME"/>
+	</obj-entity>
+	<obj-entity name="WeekInMonth" className="org.strandz.data.wombatrescue.objects.cayenne.WeekInMonth" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.WeekInMonth" dbEntityName="weekinmonth">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="WhichShift" className="org.strandz.data.wombatrescue.objects.cayenne.WhichShift" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.WhichShift" dbEntityName="whichshift">
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="NAME0"/>
+	</obj-entity>
+	<obj-entity name="Worker" className="org.strandz.data.wombatrescue.objects.cayenne.Worker" clientClassName="org.strandz.data.wombatrescue.objects.cayenne.client.Worker" dbEntityName="worker">
+		<obj-attribute name="away1End" type="java.util.Date" db-attribute-path="AWAY1END"/>
+		<obj-attribute name="away1Start" type="java.util.Date" db-attribute-path="AWAY1START"/>
+		<obj-attribute name="away2End" type="java.util.Date" db-attribute-path="AWAY2END"/>
+		<obj-attribute name="away2Start" type="java.util.Date" db-attribute-path="AWAY2START"/>
+		<obj-attribute name="birthday" type="java.util.Date" db-attribute-path="BIRTHDAY"/>
+		<obj-attribute name="christianName" type="java.lang.String" db-attribute-path="CHRISTIANNAME"/>
+		<obj-attribute name="comments" type="java.lang.String" db-attribute-path="COMMENTS"/>
+		<obj-attribute name="contactName" type="java.lang.String" db-attribute-path="CONTACTNAME"/>
+		<obj-attribute name="dummy" type="boolean" db-attribute-path="DUMMY"/>
+		<obj-attribute name="email1" type="java.lang.String" db-attribute-path="EMAIL1"/>
+		<obj-attribute name="email2" type="java.lang.String" db-attribute-path="EMAIL2"/>
+		<obj-attribute name="groupContactPerson" type="boolean" db-attribute-path="GROUPCONTACTPERSON"/>
+		<obj-attribute name="groupName" type="java.lang.String" db-attribute-path="GROUPNAME"/>
+		<obj-attribute name="homePhone" type="java.lang.String" db-attribute-path="HOMEPHONE"/>
+		<obj-attribute name="jdoclass" type="java.lang.String" db-attribute-path="JDOCLASS"/>
+		<obj-attribute name="jdoversion" type="java.lang.Integer" db-attribute-path="JDOVERSION"/>
+		<obj-attribute name="mobilePhone" type="java.lang.String" db-attribute-path="MOBILEPHONE"/>
+		<obj-attribute name="postcode" type="java.lang.String" db-attribute-path="POSTCODE"/>
+		<obj-attribute name="street" type="java.lang.String" db-attribute-path="STREET"/>
+		<obj-attribute name="suburb" type="java.lang.String" db-attribute-path="SUBURB"/>
+		<obj-attribute name="surname" type="java.lang.String" db-attribute-path="SURNAME"/>
+		<obj-attribute name="unknown" type="boolean" db-attribute-path="UNKNOWN0"/>
+		<obj-attribute name="workPhone" type="java.lang.String" db-attribute-path="WORKPHONE"/>
+	</obj-entity>
+	<db-relationship name="TO_dayinweek" source="buddymanager" target="dayinweek" toMany="false">
+		<db-attribute-pair source="DAYINWEEK_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_whichshift" source="buddymanager" target="whichshift" toMany="false">
+		<db-attribute-pair source="WHICHSHIFT_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_worker" source="buddymanager" target="worker" toMany="false">
+		<db-attribute-pair source="WORKER_JDOID" target="JDOID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="dayinweek" target="buddymanager" toMany="true">
+		<db-attribute-pair source="PKID" target="DAYINWEEK_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel1" source="dayinweek" target="rosterslot" toMany="true">
+		<db-attribute-pair source="PKID" target="DAYINWEEK_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="flexibility" target="worker" toMany="true">
+		<db-attribute-pair source="PKID" target="FLEXIBILITY_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="monthinyear" target="rosterslot" toMany="true">
+		<db-attribute-pair source="PKID" target="ONLYINMONTH_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel1" source="monthinyear" target="rosterslot" toMany="true">
+		<db-attribute-pair source="PKID" target="NOTINMONTH_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="numdaysinterval" target="rosterslot" toMany="true">
+		<db-attribute-pair source="PKID" target="NUMDAYSINTERVAL_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="override" target="rosterslot" toMany="true">
+		<db-attribute-pair source="PKID" target="OVERRIDESOTHERS_PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_dayinweek" source="rosterslot" target="dayinweek" toMany="false">
+		<db-attribute-pair source="DAYINWEEK_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_monthinyear" source="rosterslot" target="monthinyear" toMany="false">
+		<db-attribute-pair source="ONLYINMONTH_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_monthinyear1" source="rosterslot" target="monthinyear" toMany="false">
+		<db-attribute-pair source="NOTINMONTH_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_numdaysinterval" source="rosterslot" target="numdaysinterval" toMany="false">
+		<db-attribute-pair source="NUMDAYSINTERVAL_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_override" source="rosterslot" target="override" toMany="false">
+		<db-attribute-pair source="OVERRIDESOTHERS_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_weekinmonth" source="rosterslot" target="weekinmonth" toMany="false">
+		<db-attribute-pair source="WEEKINMONTH_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_whichshift" source="rosterslot" target="whichshift" toMany="false">
+		<db-attribute-pair source="WHICHSHIFT_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_worker" source="rosterslot" target="worker" toMany="false">
+		<db-attribute-pair source="WORKER_JDOID" target="JDOID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="seniority" target="worker" toMany="true">
+		<db-attribute-pair source="PKID" target="SENIORITY_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="sex" target="worker" toMany="true">
+		<db-attribute-pair source="PKID" target="SEX_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="weekinmonth" target="rosterslot" toMany="true">
+		<db-attribute-pair source="PKID" target="WEEKINMONTH_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel" source="whichshift" target="buddymanager" toMany="true">
+		<db-attribute-pair source="PKID" target="WHICHSHIFT_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel1" source="whichshift" target="worker" toMany="true">
+		<db-attribute-pair source="PKID" target="SHIFTPREFERENCE_PKID"/>
+	</db-relationship>
+	<db-relationship name="untitledRel2" source="whichshift" target="rosterslot" toMany="true">
+		<db-attribute-pair source="PKID" target="WHICHSHIFT_PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_flexibility" source="worker" target="flexibility" toMany="false">
+		<db-attribute-pair source="FLEXIBILITY_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_seniority" source="worker" target="seniority" toMany="false">
+		<db-attribute-pair source="SENIORITY_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_sex" source="worker" target="sex" toMany="false">
+		<db-attribute-pair source="SEX_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_whichshift" source="worker" target="whichshift" toMany="false">
+		<db-attribute-pair source="SHIFTPREFERENCE_PKID" target="PKID"/>
+	</db-relationship>
+	<db-relationship name="TO_worker" source="worker" target="worker" toMany="false">
+		<db-attribute-pair source="BELONGSTOGROUP_JDOID" target="JDOID"/>
+	</db-relationship>
+	<db-relationship name="buddyManager" source="worker" target="buddymanager" toMany="true">
+		<db-attribute-pair source="JDOID" target="WORKER_JDOID"/>
+	</db-relationship>
+	<db-relationship name="rosterslot_ARRAY" source="worker" target="rosterslot" toMany="true">
+		<db-attribute-pair source="JDOID" target="WORKER_JDOID"/>
+	</db-relationship>
+	<db-relationship name="workersInGroup" source="worker" target="worker" toMany="true">
+		<db-attribute-pair source="JDOID" target="BELONGSTOGROUP_JDOID"/>
+	</db-relationship>
+	<obj-relationship name="actualDayInWeek" source="BuddyManager" target="DayInWeek" deleteRule="Nullify" db-relationship-path="TO_dayinweek"/>
+	<obj-relationship name="actualWhichShift" source="BuddyManager" target="WhichShift" deleteRule="Nullify" db-relationship-path="TO_whichshift"/>
+	<obj-relationship name="actualWorker" source="BuddyManager" target="Worker" deleteRule="Nullify" db-relationship-path="TO_worker"/>
+	<obj-relationship name="actualDayInWeek" source="RosterSlot" target="DayInWeek" deleteRule="Nullify" db-relationship-path="TO_dayinweek"/>
+	<obj-relationship name="actualNotInMonth" source="RosterSlot" target="MonthInYear" deleteRule="Nullify" db-relationship-path="TO_monthinyear1"/>
+	<obj-relationship name="actualNumDaysInterval" source="RosterSlot" target="NumDaysInterval" deleteRule="Nullify" db-relationship-path="TO_numdaysinterval"/>
+	<obj-relationship name="actualOnlyInMonth" source="RosterSlot" target="MonthInYear" deleteRule="Nullify" db-relationship-path="TO_monthinyear"/>
+	<obj-relationship name="actualOverridesOthers" source="RosterSlot" target="Override" deleteRule="Nullify" db-relationship-path="TO_override"/>
+	<obj-relationship name="actualWeekInMonth" source="RosterSlot" target="WeekInMonth" deleteRule="Nullify" db-relationship-path="TO_weekinmonth"/>
+	<obj-relationship name="actualWhichShift" source="RosterSlot" target="WhichShift" deleteRule="Nullify" db-relationship-path="TO_whichshift"/>
+	<obj-relationship name="worker" source="RosterSlot" target="Worker" db-relationship-path="TO_worker"/>
+	<obj-relationship name="actualBelongsToGroup" source="Worker" target="Worker" deleteRule="Nullify" db-relationship-path="TO_worker"/>
+	<obj-relationship name="actualFlexibility" source="Worker" target="Flexibility" deleteRule="Nullify" db-relationship-path="TO_flexibility"/>
+	<obj-relationship name="actualSeniority" source="Worker" target="Seniority" deleteRule="Nullify" db-relationship-path="TO_seniority"/>
+	<obj-relationship name="actualSex" source="Worker" target="Sex" deleteRule="Nullify" db-relationship-path="TO_sex"/>
+	<obj-relationship name="actualShiftPreference" source="Worker" target="WhichShift" deleteRule="Nullify" db-relationship-path="TO_whichshift"/>
+	<obj-relationship name="buddyManager" source="Worker" target="BuddyManager" db-relationship-path="buddyManager"/>
+	<obj-relationship name="rosterSlots" source="Worker" target="RosterSlot" deleteRule="Cascade" db-relationship-path="rosterslot_ARRAY"/>
+	<obj-relationship name="workersInGroup" source="Worker" target="Worker" db-relationship-path="workersInGroup"/>
+</data-map>

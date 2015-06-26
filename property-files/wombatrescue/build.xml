@@ -1,0 +1,291 @@
+<project name="jar_property_files" default="jar-jpox-kodo-property-files" basedir=".">
+
+<!--
+jar-cayenne-meta and jar-cayenne-driver produce wr-cayenne-*.jar files
+-->
+
+<property file="../global.properties"/>
+
+<property name="jar.directory" value="../../lib"/>
+
+<property name="openaccess-meta.file" value="objects_new_format.jdo"/>
+<property name="jpox-meta.file" value="package-jpox.orm"/>
+<property name="kodo-meta.file" value="package-kodo.orm"/>
+
+<property name="cayenne-meta.jar.file" value="${jar.directory}/wr-cayenne-meta.jar"/>
+<property name="cayenne-driver.jar.file" value="${jar.directory}/wr-cayenne-driver.jar"/>
+
+<property name="generic-meta.file" value="package.jdo"/>
+<property name="mapping-meta.file" value="package.mapping"/>
+<property name="jdo-meta.jar.file" value="${jar.directory}/wr-jdo-meta.jar"/>
+<property name="generic.jdo-meta.jar.file" value="${jar.directory}/jdo-meta.jar"/>
+
+<property name="app-props.file" value="wombat"/>
+<property name="demo.app-props.jar.file" value="${jar.directory}/wr-demo-properties.jar"/>
+<property name="prod.app-props.jar.file" value="${jar.directory}/wr-prod-properties.jar"/>
+<property name="spring-configs.jar.file" value="${jar.directory}/wr-spring-configs.jar"/>
+
+<!--
+Made JPOX and Kodo Mutually exclusive
+-->
+<target name="jar-kodo-jdo-meta">
+  <delete file="${generic-meta.file}" quiet="true"/>
+  <copy file="${kodo-meta.file}" tofile="${generic-meta.file}"/>
+  <delete file="${jdo-meta.jar.file}" quiet="true"/>
+  <jar destfile="${jdo-meta.jar.file}">
+    <zipfileset dir="." includes="${openaccess-meta.file}" prefix="property-files"/>
+    <zipfileset dir="." includes="${generic-meta.file}" />
+    <zipfileset dir="." includes="${mapping-meta.file}" />
+  </jar>
+  <delete file="${generic-meta.file}" quiet="true"/>  
+  <delete file="${generic.jdo-meta.jar.file}" quiet="true"/>
+  <copy file="${jdo-meta.jar.file}" tofile="${generic.jdo-meta.jar.file}"/>
+</target>
+
+<!-- There is only one package.jdo, so on client we have only one jar. On server
+     we are more precise about packaging applications, so there is no need to ever
+     have jdo-meta.jar around, so we delete it here
+-->
+<target name="server-jar-kodo-jdo-meta" depends="jar-kodo-jdo-meta">
+  <delete file="${generic.jdo-meta.jar.file}" quiet="true"/>  
+  <echo>Should now have a file called ${jdo-meta.jar.file}, containing kodo mappings for a wombat application</echo>
+</target>
+
+<target name="jar-spring-client-configs">
+  <delete file="${spring-configs.jar.file}" quiet="true"/>
+  <jar destfile="${spring-configs.jar.file}">
+    <zipfileset dir="." includes="clientContext.xml" prefix="teresa/spring"/>
+    <zipfileset dir="." includes="clientforremote.properties" prefix="teresa/spring"/>
+    <zipfileset dir="." includes="clientforlocal.properties" prefix="teresa/spring"/>
+  </jar>
+</target>
+
+<!--
+Made JPOX and Kodo Mutually exclusive
+-->
+<target name="jar-jpox-jdo-meta">
+  <delete file="${generic-meta.file}" quiet="true"/>
+  <copy file="${jpox-meta.file}" tofile="${generic-meta.file}"/>
+  <delete file="${jdo-meta.jar.file}" quiet="true"/>
+  <jar destfile="${jdo-meta.jar.file}">
+    <zipfileset dir="." includes="${openaccess-meta.file}" prefix="property-files"/>
+    <zipfileset dir="." includes="${generic-meta.file}" />
+    <zipfileset dir="." includes="${mapping-meta.file}" />
+  </jar>
+  <delete file="${generic-meta.file}" quiet="true"/>  
+  <delete file="${generic.jdo-meta.jar.file}" quiet="true"/>
+  <copy file="${jdo-meta.jar.file}" tofile="${generic.jdo-meta.jar.file}"/>
+</target>
+
+<!--
+If we always have cayenne-demo.xml in these, then even if we have
+just deployed for production, ${cayenne-meta.jar.file} will still
+contain cayenne-demo.xml which is used by the unit tests
+-->
+
+<target name="jar-cayenne-prod-meta">
+  <delete file="${cayenne-meta.jar.file}" quiet="true"/>
+  <copy file="cayenne-prod.xml" tofile="cayenne.xml"/>
+  <jar destfile="${cayenne-meta.jar.file}">
+    <zipfileset dir="." includes="WombatrescueDataMap.map.xml"/>
+    <zipfileset dir="." includes="cayenne.xml"/>
+    <zipfileset dir="." includes="cayenne-demo.xml"/>
+    <zipfileset dir="." includes="log4j.properties"/>
+  </jar>
+</target>
+
+<target name="jar-cayenne-demo-meta">
+  <delete file="${cayenne-meta.jar.file}" quiet="true"/>
+  <copy file="cayenne-demo.xml" tofile="cayenne.xml"/>
+  <jar destfile="${cayenne-meta.jar.file}">
+    <zipfileset dir="." includes="WombatrescueDataMap.map.xml"/>
+    <zipfileset dir="." includes="cayenne.xml"/>
+    <zipfileset dir="." includes="cayenne-demo.xml"/>
+    <zipfileset dir="." includes="log4j.properties"/>
+  </jar>
+</target>
+
+<!--
+** jar-passwords-etc **
+
+The file wombat will do into wr-dev-properties.jar, 
+wr-prod-properties.jar, wr-demo-properties.jar
+As we could be dealing with sensitive information, we really do do this one half-manually.
+So invoke this target from the command line only.
+
+Got round this by never putting wombat into version control, and having the name of the jar
+file in global.properties (wr.properties.jar in app-props.jar.file defined above). 
+Thus will be called automatically on the server
+
+Trouble is will have to change global.properties whenever are doing a prod/demo deploy. Orig
+theory that it depends on the server you are on no longer holds. Will soon have jar-demo-passwords
+and jar-prod-passwords. As the jar files have different names we can just create both.
+-->
+<target name="jar-demo-passwords-etc">
+  <delete file="${demo.app-props.jar.file}" quiet="true"/>
+  <echo>To jar ${demo.app-props.jar.file} from ${app-props.file}</echo>
+  <jar destfile="${demo.app-props.jar.file}">
+    <zipfileset dir="." includes="${app-props.file}" prefix="property-files/wombatrescue"/>
+  </jar>
+  <delete file="{app-props.file}" quiet="true"/>
+</target>
+<target name="jar-prod-passwords-etc">
+  <delete file="${prod.app-props.jar.file}" quiet="true"/>
+  <echo>To jar ${prod.app-props.jar.file} from ${app-props.file}</echo>
+  <jar destfile="${prod.app-props.jar.file}">
+    <zipfileset dir="." includes="${app-props.file}" prefix="property-files/wombatrescue"/>
+  </jar>
+  <delete file="{app-props.file}" quiet="true"/>
+</target>
+
+<target name="copy-prod-file">
+  <delete file="${app-props.file}" quiet="true"/>
+  <exec executable="sh" os="Linux">
+    <arg value="put-version-info"/>
+    <arg value="."/>
+    <arg value="wombat-prod.properties"/>
+  </exec>
+  <copy file="wombat-prod.properties" tofile="${app-props.file}"/>
+  <exec executable="sh" os="Linux">
+    <arg value="unput-version-info"/>
+    <arg value="."/>
+    <arg value="wombat-prod.properties"/>
+  </exec>
+  <echo>Have copied prod file wombat-prod.properties to ${app-props.file} on os ${os.name}</echo>
+</target>
+
+<target name="copy-demo-file">
+  <delete file="${app-props.file}" quiet="true"/>
+  <exec executable="sh" os="Linux">
+    <arg value="put-version-info"/>
+    <arg value="."/>
+    <arg value="wombat-demo.properties"/>
+  </exec>
+  <copy file="wombat-demo.properties" tofile="${app-props.file}"/>
+  <exec executable="sh" os="Linux">
+    <arg value="unput-version-info"/>
+    <arg value="."/>
+    <arg value="wombat-demo.properties"/>
+  </exec>
+  <echo>Have copied demo file wombat-demo.properties to ${app-props.file} on os ${os.name}</echo>
+</target>
+
+<!--
+Many of these no longer being used often, so commented out
+-->
+<target name="jar-jdo-configs">
+  <delete quiet="true">
+    <fileset dir="${jar.directory}" includes="jdo-config*.jar"/>  
+  </delete>
+  <!-- This one is being used for enhancement by ant, so doesn't need to be put
+       into a jar
+  <jar destfile="${jar.directory}/jdo-config-local-client-wombat-dev-hsqldb.jar">
+    <zipfileset dir="." includes="local_client_wombat_dev_hsqldb.jdogenie" prefix="property-files"/>
+  </jar>
+  -->
+  
+  <!-- For web start -->
+  <jar destfile="${jar.directory}/jdo-config-remote-linode-teresa-prod-mysql.jar">
+    <zipfileset dir="." includes="remote_linode_teresa_prod_mysql.properties" prefix="property-files"/>
+  </jar>
+  <!-- For web start - manually ftp to the server ACTUALLY - now in server-jar-jdo-configs -->
+  <jar destfile="${jar.directory}/jdo-config-local-linode-teresa-prod-mysql.jar">
+    <zipfileset dir="." includes="local_linode_teresa_prod_mysql.properties" prefix="property-files"/>
+  </jar>
+  <!-- For web start production -->
+  <jar destfile="${jar.directory}/jdo-config-remote-teresa-kodo-mysql.jar">
+    <zipfileset dir="." includes="remote_teresa_kodo_mysql.properties" prefix="property-files"/>
+  </jar>
+  
+  <!-- demo -->
+  <jar destfile="${jar.directory}/jdo-config-local-demo-wombat-test-mysql.jar">
+    <zipfileset dir="." includes="local_demo_wombat_test_mysql.jpox" prefix="property-files"/>
+  </jar>
+  <!-- testing -->
+  <jar destfile="${jar.directory}/jdo-config-local-client-wombat-test-mysql.jar">
+    <zipfileset dir="." includes="local_client_wombat_test_mysql.jpox" prefix="property-files"/>
+  </jar>
+  <!-- current prod 
+       On server will cause a manifest-only jar to be created, which
+       we can live with!
+  -->
+  <jar destfile="${jar.directory}/jdo-config-local-client-teresa-prod-mysql.jar">
+    <zipfileset dir="." includes="local_client_teresa_prod_mysql.properties" prefix="property-files"/>
+  </jar>
+  
+</target>
+
+<target name="server-jar-jdo-configs">
+  <delete quiet="true">
+    <fileset dir="${jar.directory}" includes="jdo-config*.jar"/>  
+  </delete>
+  <!-- local_demo_wombat_test_mysql.jpox and local_client_wombat_test_mysql.jpox 
+       contain the same properties 
+       TODO - Refactor these files sometime as the naming convention does not make sense (? in forum explained)
+  -->  
+  <jar destfile="${jar.directory}/jdo-config-local-demo-wombat-test-mysql.jar">
+    <zipfileset dir="." includes="local_demo_wombat_test_mysql.jpox" prefix="property-files"/>
+  </jar>
+  <jar destfile="${jar.directory}/jdo-config-local-client-wombat-test-mysql.jar">
+    <zipfileset dir="." includes="local_client_wombat_test_mysql.jpox" prefix="property-files"/>
+  </jar>
+  <!-- Not needed for now, will replace with something from Kodo
+       Well - kodo on server uses straight property files so nufin to be done
+  <jar destfile="${jar.directory}/jdo-config-local-linode-teresa-prod-mysql.jar">
+    <zipfileset dir="." includes="local_linode_teresa_prod_mysql.properties" prefix="property-files"/>
+  </jar>  
+  -->
+  <!-- For web start production (repeat: for on server) -->
+  <jar destfile="${jar.directory}/jdo-config-remote-teresa-kodo-mysql.jar">
+    <zipfileset dir="." includes="remote_teresa_kodo_mysql.properties" prefix="property-files"/>
+  </jar>  
+</target>
+
+<target name="jar-demo-cayenne-driver">
+  <delete file="${cayenne-driver.jar.file}" quiet="true"/>
+  <jar destfile="${cayenne-driver.jar.file}">
+    <zipfileset dir="." includes="WombatrescueDemoDataNode.driver.xml"/>
+  </jar>
+</target>
+
+<target name="jar-prod-cayenne-driver">
+  <delete file="${cayenne-driver.jar.file}" quiet="true"/>
+  <jar destfile="${cayenne-driver.jar.file}">
+    <zipfileset dir="." includes="WombatrescueProdDataNode.driver.xml"/>
+  </jar>
+</target>
+
+<target name="jar-jpox-kodo-property-files">
+  <echo>jar-jpox-kodo-property-files is a fiction - does nothing - pick one or the other, or choose jar-kodo-demo-property-files</echo>
+</target>
+
+<target name="jar-jpox-property-files" depends="copy-demo-file, jar-demo-passwords-etc, jar-jpox-jdo-meta, jar-jdo-configs">
+</target>
+
+<target name="jar-kodo-property-files" depends="copy-prod-file, jar-prod-passwords-etc, jar-kodo-jdo-meta, jar-spring-client-configs, jar-jdo-configs">
+</target>
+
+<target name="jar-kodo-demo-property-files" depends="copy-demo-file, jar-demo-passwords-etc, jar-kodo-jdo-meta, jar-spring-client-configs, jar-jdo-configs">
+</target>
+
+
+<target name="cayenne-demo" depends="copy-demo-file, jar-demo-passwords-etc, jar-cayenne-demo-meta, jar-spring-client-configs, jar-demo-cayenne-driver">
+</target>
+
+<target name="cayenne-prod" depends="copy-prod-file, jar-prod-passwords-etc, jar-cayenne-prod-meta, jar-spring-client-configs, jar-prod-cayenne-driver">
+</target>
+
+
+<!-- shortcut -->
+<target name="jar-kodo" depends="jar-kodo-property-files">
+</target>
+
+<!--
+jar-jpox-jdo-meta removed as need to do earlier (see pre-deploy.sh)
+-->
+<!-- is used by pre-deploy.sh on the server -->
+<target name="server-jar-demo-property-files" 
+        depends="server-jar-jdo-configs, copy-demo-file, jar-demo-passwords-etc">
+</target>
+
+</project>

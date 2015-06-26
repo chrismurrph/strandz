@@ -1,0 +1,149 @@
+
+Objective:
+Set up a non-trivial (ie. with security, accesses Spring services etc.) Cayenne ROP application on a local machine.
+
+Assumptions: 
+	Installed: ant, subversion client, a database, a servlet engine, Cayenne Modeler.
+	Jars: 
+		latest Cayenne SNAPSHOT (cayenne-server-3.0-SNAPSHOT.jar):
+		http://hudson.zones.apache.org/hudson/job/Cayenne-trunk/lastBuild/org.apache.cayenne$cayenne-server/
+		Spring - you want the latest and biggest one, which is 'with dependencies':
+		http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644&release_id=565073
+		( This one is the latest but no DispatcherServlet !!:
+		  http://sourceforge.net/project/showfiles.php?group_id=73357&package_id=173644&release_id=608794
+		)
+		From this download you will need:
+			spring.jar - $SPRING_UNZIPPED/dist
+			ehcache-1.*.jar - $SPRING_UNZIPPED/lib/ehcache
+			backport-util-concurrent.jar - $SPRING_UNZIPPED/lib/concurrent
+			velocity-1.*.jar - $SPRING_UNZIPPED/lib/velocity 
+		ORO:
+		http://jakarta.apache.org/site/downloads/downloads_oro.cgi
+		Acegi Security:
+		http://sourceforge.net/project/showfiles.php?group_id=104215
+		
+Setup two directories, for example:
+C:\temp\sdz-roster-app\dev ($DEV) and C:\temp\sdz-roster-app\etc ($ETC)
+
+From $DEV, remove all the sub directories but leave the IDE project files. Also remove the license file as checking out won't work if you are overwriting a file.
+
+Do checkout of https://strandz.svn.sourceforge.net/svnroot/strandz/sdz-src/trunk at 10?? (or HEAD) into $DEV
+
+From $ETC remove everything.
+
+Do checkout of https://strandz.svn.sourceforge.net/svnroot/strandz/sdz-zone/trunk at 10?? (or HEAD) into $ETC
+
+Create a project in your IDE 'from existing sources'. Call it RosterApp. The project file location should be $DEV. You will need to specify that $DEV/classes is where compilation output goes.
+
+Put some of the jars you have already downloaded into the $ETC/lib directory: 
+	acegi-security-1.0.7.jar
+	cayenne-server-3.0-SNAPSHOT.jar
+	spring.jar
+	
+The application needs some configuration style jars:
+	cd C:\temp\sdz-roster-app\etc\bin
+	ant config-jars
+Thus these jars will be produced, and will appear in $ETC/lib:
+	app-images.jar
+	wr-cayenne-driver.jar (expect this to be MANIFEST ONLY)
+	wr-cayenne-meta.jar
+	wr-demo-properties.jar
+	wr-help.jar
+	wr-sdz-dt-files.jar
+	wr-spring-configs
+	
+The rest of the necessary client jars are found in rosterAppJars.zip:
+	ashwood-2.0.jar
+        commons-codec-1.3.jar
+	commons-collections-3.1.jar
+	commons-lang-2.1.jar
+	commons-logging.jar
+	foxtrot.jar	
+	hessian-3.0.13.jar	
+	jdo2-api-2.0.jar
+	jh.jar
+	junit.jar
+	mail.jar
+	MDateSelector-mine.jar
+	TableLayout.jar
+
+Once you have informed your IDE about these dependencies start off by running org.strandz.applic.wombatrescue.StartupMemoryDemo. This will test that an uncomplicated version of the application works (one using POJOs with no persistence). 
+
+The next thing we will try is running directly against a local database. However before doing so we will need to create a database and populate it with test data.
+
+Write your own WombatrescueDataNode.driver.xml file. It should go into the C:\temp\sdz-roster-app\etc\property-files\wombatrescue directory. For instance here is an example configuration:
+
+<?xml version="1.0" encoding="utf-8"?>
+<driver project-version="3.0" class="com.mysql.jdbc.Driver">
+	<url value="jdbc:mysql://localhost:3306/test"/>
+	<connectionPool min="1" max="1"/>
+	<login/>
+</driver>
+
+To create the jar file:
+	cd C:\temp\sdz-roster-app\etc\property-files\wombatrescue
+	ant jar-cayenne-driver
+
+Bring up the Modeler to generate the DB tables - you will find the cayenne.xml file in the C:\temp\sdz-roster-app\etc\property-files\wombatrescue directory. Inside the Modeler do [Tools/Generate Database Schema] - this menu option will be available when you have selected WombatrescueDataMap on the tree control.
+
+Next we will run PopulateForCayenne to populate the database we have just created. We just need to tell the IDE which driver to use - so put your JDBC driver in $ETC/lib and make your IDE aware of it. Now you can run org.strandz.task.data.wombatrescue.PopulateForCayenne.
+
+Run org.strandz.applic.wombatrescue.StartupLocalDemo to communicate with the populated database.
+
+Soon we will demonstrate a ROP version of this same application. But first of all we need to have our servlet in place. 
+
+cayenneRemoteService.zip contains a tomcat servlet webapp called cayenneRemoteService. Unzip it into your servlet engine's webapps directory ($WEB_SERVER/webapps). You will then need to change the file $WEB_SERVER/webapps/cayenneRemoteService/WEB_INF/applicationContext-common-business.xml to reflect the database you will be using for authentication - which for our 'demo' purposes can be the same as the one we have just populated.
+
+Copy these jar files across from $ETC/lib to $WEB_SERVER/webapps/cayenneRemoteService/WEB_INF/lib:
+
+acegi-security-1.0.1.jar
+ashwood-2.0.jar
+cayenne-server-3.0-SNAPSHOT.jar
+commons-codec-1.3.jar
+commons-collections-3.1.jar
+commons-lang-2.1.jar
+commons-logging-1.1.jar
+foxtrot.jar
+hessian-3.1.6.jar
+jdo2-api-2.0.jar
+mysql-connector-java-3.0.15-ga-bin.jar
+spring.jar
+wr-cayenne-driver.jar
+wr-cayenne-meta.jar
+
+These 'server only' jar files also need to be added, all of which were downloaded in the assumptions section:
+
+backport-util-concurrent.jar (Spring)
+ehcache-1.1.jar (Spring)
+oro-2.0.8.jar (ORO)
+velocity-1.3.jar (Spring)
+
+The implementation of the services comes from the application jar (wombat.jar), which depends upon Strandz (strandz.jar). To create these jars, first of all create the file $ETC/property-files/global.properties to let ant know where $DEV is, for example:
+
+src.root=C:/temp/sdz-roster-app/dev
+
+Now we can create the jar files from the previously generated classes in $DEV/classes: 
+	cd C:\temp\sdz-roster-app\etc\bin
+	ant -f jarWombat.xml
+	ant -f jarStrandz.xml
+
+After copying these two jars across from $ETC/lib-sdz to $WEB_SERVER/webapps/cayenneRemoteService/WEB_INF/lib, startup the servlet engine.
+
+Test that the authentication works by entering this URL into your browser:
+http://localhost:8080/cayenneRemoteService/acegihttpinvoker/userDetails
+If you get an java.io.EOFException after entering Mike/Mike then everything is working.
+
+Run org.strandz.task.data.wombatrescue.StartupCayenne. 
+
+
+
+Commentary
+
+Not only does it use ROP, but also Spring services - such as when the user does a roster for a particular month. In the current version of this application 'Server' Data Objects (ones that come from the package org.strandz.data.wombatrescue.objects.cayenne) are passed back to the client as part of the service call. The client converts them to  
+
+WombatConnectionEnum.REMOTE_DEMO_WOMBAT_KODO needs to be the connection that StartupCayenne uses. 
+
+StartupCayenne.EASY_AUTHENTICATION ensures that Mike/Mike is defaulted.
+
+
+

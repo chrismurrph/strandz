@@ -1,0 +1,60 @@
+Adobe Documentation:
+
+flashmediaserver_AS2LR.pdf
+ActionScript language
+
+flashmediaserver_config_admin.pdf
+fmsmgr commands
+
+flashmediaserver_dev_guide.pdf
+Play swf, vod2
+
+Remote Server Start:
+
+cd /opt/adobe/fms
+./fmsmgr adminserver start
+./fmsmgr server fms start
+net
+
+General:
+
+rtmp://localhost/vod2/Blah.flv
+
+Need to produce a .flv for the server
+
+For the client the example html -> javascript -> vodtest.swf
+vodtest.swf is the page that we are entering the url of [rtmp://www.strandz.org/vod2/Blah.flv]
+You can't see this link unless you are in Adobe Flash.
+
+http://www.onyxservers.com requires .flv files - gave good description of how it all works
+
+HOWTO Make a ProdKPIs.html:
+
+Record AVI (use DivX not XviD) to C:/Screen Recordings
+Test in RealPlayer
+  Convert to MWV using AVS Video Converter
+  Upload MWV file to Video Desk
+  Check that name used is the same as the name used by video.html
+Use http://www.flvencoder.com/ to make a FLV file, and double-click to test 
+Ftp to FLVHosting host (/httpdocs/movies directory)
+Copy a .fla file (with right dimensions) before starting Adobe Flash
+
+rtmp://72.35.95.20/seaweed/
+
+Make that file name the source in Adobe Flash [rtmp://72.35.95.20/seaweed/ProdKPIs2.flv]
+Ftp two files (.html and SWF) to Tomcat ($TOMAPPS/flash) directory
+mv ProdKPIs4.html ProdKPIs4Actual.html and make ProdKPIs.html use the detection script:
+vi ProdKPIs.html
+i, and copy C:\sdz-zone\docs\indexflash.html (or C:\sdz-zone\docs\ClientSideDetection.html) into it, making sure it calls on ProdKPIs4Actual.html
+/etc/init.d/tomcat5.5 restart
+Watch demo from http://www.strandz.org/flash/ProdKPIs.html 
+
+FLA Encoding difficulties:
+(alternatively FLV Encoder with max bitrate is as good as any - but is smaller (800*640) and blurs a bit)
+(Flix might be another option but doesn't seem to like any .avi file I use [support on it])
+(The Flash Encoder cannot even start up!)
+(Behind the scenes Riva VX is used, is based on http://blog.inlet-media.de/flvtool2/ - so we could download the source)
+
+
+
+

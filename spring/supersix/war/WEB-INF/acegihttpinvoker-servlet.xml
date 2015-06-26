@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+  <!-- Spring's HTTP invoker uses Java serialization via HTTP  -->
+  <bean name="/userDetails" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+    <property name="service" ref="userDetails"/>
+    <property name="serviceInterface" value="org.strandz.lgpl.util.UserDetailsServiceI"/>
+  </bean>
+
+</beans>

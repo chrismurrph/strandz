@@ -1,0 +1,89 @@
+How to get out an old version from subversion
+
+The project 'Old Strandz' has been set up. C:\dev-old and C:\sdz-zone-old also
+
+To find out which version are at using TortoiseSVN do 'Check for modifications' against the root directory, or do an update.
+
+Imagine we want to check out <revision> from sourceforge.
+
+1./
+From dev-old, wipe all the sub directories but leave the files (IDEA ones important). Also need to wipe out the license file as checking out won't work if you are overwriting a file.
+
+2./
+Do checkout of https://strandz.svn.sourceforge.net/svnroot/strandz/sdz-src/trunk at <revision> to C:\dev-old\sdz-src\ as it will auto fill in
+
+3./
+Check out into C:\sdz-zone-old. Wipe all first. Use https://strandz.svn.sourceforge.net/svnroot/strandz/sdz-zone/trunk at <revision>
+
+4./
+cd C:\sdz-zone\bin
+copy_to_old.bat will copy the jars across etc
+
+
+Look in the IDE to see that everything will COMPILE. No point running anything until have right versions of dt files etc which will not be until after have sdz-zone (and then some). Mose well wait until 11 to run anything.
+
+Note that the project points to the right jar files (C:\sdz-zone-old\lib) and classes (C:\dev-old\classes) directories. Next we will check out into C:\sdz-zone-old (gets old dt file), modified some important files (by batch file and one manual change) and run the deploy batch command. As part of doing the deploy the right dt jar file will be created. (dt file was just an example!).
+
+5./ 
+to_old_6_to_9.bat will take you straight to 10!
+
+6./
+Enhance by 
+cd C:\sdz-zone-old\bin-jdo
+enhance.bat
+
+7./
+As part of copy_to_old.bat new properties files have been copied across (for using DEMO (clientforlocal.properties and the Spring bean file)) which need to be jarred, so
+cd C:\sdz-zone-old\property-files\wombatrescue
+ant jar-kodo
+
+
+8./
+Make sure the dt file jar is correct
+cd C:\sdz-zone-old\dt-files\wombatrescue
+ant
+
+9./
+cd C:\sdz-zone-old\bin
+deployTeresaSpring.bat
+
+10./
+Startup tomcat
+
+11./
+Try the test, in our example StartupKodo.
+
+12./
+WombatConnectionEnum.REMOTE_DEMO_WOMBAT_KODO. Follow 1,2,3 instructions there if need to make it talk to local tomcat (it might be on live). You need the app to use the jar files that you have just deployed onto your own computer - rather than the ones on the server! Before you make any changes to the source it might be a good cleanup duty to have HEAD completely commited - that way can rescue yourself if you accidentally commit something from here.
+
+13./
+java.lang.Error: Classpath does not contain the requested JDOVendorOpsI: com.seasoft.store.KodoJDOVendorOps
+
+Means we need to checkout the seasoft source as well. Make sure C:\dev-old-com is empty and checkout svn+ssh://svnstrandz/usr/local/svnrep/sdz-src/trunk straight into it, after having found the correct version number by the time (use show log on both repositories).
+
+14./
+Cut and paste the com directory to C:\dev-old (actually don't need to as I've made another source root in IDE), compile and do 9,10,11 again.
+
+15./ 
+Should be able to test
+
+16./
+Repeat steps 1 -> 10, increasing in revision number until you can replicate the bug
+
+As do this may get meta-data problems - so a broken build was checked in. Can fix this in-situ:
+
+C:\sdz-zone-old\bin-jdo
+ant create-db-kodo
+
+un-rem in 6_to_9
+
+17./
+Look at changes between the earlier version that does work and the later one that doesn't.
+
+18./
+Write a test in HEAD that will show the problem. Try to make it so that it will run on the server. For example a spring test that the same roster can be done successfully several times will actually have to be done against production - as that's the only place we have Kodo on the server.
+
+19./
+Now that the test is failing, fix it - its a regression test to stop you having to visit this doc too frequently!
+
+

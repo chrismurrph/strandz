@@ -1,0 +1,39 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jDepend" default="jDepend-cmts" basedir=".">
+
+  <property file="../property-files/global.properties"/>
+
+  <!-- Like this when doing for strandz -->
+  <property name="sdz.src.place" value="${src.root}"/>
+  <property name="sdz.out.place" value="${src.root}/classes"/>
+  
+  <!-- Like this when doing for cmts -->
+  <property name="cmts.src.place" value="C:/dev/cmts/src"/>
+  <property name="cmts.out.place" value="${cmts.src.place}/out"/>
+  
+  <target name="jDepend-sdz">
+    <jdepend outputfile="../docs/sdz-jdepend-report.txt">
+      <exclude name="java.*"/>
+      <exclude name="javax.*"/>
+      <exclude name="mseries.*"/>
+      <exclude name="org.strandz.data.gallery.objects.auto"/>
+      <exclude name="org.strandz.data.wombatrescue.objects.cayenne.auto"/>
+      <exclude name="org.strandz.data.wombatrescue.objects.cayenne.client.auto"/>
+      <exclude name="com.seasoft.data.money.objects.cayenne.auto"/>
+      <classespath>
+        <pathelement location="${sdz.out.place}" />
+      </classespath>
+      <classpath location="${sdz.out.place}" />
+    </jdepend>
+  </target>
+
+  <target name="jDepend-cmts">
+    <jdepend outputfile="../docs/cmts-jdepend-report.txt">
+      <classespath>
+        <pathelement location="${cmts.out.place}" />
+      </classespath>
+      <classpath location="${cmts.out.place}" />
+    </jdepend>
+  </target>
+
+</project>

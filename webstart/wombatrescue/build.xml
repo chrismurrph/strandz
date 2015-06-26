@@ -1,0 +1,210 @@
+<project name="wombat" default="ftp-app-linode" basedir=".">
+
+<property file="../../property-files/global.properties"/>
+<property file="init.properties"/>
+<property name="sdz.zone" value="../.."/>
+
+<target name="init-memory-linode">
+  <property file="linode.memory.build.properties"/>
+</target>   
+
+<target name="init-prod-linode">
+  <property file="linode.prod.build.properties"/>
+</target>   
+
+<target name="init-debian">
+  <property file="debian.build.properties"/>
+</target>   
+
+<target name="set-sensitive-properties">
+  <property file="build.properties"/>
+</target>   
+
+<target name="rm-all-jars" depends="set-sensitive-properties">
+  <echo>To remove wombatrescue jars from ${webstart.jars.to.location}</echo>
+  <delete quiet="true">
+    <fileset dir="${webstart.jars.to.location}" includes="*.jar"/>  
+  </delete>
+  <delete quiet="true">
+    <fileset dir="${servlet.jars.to.location}" includes="*.jar"/>  
+  </delete>
+</target>
+
+<!--
+Don't get confused. Here are the application files, that will be needed by
+the webstart application. Together cpy-main, jar-sdz-dt-files, copy-memory-webstart-jars, 
+make up what is in the jnlp file.
+->ADD TO JNLP FILE WHEN ADD TO HERE
+->CLEAR THE CACHE OF THE CLIENT BROSWER ONCE HAVE DEPLOYED
+-->
+
+<target name="copy-memory-signed-jars">
+  <copy file="${signed.jars.from.location}/TableLayout.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/mail.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/activation.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/app-images.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/foxtrot.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/MDateSelector-mine.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${signed.jars.from.location}/jh.jar" todir="${webstart.jars.to.location}"/>
+  <!--
+  <copy file="${signed.jars.from.location}/spring-remoting.jar" todir="${webstart.jars.to.location}"/>   
+  <copy file="${signed.jars.from.location}/spring-core.jar" todir="${webstart.jars.to.location}"/>   
+  <copy file="${signed.jars.from.location}/spring-beans.jar" todir="${webstart.jars.to.location}"/>      
+  <copy file="${signed.jars.from.location}/spring-context.jar" todir="${webstart.jars.to.location}"/>      
+  <copy file="${signed.jars.from.location}/spring-aop.jar" todir="${webstart.jars.to.location}"/>      
+  <copy file="${signed.jars.from.location}/commons-logging.jar" todir="${webstart.jars.to.location}"/>      
+  -->
+</target>
+
+<target name="copy-memory-app-jars">
+  <copy file="${external.jars.from.location}/wr-sdz-dt-files.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${external.jars.from.location}/wr-demo-properties.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${external.jars.from.location}/wr-help.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${strandz.jar.file}" todir="${webstart.jars.to.location}"/>
+</target>
+
+<target name="copy-prod-stable-webstart-jars">
+  <ant antfile="../copystablejars.xml">
+    <property name="source.location" value="${signed.jars.from.location}"/>
+    <property name="destination.location" value="${webstart.jars.to.location}"/>
+  </ant>
+</target>
+
+<target name="copy-prod-unstable-webstart-jars">
+  <!-- Deleting first means they will always be signed -->  
+  <!-- <delete file="${webstart.jars.to.location}/wr-spring-configs.jar" quiet="true"/> -->
+  <copy file="${sdz.zone}/lib/wr-spring-configs.jar" todir="${webstart.jars.to.location}"/>
+
+  <!-- <delete file="${webstart.jars.to.location}/wr-jdo-meta.jar" quiet="true"/> -->
+  <copy file="${sdz.zone}/lib/wr-jdo-meta.jar" todir="${webstart.jars.to.location}"/>
+
+  <copy file="${sdz.zone}/lib/wr-sdz-dt-files.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${sdz.zone}/lib/wr-help.jar" todir="${webstart.jars.to.location}"/>
+  <copy file="${sdz.zone}/lib/jdo-config-remote-teresa-kodo-mysql.jar" todir="${webstart.jars.to.location}"/>
+
+  <!-- <delete file="${webstart.jars.to.location}/wr-prod-properties.jar" quiet="true"/> -->
+  <copy file="${sdz.zone}/lib/wr-prod-properties.jar" tofile="${webstart.jars.to.location}/wr-prod-properties.jar" failonerror="false"/>  
+  <echo>Should now have copied wr-prod-properties.jar from ${sdz.zone}/lib/ to ${webstart.jars.to.location}</echo>
+  
+  <copy file="${strandz.jar.file}" todir="${webstart.jars.to.location}"/>
+  <copy file="${external.jars.from.location}/jdo-config-remote-teresa-kodo-mysql.jar" todir="${webstart.jars.to.location}"/>
+</target>
+
+
+<!--
+webstart.jars.to.location is for webstart files
+servlet.jars.to.location  - need to put jars that contain servlets here
+
+Don't get confused - this is the minimalist stuff that the JDO servers will
+need
+-->
+<target name="cpy-servlets">
+  <copy file="${external.jars.from.location}/jnlp-servlet.jar" todir="${servlet.jars.to.location}"/>
+</target>
+
+<target name="cpy-main"
+        description="Create the main jar file">
+  <copy file="${main.jar.file}" todir="${webstart.jars.to.location}"/>
+  <echo>Copied ${main.jar.file} to ${webstart.jars.to.location}</echo>
+</target>
+
+<target name="sign-prod-jars" 
+        depends="set-sensitive-properties, copy-prod-unstable-webstart-jars, cpy-main, cpy-servlets, sign-jars, copy-prod-stable-webstart-jars"
+        description="Set and sign jars">
+</target>      
+
+<target name="sign-jars" 
+        description="Sign jars">
+  <echo level="info">Signing JARS...</echo>
+  <signjar keystore="${home.path}/../../keystore.ks" alias="myalias2" storepass="${keypass}" keypass="${keypass}">
+    <fileset dir="${webstart.jars.to.location}" includes="*.jar"/>
+  </signjar>  
+</target>     
+
+<target name="sign-kept-jars" 
+        depends="init-prod-linode, set-sensitive-properties"
+        description="Sign kept jars - do as one off on its own">
+  <echo level="info">Signing Kept JARS...</echo>
+  <signjar keystore="${home.path}/../../keystore.ks" alias="myalias2" storepass="${keypass}" keypass="${keypass}">   
+    <fileset dir="${signed.jars.from.location}" includes="*.jar"/>
+  </signjar>  
+</target>     
+
+<target name="sign-memory-jars" 
+        depends="set-sensitive-properties, copy-memory-app-jars, cpy-main, sign-jars, copy-memory-signed-jars, cpy-servlets"
+        description="Sign jars">
+  <echo level="info">Signing JARS...</echo>
+</target>      
+
+<target name="war-memory-app" 
+        depends="init-memory-linode, rm-all-jars, sign-memory-jars"
+        description="Create a war for the memory application as a web start application (delete required)">
+  <delete file="../../in-out/${war.file}" quiet="true"/>
+  <war destfile="../../in-out/${war.file}" webxml="${home.path}/web.xml">
+    <zipfileset dir="${war.path}" includes="**/wombat-memory.jnlp"/>
+    <zipfileset dir="${war.path}" includes="**/*.jar"/>
+  </war>
+</target>  
+
+<target name="war-prod-app" 
+        depends="init-prod-linode, sign-prod-jars"
+        description="Create a war for the prod application as a web start application (delete required)">
+  <!--
+  Experiment with not deleting first, and doing a war with update=true did not work. Need to do something
+  else to keep the timestamps for unchanging jars the same as last time ...
+  -->
+  <delete file="../../in-out/${war.file}" quiet="true"/>
+  <war destfile="../../in-out/${war.file}" webxml="${home.path}/web.xml">
+    <zipfileset dir="${war.path}" includes="**/teresa.jnlp"/>
+    <zipfileset dir="${war.path}" includes="**/*.jar"/>
+  </war>
+</target>  
+
+<target name="ftp-app"> 
+  <ftp server="${ftp.target.server}"
+       userid="${ftp.target.userid}"
+       password="${ftp.target.password}"
+       remotedir="scratch"
+       verbose="true"
+       passive="yes">
+    <fileset dir="../../in-out" includes="${war.file}" />
+  </ftp>    
+</target>  
+
+<target name="war-and-send" depends="war-memory-app, ftp-app"> 
+</target>  
+
+<!--
+Just sends the war file across, for debugging punching through
+the firewall
+-->
+<target name="ftp-to-linode" 
+        depends="init-memory-linode, ftp-app"
+        description="Ftp web start application to the linode machine"
+        >
+</target>  
+
+<target name="build-memory-war" 
+        depends="init-memory-linode, 
+                 rm-all-jars, 
+                 set-sensitive-properties, 
+                 cpy-servlets, 
+                 war-memory-app, 
+                 rm-all-jars"
+        description="Build war for Wombat Rescue in-Memory"
+        >
+</target>  
+
+<target name="build-prod-war" 
+        depends="init-prod-linode, 
+                 rm-all-jars, 
+                 set-sensitive-properties, 
+                 cpy-servlets, 
+                 war-prod-app, 
+                 rm-all-jars"
+        description="Build war for Teresa Rosterer"
+        >
+</target>  
+
+
+</project>

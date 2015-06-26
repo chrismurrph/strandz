@@ -1,0 +1,53 @@
+<!--
+In the process of web site deployment this file 
+is renamed from basic-theory-build.xml to build.xml
+so that the user just has to go 'ant'.
+This happens in <$SDZ/bin/zipSource.xml zip-basic-theory>.
+-->
+<project name="basic_theory" default="all" basedir=".">
+
+  <property name="lib.third-party" value="./lib"/>   
+  <property name="lib.sdz" value="./lib-sdz"/>   
+  <property name="src.root" value="./src"/>   
+  <property name="out.root" value="./classes"/>   
+
+  <path id="cp">
+    <pathelement path="${out.root}"/>    
+    <fileset dir="${lib.third-party}" includes="*.jar"/>
+    <fileset dir="${lib.sdz}" includes="*.jar"/>
+  </path>
+  
+  <target name="clean" description="remove all classes">
+    <mkdir dir="${out.root}"/>
+    <delete>
+      <fileset dir="${out.root}" includes="*.class"/>  
+    </delete>
+  </target>      
+
+  <!--
+  The compilerarg will just stop a "this code is not 1.5" style warning message
+  NO - it gives a more explicit detailing of the issue
+  -->
+  <target name="compile"
+          description="compile basic theory">
+    <javac srcdir="${src.root}"
+           destdir="${out.root}"
+           classpathref="cp"
+           debug="on">
+      <!--      
+      <compilerarg value="-Xlint:unchecked"/>           
+      -->
+    </javac>
+  </target>
+  
+  <target name="run"
+          description="run basic theory">
+    <java classname="org.strandz.task.wombatrescue.BasicTheorySdzExample1" classpathref="cp" fork="true">
+    </java>
+  </target>
+  
+  <target name="all" depends="clean, compile, run"
+          description="clean, compile and run">
+  </target>
+  
+</project>

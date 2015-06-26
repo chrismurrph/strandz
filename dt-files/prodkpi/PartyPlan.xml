@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_02" class="java.beans.XMLDecoder"> 
+ <object class="org.strandz.core.applichousing.SdzBag"> 
+  <void property="currentPane"> 
+   <int>-1</int> 
+  </void> 
+  <void property="name"> 
+   <string>PartyPlan</string> 
+  </void> 
+  <void property="nodes"> 
+   <array class="org.strandz.core.interf.Node" length="8"> 
+    <void index="0"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object class="org.strandz.core.interf.Cell"> 
+        <void id="CellArray0" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray0"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.partyplan.objects.PartyPlanI</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Salesperson Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="commitOnly"> 
+       <boolean>true</boolean> 
+      </void> 
+      <void id="IndependentArray0" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray0"/> 
+      </void> 
+      <void property="name"> 
+       <string>Salesperson Node</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="1"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell0" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>airMiles</string> 
+           </void> 
+           <void property="name"> 
+            <string>salesPerson airMiles</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void id="CellArray1" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray1"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.partyplan.objects.Salesperson</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Team Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="commitOnly"> 
+       <boolean>true</boolean> 
+      </void> 
+      <void id="IndependentArray1" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray1"/> 
+      </void> 
+      <void property="name"> 
+       <string>Team Node</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="2"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell1" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell1"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>airMiles</string> 
+           </void> 
+           <void property="name"> 
+            <string>team airMiles</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void id="CellArray2" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray2"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.partyplan.objects.Team</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Sector Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="commitOnly"> 
+       <boolean>true</boolean> 
+      </void> 
+      <void id="IndependentArray2" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray2"/> 
+      </void> 
+      <void property="name"> 
+       <string>Sector Node</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="3"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell2" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell2"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>airMiles</string> 
+           </void> 
+           <void property="name"> 
+            <string>sector airMiles</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void id="CellArray3" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray3"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.partyplan.objects.Sector</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Company Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="commitOnly"> 
+       <boolean>true</boolean> 
+      </void> 
+      <void id="IndependentArray3" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray3"/> 
+      </void> 
+      <void property="name"> 
+       <string>Company Node</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="4"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object class="org.strandz.core.interf.Cell"> 
+        <void id="CellArray4" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray4"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.prodkpi.objects.ProdKpiI</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Salesperson HeaderCell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void id="IndependentArray4" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray4"/> 
+      </void> 
+      <void property="name"> 
+       <string>Salesperson HeaderNode</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="5"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object class="org.strandz.core.interf.Cell"> 
+        <void id="CellArray5" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray5"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.partyplan.objects.Salesperson</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Team HeaderCell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void id="IndependentArray5" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray5"/> 
+      </void> 
+      <void property="name"> 
+       <string>Team HeaderNode</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="6"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object class="org.strandz.core.interf.Cell"> 
+        <void id="CellArray6" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray6"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.partyplan.objects.Team</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Sector HeaderCell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void id="IndependentArray6" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray6"/> 
+      </void> 
+      <void property="name"> 
+       <string>Sector HeaderNode</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="7"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object class="org.strandz.core.interf.Cell"> 
+        <void id="CellArray7" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray7"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.partyplan.objects.Sector</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Company HeaderCell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void id="IndependentArray7" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray7"/> 
+      </void> 
+      <void property="name"> 
+       <string>Company HeaderNode</string> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void id="JComponentArray0" property="panes"/> 
+  <void property="panes"> 
+   <object idref="JComponentArray0"/> 
+  </void> 
+  <void property="physicalController"> 
+   <object class="org.strandz.core.applichousing.PictToolBarController"/> 
+  </void> 
+  <void property="statusBar"> 
+   <object class="org.strandz.core.applichousing.NodeStatusBar"/> 
+  </void> 
+ </object> 
+</java> 

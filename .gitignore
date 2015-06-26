@@ -1,0 +1,10 @@
+/.idea/
+/out/
+/property-files/global.properties
+/property-files/wombatrescue/WombatrescueProdDataNode.driver.xml
+/property-files/wombatrescue/WombatrescueDemoDataNode.driver.xml
+/lib/*.jar
+/lib/*._jar
+/lib-sdz/*.jar
+*.class
+target/

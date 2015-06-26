@@ -1,0 +1,33 @@
+log4j.rootCategory=, A1
+
+# Define the log to be a file
+log4j.appender.A1=org.apache.log4j.FileAppender
+log4j.appender.A1.File=jpox.log
+
+# Appender A1 uses the PatternLayout.
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d{DATE} %-5p %c - %m%n
+
+# Global Threshold - overridden by any Categories below.
+#log4j.appender.A1.Threshold=INFO
+
+# JPOX Categories
+log4j.category.JPOX.JDO=INFO
+log4j.category.JPOX.Cache=INFO
+log4j.category.JPOX.MetaData=INFO
+log4j.category.JPOX.General=INFO
+log4j.category.JPOX.Utility=INFO
+log4j.category.JPOX.Transaction=INFO
+
+log4j.category.JPOX.RDBMS=DEBUG
+log4j.category.JPOX.RDBMS.Schema=DEBUG
+log4j.category.JPOX.RDBMS.DDL=DEBUG
+log4j.category.JPOX.RDBMS.SQL=DEBUG
+
+log4j.category.JPOX.OLAP=INFO
+
+log4j.category.JPOX.FileIO=INFO
+
+log4j.category.JPOX.Enhancer=INFO
+
+log4j.category.JPOX.IDE=INFO

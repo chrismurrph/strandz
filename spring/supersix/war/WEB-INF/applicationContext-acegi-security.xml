@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean id="filterChainProxy" class="org.acegisecurity.util.FilterChainProxy">
+        <property name="filterInvocationDefinitionSource">
+            <value>
+                CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+                PATTERN_TYPE_APACHE_ANT
+                /**=httpSessionContextIntegrationFilter,basicProcessingFilter,securityContextHolderAwareRequestFilter,exceptionTranslationFilter,filterInvocationInterceptor
+            </value>
+        </property>
+    </bean>
+    
+    <!-- Adding this filter made testSecuredByAcegiWrongCredentials always work
+    -->
+    <bean id="httpSessionContextIntegrationFilter" class="org.acegisecurity.context.HttpSessionContextIntegrationFilter">
+    </bean>
+    
+    <bean id="authenticationManager" class="org.acegisecurity.providers.ProviderManager">
+        <property name="providers">
+            <list>
+                <ref local="daoAuthenticationProvider"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="jdbcDaoImpl" class="org.acegisecurity.userdetails.jdbc.JdbcDaoImpl">
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+        <property name="usersByUsernameQuery">
+            <value>SELECT USERNAME, PASSWORD,'true' as enabled FROM userdetails WHERE USERNAME = ?</value> 
+        </property>
+        <property name="authoritiesByUsernameQuery">
+            <value>SELECT USERNAME, 'ROLE_USER' as authority FROM userdetails WHERE USERNAME = ?</value> 
+        </property>
+    </bean>
+    
+    <!--     The inMemoryDaoImpl DOES NOT support the passwordEncoder
+             Switch to jdbcDaoImpl for that 
+             -->
+    <bean id="inMemoryDaoImpl" class="org.acegisecurity.userdetails.memory.InMemoryDaoImpl">
+        <property name="userMap">
+            <value>
+                Chris=Chris,ROLE_USER
+            </value>
+        </property>
+    </bean>
+        
+    <bean id="daoAuthenticationProvider" class="org.acegisecurity.providers.dao.DaoAuthenticationProvider">
+        <property name="userDetailsService">
+            <ref local="jdbcDaoImpl"/>
+        </property>
+        <property name="userCache">
+            <ref local="userCache"/>
+        </property>
+        <!--
+        <property name="passwordEncoder"><ref local="passwordEncoder"/></property>
+        -->
+    </bean>
+
+    <!--
+    <bean id="passwordEncoder" class="org.acegisecurity.providers.encoding.Md5PasswordEncoder"/>
+    -->
+
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"/>
+
+    <bean id="userCacheBackend" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+        <property name="cacheManager">
+            <ref local="cacheManager"/>
+        </property>
+        <property name="cacheName">
+            <value>userCache</value>
+        </property>
+    </bean>
+
+    <bean id="userCache" class="org.acegisecurity.providers.dao.cache.EhCacheBasedUserCache">
+        <property name="cache">
+            <ref local="userCacheBackend"/>
+        </property>
+    </bean>
+
+    <!-- Automatically receives AuthenticationEvent messages -->
+    <bean id="loggerListener" class="org.acegisecurity.event.authentication.LoggerListener"/>
+
+    <bean id="basicProcessingFilter" class="org.acegisecurity.ui.basicauth.BasicProcessingFilter">
+        <property name="authenticationManager">
+            <ref local="authenticationManager"/>
+        </property>
+        <property name="authenticationEntryPoint">
+            <ref local="basicProcessingFilterEntryPoint"/>
+        </property>
+    </bean>
+
+    <bean id="basicProcessingFilterEntryPoint" class="org.acegisecurity.ui.basicauth.BasicProcessingFilterEntryPoint">
+        <property name="realmName">
+            <value>SuperSix Realm</value>
+        </property>
+    </bean>
+
+    <bean id="securityContextHolderAwareRequestFilter"
+          class="org.acegisecurity.wrapper.SecurityContextHolderAwareRequestFilter"/>
+
+    <bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint">
+            <ref local="basicProcessingFilterEntryPoint"/>
+        </property>
+    </bean>
+
+    <bean id="httpRequestAccessDecisionManager"
+          class="org.acegisecurity.vote.AffirmativeBased">
+        <property name="allowIfAllAbstainDecisions">
+            <value>false</value>
+        </property>
+
+        <property name="decisionVoters">
+            <list>
+                <ref local="roleVoter"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--
+     =- An access decision voter that reads ROLE_* configuration
+     =- settings.
+    -->
+    <bean id="roleVoter" class="org.acegisecurity.vote.RoleVoter"/>
+
+    <bean id="filterInvocationInterceptor"
+          class="org.acegisecurity.intercept.web.FilterSecurityInterceptor">
+        <property name="authenticationManager">
+            <ref local="authenticationManager"/>
+        </property>
+        <!-- Makes debugging easier but not usually appropriate for production -->
+        <property name="alwaysReauthenticate">
+            <value>true</value>
+        </property>
+        <property name="accessDecisionManager">
+            <ref local="httpRequestAccessDecisionManager"/>
+        </property>
+
+        <property name="objectDefinitionSource">
+            <value>
+                CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+                PATTERN_TYPE_APACHE_ANT
+                /**=ROLE_USER
+            </value>
+        </property>
+    </bean>
+
+</beans>

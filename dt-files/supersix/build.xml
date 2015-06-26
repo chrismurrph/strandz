@@ -1,0 +1,50 @@
+
+<!--
+This ant build file will only need to be used after have manually
+altered an xml file, as the Designer will automatically do the jarring
+ie. basically do the same thing as is done here.
+Of course whenever deploy this will be called as well.
+Value of "." does not work for basedir when calling - see ant inheritAll
+Thus have had to use the property cwd - CHANGE SOON - difficult if want this
+build file to work stand alone as well as from the main one in webstart
+-->
+<project name="jar_dt_files" default="jar-dt-files" basedir=".">
+
+<property name="jar.directory" value="../../lib"/>
+<property name="dt1.file" value="maintainGlobal.xml"/>
+<property name="dt2.file" value="maintainSeason.xml"/>
+<property name="dt3.file" value="maintainTeam.xml"/>
+
+<!--
+1./
+This one is only for testing so theoretically it should go into
+a separate jar file (testing code not normally deployed) however
+there are so many jar files that we have let this one slip in, for
+now!
+(will quite probably never be done properly like this)
+2./
+As we will probably forget to create RosterWorkers_NON_VISUAL.xml
+after changes to RosterWorkers_NEW_FORMAT.xml, the server is
+doing this in pre-deploy.sh. Thus the non-visual server tests will 
+not rely on a human keeping this file up to date.
+
+What we will eventually do is have this controlled by the Designer, 
+so always having two versions of every persistent SdzBag.
+-->
+<!-- No unit tests so don't yet need this
+<property name="dt3.file" value="RosterWorkers_NON_VISUAL.xml"/>
+-->
+
+<property name="dt.jar.file.name" value="ss-sdz-dt-files.jar"/>
+<property name="dt.jar.file" value="${jar.directory}/${dt.jar.file.name}"/>
+
+<target name="jar-dt-files">
+  <delete file="${dt.jar.file}" quiet="true"/>
+  <jar destfile="${dt.jar.file}">
+    <zipfileset dir="." includes="${dt1.file}" prefix="dt-files"/>
+    <zipfileset dir="." includes="${dt2.file}" prefix="dt-files"/>
+    <zipfileset dir="." includes="${dt3.file}" prefix="dt-files"/>
+  </jar>
+</target>
+
+</project>

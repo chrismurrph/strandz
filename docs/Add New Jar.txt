@@ -1,0 +1,33 @@
+How to add a new jar file to an application
+-------------------------------------------
+
+Example: microba-mine.jar - slightly altered jar for a date component
+
+1./ Put it in C:\sdz-zone\lib
+2./ C:\sdz-zone\webstart\copystablejars.xml
+3./ C:\sdz-zone\webstart\wombatrescue\build.xml
+4./ C:\sdz-zone\webstart\wombatrescue\linode\war\teresa.jnlp
+    C:\sdz-zone\webstart\wombatrescue\linode\war\wombat-memory.jnlp
+5./ Commit these 
+6./ Ftp it across to the lib directory on the server
+7./ On server cd $SR and ./redo.sh to see if can get to compile
+
+On server:
+
+1./
+Make sure jar file is in these two places:
+
+/home/chris/signed_stable_jars/MDateSelector.jar (just copy it across, at 2 we will sign it)
+/usr/local/sdz-zone/lib/MDateSelector.jar (already done at 6)
+
+All these are 'copied to by scripts' locations, so remove unused jar files:
+
+/usr/local/sdz-zone/webstart/wombatrescue/linode/war/lib/MDateSelector.jar
+/usr/local/sdz-zone/webstart/supersix/linode/war/lib/MDateSelector.jar
+/var/lib/tomcat4/webapps/wombat-memory/lib/MDateSelector.jar
+/var/lib/tomcat4/webapps/supersix-memory/lib/MDateSelector.jar
+/var/lib/tomcat4/webapps/teresa/lib/MDateSelector.jar
+
+2./
+cd $SDZ/webstart/wombatrescue
+ant sign-kept-jars  

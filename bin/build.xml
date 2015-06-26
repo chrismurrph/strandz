@@ -1,0 +1,19 @@
+<project name="config-jars" basedir=".">
+
+    <target name="config-prod-jars"
+             description="Create configuration jars for all apps">
+        <ant inheritAll="false" antfile="../images/build.xml" target="jar_wombat_images"/>
+        <ant inheritAll="false" antfile="../property-files/wombatrescue/build.xml" target="cayenne-prod"/>
+        <ant inheritAll="false" antfile="../docs/help/wombatrescue/build.xml" target="jar-help"/>
+        <ant inheritAll="false" antfile="../dt-files/wombatrescue/build.xml" target="jar-dt-files"/>
+    </target>
+
+    <target name="config-demo-jars"
+             description="Create configuration jars for all apps">
+        <ant inheritAll="false" antfile="../images/build.xml" target="jar_wombat_images"/>
+        <ant inheritAll="false" antfile="../property-files/wombatrescue/build.xml" target="cayenne-demo"/>
+        <ant inheritAll="false" antfile="../docs/help/wombatrescue/build.xml" target="jar-help"/>
+        <ant inheritAll="false" antfile="../dt-files/wombatrescue/build.xml" target="jar-dt-files"/>
+    </target>
+
+</project>

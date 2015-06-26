@@ -1,0 +1,13 @@
+<project name="jar_help" default="jar-help" basedir=".">
+
+<property name="jar.directory" value="../../../lib"/>
+<property name="wr-help.jar.file" value="${jar.directory}/wr-help.jar"/>
+
+<target name="jar-help">
+  <delete file="${wr-help.jar.file}" quiet="true"/>
+  <jar destfile="${wr-help.jar.file}">
+    <zipfileset dir="." includes="**/*" excludes="build.xml,WRProject.xml" />
+  </jar>
+</target>
+
+</project>

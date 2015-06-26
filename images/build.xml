@@ -1,0 +1,65 @@
+<!-- run only with ANT 1.4 and above -->
+<project name="jar_images" default="jar_emissions_images" basedir=".">
+
+<property name="root.dir" value=".."/>
+<property name="dist.dir" value="../lib"/>
+<property name="dist.file" value="${dist.dir}/app-images.jar"/>
+<property name="emissions.dist.file" value="${dist.dir}/emissions-app-images.jar"/>
+
+<target name="jar_wombat_images">
+  <delete file="${dist.file}" quiet="true"/>
+  <jar destfile="${dist.file}">
+    <fileset dir="${root.dir}" includes="images/Copy.gif"/>
+    <fileset dir="${root.dir}" includes="images/Paste.gif"/>   
+    <fileset dir="${root.dir}" includes="images/Calendar.gif"/>
+    <fileset dir="${root.dir}" includes="images/Save.gif"/>   
+    <fileset dir="${root.dir}" includes="images/Delete.gif"/>    
+    <fileset dir="${root.dir}" includes="images/Insert.gif"/>    
+    <fileset dir="${root.dir}" includes="images/Load.gif"/>   
+    <fileset dir="${root.dir}" includes="images/Next.gif"/>   
+    <fileset dir="${root.dir}" includes="images/Post.gif"/>   
+    <fileset dir="${root.dir}" includes="images/Prev.gif"/>   
+    <fileset dir="${root.dir}" includes="images/Debug.gif"/>   
+    <fileset dir="${root.dir}" includes="images/Splash.jpg"/>   
+    <fileset dir="${root.dir}" includes="images/Icon.gif"/>   
+    <fileset dir="${root.dir}" includes="images/foxtrot.gif"/>   
+    <fileset dir="${root.dir}" includes="images/jpox_logo_large.gif"/>   
+    <fileset dir="${root.dir}" includes="images/TableLayoutLogo.gif"/>   
+    <fileset dir="${root.dir}" includes="images/M2.gif"/>   
+    <fileset dir="${root.dir}" includes="images/no_logo.gif"/>   
+    <fileset dir="${root.dir}" includes="images/mysql.gif"/>   
+    <fileset dir="${root.dir}" includes="images/strandz_img.jpg"/>   
+    <fileset dir="${root.dir}" includes="images/cayenne_logo.gif"/>
+  </jar>
+</target>
+
+<target name="jar_emissions_images">
+  <delete file="${emissions.dist.file}" quiet="true"/>
+  <jar destfile="${emissions.dist.file}">
+    <fileset dir="${root.dir}" includes="images/SmallSmallWorld.png"/>
+    <fileset dir="${root.dir}" includes="images/SmallAnt.png"/>
+    <fileset dir="${root.dir}" includes="images/Finger.png"/>
+    <fileset dir="${root.dir}" includes="images/BigFinger.png"/>
+    <fileset dir="${root.dir}" includes="images/Phone.png"/>   
+    <fileset dir="${root.dir}" includes="images/Mail.png"/>   
+    <fileset dir="${root.dir}" includes="images/Properties.png"/>
+    <fileset dir="${root.dir}" includes="images/Icon.gif"/>   
+    <fileset dir="${root.dir}" includes="images/DescendingBlack.gif"/>   
+    <fileset dir="${root.dir}" includes="images/AscendingBlack.gif"/>   
+    <fileset dir="${root.dir}" includes="images/DescendingWhite.gif"/>   
+    <fileset dir="${root.dir}" includes="images/AscendingWhite.gif"/>   
+    <fileset dir="${root.dir}" includes="images/MoneyBox.png"/>   
+    <fileset dir="${root.dir}" includes="images/MoneyCalc.png"/>   
+    <fileset dir="${root.dir}" includes="images/MoneyPig.png"/>   
+    <fileset dir="${root.dir}" includes="images/DoesNotExist.png"/>   
+    <fileset dir="${root.dir}" includes="images/MoneyBoxSmall.png"/>   
+    <fileset dir="${root.dir}" includes="images/MoneyCalcSmall.png"/>   
+    <fileset dir="${root.dir}" includes="images/MoneyPigSmall.png"/>   
+    <fileset dir="${root.dir}" includes="images/DoesNotExistSmall.png"/>   
+    <fileset dir="${root.dir}" includes="images/control_end_blue.png"/>   
+    <fileset dir="${root.dir}" includes="images/sitemap.png"/>   
+  </jar>
+</target>
+
+
+</project>

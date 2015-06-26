@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+
+<project name="teresaSpring" basedir="." default="usage">
+    <property file="../build.properties"/>
+    <property environment="env"/>
+    <property name="appserver.home" location="${env.CATALINA_HOME}"/>
+    <property name="deploy.path" value="${appserver.home}/webapps"/>
+    <property name="src.dir" value="src"/>
+    <property name="web.dir" value="war"/>
+    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
+    <property name="sdz.zone" value="../.."/>
+    <property name="staging.lib.dir" value="war/WEB-INF/lib"/>
+    <property name="staging.classes.dir" value="war/WEB-INF/classes"/>
+    <property name="app-props.file" value="wombat"/>
+    <property name="name" value="teresaSpring"/>
+
+    <path id="master-classpath">
+        <fileset dir="${web.dir}/WEB-INF/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <!-- We need the servlet API classes:        -->
+        <!--   for Tomcat 4.1 use servlet.jar        -->
+        <!--   for Tomcat 5.0 use servlet-api.jar    -->
+        <!--   for Other app server - check the docs -->
+        <fileset dir="${appserver.home}/common/lib">
+            <include name="servlet*.jar"/>
+        </fileset>
+        <pathelement path="${build.dir}"/>
+    </path>
+
+    <target name="usage">
+        <echo message=""/>
+        <echo message="${name} build file"/>
+        <echo message="-----------------------------------"/>
+        <echo message=""/>
+        <echo message="Available targets are:"/>
+        <echo message=""/>
+        <echo message="deploy    --> Deploy application as directory"/>
+        <echo message="deploywar --> Deploy application as a WAR file"/>
+        <echo message="install   --> Install application in Tomcat"/>
+        <echo message="reload    --> Reload application in Tomcat"/>
+        <echo message="start     --> Start Tomcat application"/>
+        <echo message="stop      --> Stop Tomcat application"/>
+        <echo message="list      --> List Tomcat applications"/>
+        <echo message=""/>
+    </target>
+    
+    <target name="delete-target" description="Delete target files">
+      <delete quiet="true">
+        <fileset dir="${deploy.path}/${name}" includes="**/*"/>  
+      </delete>
+    </target>
+
+    <target name="copy-stable-jars">
+      <ant antfile="../copystablejars.xml">
+        <property name="destination" value="${staging.lib.dir}"/>
+      </ant>
+    </target>    
+    
+    <target name="jar-unstables">
+      <ant inheritAll="false" antfile="../../bin/jarWombat.xml">
+      </ant>
+      <ant inheritAll="false" antfile="../../bin/jarStrandz.xml">
+      </ant>
+      <ant antfile="../../property-files/wombatrescue/build.xml" dir="../../property-files/wombatrescue" target="jar-kodo-jdo-meta">
+      </ant>
+    </target>    
+
+    <target name="server-jar-unstables">
+      <echo>Need to manually copy wombat.jar across</echo>
+      <!-- Cannot do this on server, as DOs need to be Kodo enhanced first,
+           and there is no Kodo enhancement available on the server. Manually
+           ftp across
+      <ant inheritAll="false" antfile="../../bin/jarWombat.xml">
+      </ant>
+      -->
+      <!--
+      <ant inheritAll="false" antfile="../../bin/jarStrandz.xml">
+      </ant>
+      -->
+      <echo>Also to manually copy strandz.jar across (hopefully this will change when everything moves to JDO2.0)</echo>      
+      <ant antfile="../../property-files/wombatrescue/build.xml" dir="../../property-files/wombatrescue" target="server-jar-kodo-jdo-meta">
+      </ant>
+    </target>    
+    
+    <target name="copy-unstable-jars">
+      <delete file="${staging.lib.dir}/wombat.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib-sdz/wombat.jar" todir="${staging.lib.dir}"/>
+      <delete file="${staging.lib.dir}/strandz.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib-sdz/strandz.jar" todir="${staging.lib.dir}"/>
+      <delete file="${staging.lib.dir}/wr-jdo-meta.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib/wr-jdo-meta.jar" todir="${staging.lib.dir}"/>
+    </target>
+    
+    <target name="copy-prod-file">
+      <delete file="${staging.classes.dir}/property-files/wombatrescue/${app-props.file}" quiet="true"/>
+      <exec executable="sh" os="Linux">
+        <arg value="put-version-info"/>
+        <arg value="${sdz.zone}/property-files/wombatrescue"/>
+        <arg value="wombat-prod.properties"/>
+      </exec>
+      <copy file="${sdz.zone}/property-files/wombatrescue/wombat-prod.properties" tofile="${staging.classes.dir}/property-files/wombatrescue/${app-props.file}"/>
+      <exec executable="sh" os="Linux">
+        <arg value="unput-version-info"/>
+        <arg value="${sdz.zone}/property-files/wombatrescue"/>
+        <arg value="wombat-prod.properties"/>
+      </exec>
+    </target>
+
+    <target name="copy-demo-file">
+      <delete file="${staging.classes.dir}/property-files/wombatrescue/${app-props.file}" quiet="true"/>
+      <exec executable="sh" os="Linux">
+        <arg value="put-version-info"/>
+        <arg value="${sdz.zone}/property-files/wombatrescue"/>
+        <arg value="wombat-demo.properties"/>
+      </exec>
+      <copy file="${sdz.zone}/property-files/wombatrescue/wombat-demo.properties" tofile="${staging.classes.dir}/property-files/wombatrescue/${app-props.file}"/>
+      <exec executable="sh" os="Linux">
+        <arg value="unput-version-info"/>
+        <arg value="${sdz.zone}/property-files/wombatrescue"/>
+        <arg value="wombat-demo.properties"/>
+      </exec>
+    </target>
+    
+    <target name="make-jarfile">
+      <ant inheritAll="false" antfile="../../bin/jarTeresaSpring.xml"/>
+      <delete file="${staging.lib.dir}/teresaSpring.jar" quiet="true"/>
+      <copy file="${sdz.zone}/lib-sdz/teresaSpring.jar" todir="${staging.lib.dir}"/>
+    </target>    
+    
+    <target name="env-sensitive-reload">
+      <ant antfile="../reload.xml">
+        <property name="current.app" value="${name}"/>
+      </ant>
+    </target>    
+    
+    <target name="deploy-remote-service">
+      <ant inheritAll="false" antfile="../../remoteservice/teresa/build.xml"/>
+    </target>
+    
+    <target name="deploy-webstart">
+      <ant inheritAll="false" antfile="../../webstart/wombatrescue/build.xml" dir="../../webstart/wombatrescue" target="build-prod-war"/>
+      <echo>Now copy across from in-out to TOMCAT</echo> 
+      <delete quiet="true" dir="${deploy.path}/teresa"/>      
+      <delete file="${deploy.path}/teresa.war" quiet="true"/>
+      <copy file="${sdz.zone}/in-out/teresa.war" todir="${deploy.path}"/>
+    </target>
+
+    <target name="deploy" depends="copy-stable-jars, jar-unstables, copy-unstable-jars, copy-demo-file, make-jarfile, delete-target, copy-across, deploy-remote-service, env-sensitive-reload">
+    </target>
+    <!--  env-sensitive-reload, - one before last - took off because stopped working -->
+    <target name="server-deploy" depends="copy-stable-jars, server-jar-unstables, copy-unstable-jars, copy-prod-file, make-jarfile, delete-target, copy-across, deploy-remote-service, deploy-webstart">
+    </target>
+
+    <target name="copy-across" description="Deploy application">
+        <copy todir="${deploy.path}/${name}" preservelastmodified="true">
+            <fileset dir="${web.dir}">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+    </target>
+
+<!-- ============================================================== -->
+<!-- Tomcat tasks - remove these if you don't have Tomcat installed -->
+<!-- ============================================================== -->
+
+    <taskdef name="install" classname="org.apache.catalina.ant.InstallTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="list" classname="org.apache.catalina.ant.ListTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="start" classname="org.apache.catalina.ant.StartTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="stop" classname="org.apache.catalina.ant.StopTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="install" description="Install application in Tomcat">
+        <install url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"
+                 war="${name}"/>
+    </target>
+
+    <target name="reload" description="Reload application in Tomcat">
+        <reload url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"/>
+    </target>
+
+    <target name="start" description="Start Tomcat application">
+        <start url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"/>
+    </target>
+
+    <target name="stop" description="Stop Tomcat application">
+        <stop url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"/>
+    </target>
+
+    <target name="list" description="List Tomcat applications">
+        <list url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"/>
+    </target>
+
+<!-- End Tomcat tasks -->
+
+</project>

@@ -1,0 +1,47 @@
+commit files on client
+extract-sdz.sh
+extract-src.sh
+(above two now done automatically)
+pre-deploy.sh (does compile.sh and _site-deploy.sh)
+#
+# Now we will have .zip files in $SDZ/in-out that we wish to
+# test without releasing them to sf.
+# To do this make sure last 3 lines of sf.sh are commented out
+# before using it to 'locally deploy' the bundle you want to test
+# You can use all-sf.sh for either
+#
+cd $SDZ/in-out
+#
+sf.sh rosterAppSource #all-sf.sh does
+sf.sh rosterAppJars #all-sf.sh does
+#
+# Alter the html of downloads.html on desktop and deploy it
+# Go to the strandz web site, download and test
+# If all goes ok and want to deploy memory app as well uncomment lines in all-sf.sh and run it
+sf.sh basicTheory #all-sf.sh does
+sf.sh cayenneRemoteService #all-sf.sh does
+
+# ,and this one that remember goes to a different sf package
+sf.sh strandzSource #all-sf.sh does
+# Go to sf and do the release (but don't delete the old files yet)
+# Update html files on desktop to the new revision number and deploy them
+# Go to sf and delete the old files (anytime)
+
+So (quicker, for testing):
+* commit, wait for errors
+* pre-deploy
+* comments in sf.sh so goes locally on just Linode
+* all-sf.sh to create zip files using sf.sh
+* test memory app
+* if required alter site pages to pick up from Linode (rather than sf) - see download page 
+* and use latest svn version (WinGrep)
+* stream it across using Action and $BIN d-si
+* test site
+
+Then when ready:
+* comments out from sf.sh so goes to sourceforge
+* all-sf.sh
+* go to sf and do the release
+* alter site downloads page so not from Linode (only from sf), stream it across
+
+

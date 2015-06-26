@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+  <!-- Resolves ${...} placeholders from client.properties -->
+  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="location"><value>teresa/spring/clientforremote.properties</value></property>
+  </bean>
+          
+  <!-- Spring's HTTP invoker uses Java serialization via HTTP  -->
+  <bean id="userDetailsService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    <property name="serviceInterface">
+      <value>org.strandz.lgpl.util.UserDetailsServiceI</value>
+    </property>
+    <property name="serviceUrl">
+      <value>http://${serverName}:${httpPort}${contextPath}/userDetails</value>
+    </property>
+    <property name="httpInvokerRequestExecutor">
+      <ref local="httpInvokerRequestExecutor"/>
+    </property>
+  </bean>
+  
+  <!-- Spring's HTTP invoker uses Java serialization via HTTP  -->
+  <bean id="rosterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    <property name="serviceInterface">
+      <value>org.strandz.data.wombatrescue.business.RosterServiceI</value>
+    </property>
+    <property name="serviceUrl">
+      <value>http://${serverName}:${httpPort}${contextPath}/rosterService</value>
+    </property>
+    <property name="httpInvokerRequestExecutor">
+      <ref local="httpInvokerRequestExecutor"/>
+    </property>
+  </bean>
+  
+  <bean id="uploadRosterService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+    <property name="serviceInterface">
+      <value>org.strandz.data.wombatrescue.business.UploadRosterServiceI</value>
+    </property>
+    <property name="serviceUrl">
+      <value>http://${serverName}:${httpPort}${contextPath}/uploadRosterService</value>
+    </property>
+    <property name="httpInvokerRequestExecutor">
+      <ref local="httpInvokerRequestExecutor"/>
+    </property>
+  </bean>
+    
+  <!-- Automatically propagates ContextHolder-managed Authentication principal
+       and credentials to a HTTP invoker BASIC authentication header -->
+  <bean id="httpInvokerRequestExecutor" class="org.springframework.security.remoting.httpinvoker.AuthenticationSimpleHttpInvokerRequestExecutor"/>  
+ 
+</beans>

@@ -1,0 +1,2740 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_07" class="java.beans.XMLDecoder"> 
+ <object class="org.strandz.core.applichousing.SdzBag"> 
+  <void property="name"> 
+   <string>TheRoster</string> 
+  </void> 
+  <void property="nodes"> 
+   <array class="org.strandz.core.interf.Node" length="5"> 
+    <void index="0"> 
+     <object id="Node0" class="org.strandz.core.interf.Node"> 
+      <void property="cascadeDelete"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="cell"> 
+       <object id="Cell0" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>month</string> 
+           </void> 
+           <void property="name"> 
+            <string>rosterMonth month</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.CollectionLinkAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>nights</string> 
+           </void> 
+           <void property="independent"> 
+            <object id="Independent0" class="org.strandz.core.domain.Independent"> 
+             <void property="masterNode"> 
+              <object idref="Node0"/> 
+             </void> 
+             <void property="masterOrDetailField"> 
+              <string>nights</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>rosterMonth nights</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>particularShiftsHolder</string> 
+           </void> 
+           <void property="name"> 
+            <string>rosterMonth particularShiftsHolder</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>year</string> 
+           </void> 
+           <void property="enabled"> 
+            <boolean>false</boolean> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField0" class="javax.swing.JTextField"> 
+             <void property="background"> 
+              <object id="ColorUIResource0" class="javax.swing.plaf.ColorUIResource"> 
+               <int>235</int> 
+               <int>235</int> 
+               <int>228</int> 
+              </object> 
+             </void> 
+             <void property="editable"> 
+              <boolean>false</boolean> 
+             </void> 
+             <void property="name"> 
+              <string>tfYear</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>rosterMonth year</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.CollectionLinkAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>clashes</string> 
+           </void> 
+           <void property="independent"> 
+            <object id="Independent1" class="org.strandz.core.domain.Independent"> 
+             <void property="masterNode"> 
+              <object idref="Node0"/> 
+             </void> 
+             <void property="masterOrDetailField"> 
+              <string>clashes</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>clashes</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.CollectionLinkAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>failedNights</string> 
+           </void> 
+           <void property="independent"> 
+            <object id="Independent2" class="org.strandz.core.domain.Independent"> 
+             <void property="masterNode"> 
+              <object idref="Node0"/> 
+             </void> 
+             <void property="masterOrDetailField"> 
+              <string>failedNights</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>rosterMonth failedNights</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.CollectionLinkAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>unrosteredAvailableWorkers</string> 
+           </void> 
+           <void property="independent"> 
+            <object id="Independent3" class="org.strandz.core.domain.Independent"> 
+             <void property="masterNode"> 
+              <object idref="Node0"/> 
+             </void> 
+             <void property="masterOrDetailField"> 
+              <string>unrosteredAvailableWorkers</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>unrosteredAvailableWorkers</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="1"> 
+          <void index="0"> 
+           <object id="Cell1" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="enabled"> 
+                <boolean>false</boolean> 
+               </void> 
+               <void property="item"> 
+                <object id="JTextField1" class="javax.swing.JTextField"> 
+                 <void property="background"> 
+                  <object idref="ColorUIResource0"/> 
+                 </void> 
+                 <void property="editable"> 
+                  <boolean>false</boolean> 
+                 </void> 
+                 <void property="name"> 
+                  <string>tfMonth</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>monthInYear name</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>ordinal</string> 
+               </void> 
+               <void property="name"> 
+                <string>monthInYear ordinal</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="name"> 
+                <string>monthInYear pkId</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray0" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray0"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.lgpl.data.objects.MonthInYearI</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>month Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>month</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.wombatrescue.calculated.RosterMonth</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>RosterMonth Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="commitReload"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="editInsertsBeforeCommit"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="focusCausesNodeChange"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void id="IndependentArray0" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray0"/> 
+      </void> 
+      <void property="insert"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="name"> 
+       <string>RosterMonth Node</string> 
+      </void> 
+      <void property="next"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="previous"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="remove"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="update"> 
+       <boolean>false</boolean> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="1"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell2" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.TableAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell2"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>formattedDate</string> 
+           </void> 
+           <void property="enabled"> 
+            <boolean>false</boolean> 
+           </void> 
+           <void property="name"> 
+            <string>night formattedDate</string> 
+           </void> 
+           <void property="ordinal"> 
+            <int>1</int> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="6"> 
+          <void index="0"> 
+           <object id="Cell3" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>first evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell4" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell4"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>first evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>2</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray1" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray1"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>first evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>firstEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>firstEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="1"> 
+           <object id="Cell5" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell5"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>second evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell6" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell6"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>second evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>3</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray2" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray2"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>second evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>secondEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>secondEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="2"> 
+           <object id="Cell7" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell7"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>third evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell8" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell8"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>third evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>4</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray3" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray3"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>third evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>thirdEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>thirdEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="3"> 
+           <object id="Cell9" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell9"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>first overnight particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell10" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell10"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>first overnight worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>5</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray4" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray4"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>first overnight worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>firstOvernight Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>firstOvernight</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="4"> 
+           <object id="Cell11" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>second overnight particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell12" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell12"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>second overnight worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>6</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray5" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray5"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>second overnight worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>secondOvernight Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>secondOvernight</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="5"> 
+           <object id="Cell13" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.TableAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell13"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="enabled"> 
+                <boolean>false</boolean> 
+               </void> 
+               <void property="name"> 
+                <string>weekInMonth pkId</string> 
+               </void> 
+               <void property="ordinal"> 
+                <int>0</int> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray6" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray6"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WeekInMonth</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>weekInMonth Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>weekInMonth</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.wombatrescue.calculated.Night</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>nights List Detail Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="independents"> 
+       <array class="org.strandz.core.domain.Independent" length="1"> 
+        <void index="0"> 
+         <object idref="Independent0"/> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="name"> 
+       <string>nights List Detail Node</string> 
+      </void> 
+      <void property="tableControl"> 
+       <object id="ComponentTableView0" class="org.strandz.lgpl.widgets.table.ComponentTableView"> 
+        <void property="background"> 
+         <object id="Color0" class="java.awt.Color"> 
+          <int>255</int> 
+          <int>255</int> 
+          <int>255</int> 
+          <int>255</int> 
+         </object> 
+        </void> 
+        <void property="cellComponentCreator"> 
+         <object class="org.strandz.view.wombatrescue.NightsCellComponentCreator"/> 
+        </void> 
+        <void property="columnWidthsInformer"> 
+         <object class="org.strandz.view.wombatrescue.NightsColumnWidthsInformer"/> 
+        </void> 
+        <void property="name"> 
+         <string>NightsComponentTable</string> 
+        </void> 
+        <void property="readOnly"> 
+         <boolean>true</boolean> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="2"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell14" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>firstEvening</string> 
+           </void> 
+           <void property="name"> 
+            <string>clash firstEvening</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>firstOvernight</string> 
+           </void> 
+           <void property="name"> 
+            <string>clash firstOvernight</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.TableAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>formattedDate</string> 
+           </void> 
+           <void property="enabled"> 
+            <boolean>false</boolean> 
+           </void> 
+           <void property="name"> 
+            <string>clash formattedDate</string> 
+           </void> 
+           <void property="ordinal"> 
+            <int>1</int> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>secondEvening</string> 
+           </void> 
+           <void property="name"> 
+            <string>clash secondEvening</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>secondOvernight</string> 
+           </void> 
+           <void property="name"> 
+            <string>clash secondOvernight</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>thirdEvening</string> 
+           </void> 
+           <void property="name"> 
+            <string>clash thirdEvening</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.NonVisualTableAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>toReason</string> 
+           </void> 
+           <void property="name"> 
+            <string>clash toReason</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.NonVisualTableAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>toSentence</string> 
+           </void> 
+           <void property="name"> 
+            <string>clash toSentence</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell14"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>weekInMonth</string> 
+           </void> 
+           <void property="name"> 
+            <string>weekInMonth</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="6"> 
+          <void index="0"> 
+           <object id="Cell15" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell15"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>clashes first evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell16" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell16"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>clashes first evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>2</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray7" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray7"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>clashes first evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>clashes firstEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>firstEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="1"> 
+           <object id="Cell17" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell17"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>clashes first overnight particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell18" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell18"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>clashes first overnight worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>5</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray8" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray8"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>clashes first overnight worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>clashes firstOvernight Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>firstOvernight</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="2"> 
+           <object id="Cell19" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell19"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>clashes second evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell20" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell20"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>clashes second evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>3</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray9" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray9"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>clashes second evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>clashes secondEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>secondEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="3"> 
+           <object id="Cell21" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell21"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>clashes second overnight particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell22" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell22"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>clashes second overnight worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>6</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray10" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray10"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>clashes second overnight worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>clashes secondOvernight Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>secondOvernight</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="4"> 
+           <object id="Cell23" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell23"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>clashes third evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell24" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell24"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>clashes third evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>4</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray11" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray11"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>clashes third evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>clashes thirdEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>thirdEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="5"> 
+           <object id="Cell25" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.TableAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell25"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="enabled"> 
+                <boolean>false</boolean> 
+               </void> 
+               <void property="name"> 
+                <string>clash weekInMonth pkId</string> 
+               </void> 
+               <void property="ordinal"> 
+                <int>0</int> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray12" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray12"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WeekInMonth</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>clash weekInMonth Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>weekInMonth</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.wombatrescue.calculated.Clash</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>clashes Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="independents"> 
+       <array class="org.strandz.core.domain.Independent" length="1"> 
+        <void index="0"> 
+         <object idref="Independent1"/> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="name"> 
+       <string>clashes List Detail Node</string> 
+      </void> 
+      <void property="tableControl"> 
+       <object id="ComponentTableView1" class="org.strandz.lgpl.widgets.table.ComponentTableView"> 
+        <void property="background"> 
+         <object idref="Color0"/> 
+        </void> 
+        <void property="cellComponentCreator"> 
+         <object class="org.strandz.view.wombatrescue.ClashesCellComponentCreator"/> 
+        </void> 
+        <void property="columnWidthsInformer"> 
+         <object class="org.strandz.view.wombatrescue.NightsColumnWidthsInformer"/> 
+        </void> 
+        <void property="name"> 
+         <string>ClashesComponentTable</string> 
+        </void> 
+        <void property="readOnly"> 
+         <boolean>true</boolean> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="3"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell26" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>dayInWeek</string> 
+           </void> 
+           <void property="name"> 
+            <string>night dayInWeek</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>firstEvening</string> 
+           </void> 
+           <void property="name"> 
+            <string>night firstEvening</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>firstOvernight</string> 
+           </void> 
+           <void property="name"> 
+            <string>night firstOvernight</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.TableAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>formattedDate</string> 
+           </void> 
+           <void property="enabled"> 
+            <boolean>false</boolean> 
+           </void> 
+           <void property="name"> 
+            <string>failed night formattedDate</string> 
+           </void> 
+           <void property="ordinal"> 
+            <int>1</int> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>month</string> 
+           </void> 
+           <void property="name"> 
+            <string>night month</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>notComplete</string> 
+           </void> 
+           <void property="name"> 
+            <string>night notComplete</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>notFullyComplete</string> 
+           </void> 
+           <void property="name"> 
+            <string>night notFullyComplete</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>particularShift</string> 
+           </void> 
+           <void property="name"> 
+            <string>night particularShift</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>secondEvening</string> 
+           </void> 
+           <void property="name"> 
+            <string>night secondEvening</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>secondOvernight</string> 
+           </void> 
+           <void property="name"> 
+            <string>night secondOvernight</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>shiftDate</string> 
+           </void> 
+           <void property="name"> 
+            <string>night shiftDate</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>thirdEvening</string> 
+           </void> 
+           <void property="name"> 
+            <string>night thirdEvening</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>weekInMonth</string> 
+           </void> 
+           <void property="name"> 
+            <string>night weekInMonth</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell26"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>year</string> 
+           </void> 
+           <void property="name"> 
+            <string>night year</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="6"> 
+          <void index="0"> 
+           <object id="Cell27" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell27"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>failedNights first evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell28" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell28"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>failedNights first evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>2</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray13" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray13"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>failedNights first evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>failedNights firstEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>firstEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="1"> 
+           <object id="Cell29" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell29"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>failedNights second evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell30" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell30"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>failedNights second evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>3</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray14" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray14"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>failedNights second evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>failedNights secondEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>secondEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="2"> 
+           <object id="Cell31" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell31"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>failed nights third evening particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell32" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell32"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>failed nights third evening worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>4</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray15" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray15"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>failed nights third evening worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>failed nights thirdEvening Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>thirdEvening</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="3"> 
+           <object id="Cell33" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell33"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>failed nights first overnight particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell34" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell34"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>failed nights first overnight worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>5</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray16" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray16"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>failed nights first overnight worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>failed nights firstOvernight Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>firstOvernight</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="4"> 
+           <object id="Cell35" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell35"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>worker</string> 
+               </void> 
+               <void property="name"> 
+                <string>failed nights second overnight particularShift worker</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell36" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.TableAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell36"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>toShort</string> 
+                   </void> 
+                   <void property="enabled"> 
+                    <boolean>false</boolean> 
+                   </void> 
+                   <void property="name"> 
+                    <string>failed nights second overnight worker toShort</string> 
+                   </void> 
+                   <void property="ordinal"> 
+                    <int>6</int> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray17" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray17"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>failed nights second overnight worker Lookup Cell</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>worker</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.calculated.ParticularShift</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>failed nights secondOvernight Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>secondOvernight</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="5"> 
+           <object id="Cell37" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.TableAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell37"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="enabled"> 
+                <boolean>false</boolean> 
+               </void> 
+               <void property="name"> 
+                <string>failed night weekInMonth pkId</string> 
+               </void> 
+               <void property="ordinal"> 
+                <int>0</int> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray18" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray18"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.wombatrescue.objects.WeekInMonth</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>failed night weekInMonth Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>weekInMonth</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.wombatrescue.calculated.Night</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>failedNights Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="independents"> 
+       <array class="org.strandz.core.domain.Independent" length="1"> 
+        <void index="0"> 
+         <object idref="Independent2"/> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="name"> 
+       <string>failedNights List Detail Node</string> 
+      </void> 
+      <void property="tableControl"> 
+       <object id="ComponentTableView2" class="org.strandz.lgpl.widgets.table.ComponentTableView"> 
+        <void property="background"> 
+         <object idref="Color0"/> 
+        </void> 
+        <void property="cellComponentCreator"> 
+         <object class="org.strandz.view.wombatrescue.NightsCellComponentCreator"/> 
+        </void> 
+        <void property="columnWidthsInformer"> 
+         <object class="org.strandz.view.wombatrescue.NightsColumnWidthsInformer"/> 
+        </void> 
+        <void property="name"> 
+         <string>UnfilledNightsComponentTable</string> 
+        </void> 
+        <void property="readOnly"> 
+         <boolean>true</boolean> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="4"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell38" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.TableAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell38"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>toShort</string> 
+           </void> 
+           <void property="enabled"> 
+            <boolean>false</boolean> 
+           </void> 
+           <void property="name"> 
+            <string>worker toShort</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void id="CellArray19" property="cells"/> 
+        <void property="cells"> 
+         <object idref="CellArray19"/> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.wombatrescue.objects.WorkerI</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>unrosteredAvailableWorkers Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="independents"> 
+       <array class="org.strandz.core.domain.Independent" length="1"> 
+        <void index="0"> 
+         <object idref="Independent3"/> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="name"> 
+       <string>unrosteredAvailableWorkers List Detail Node</string> 
+      </void> 
+      <void property="tableControl"> 
+       <object id="ComponentTableView3" class="org.strandz.lgpl.widgets.table.ComponentTableView"> 
+        <void property="background"> 
+         <object idref="Color0"/> 
+        </void> 
+        <void property="cellComponentCreator"> 
+         <object class="org.strandz.view.wombatrescue.WorkersCellComponentCreator"/> 
+        </void> 
+        <void property="columnWidthsInformer"> 
+         <object class="org.strandz.view.wombatrescue.WorkersColumnWidthsInformer"/> 
+        </void> 
+        <void property="name"> 
+         <string>UnrosteredComponentTable</string> 
+        </void> 
+        <void property="readOnly"> 
+         <boolean>true</boolean> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="panes"> 
+   <array class="javax.swing.JComponent" length="1"> 
+    <void index="0"> 
+     <object class="org.strandz.view.wombatrescue.RosterTablePanel"> 
+      <void method="add"> 
+       <object id="MonthYearPanel0" class="org.strandz.view.wombatrescue.MonthYearPanel"> 
+        <void method="add"> 
+         <object id="JLabel0" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>Month</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JTextField1"/> 
+        </void> 
+        <void method="add"> 
+         <object id="JLabel1" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>Year</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JTextField0"/> 
+        </void> 
+        <void method="add"> 
+         <object id="JButton0" class="javax.swing.JButton"> 
+          <string>Copy to Clipboard and Upload</string> 
+          <void property="name"> 
+           <string>bUpload</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="BUpload"> 
+         <object idref="JButton0"/> 
+        </void> 
+        <void property="layout"> 
+         <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+          <void property="column"> 
+           <array class="double" length="12"> 
+            <void index="0"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>0.1</double> 
+            </void> 
+            <void index="2"> 
+             <double>5.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>0.15</double> 
+            </void> 
+            <void index="4"> 
+             <double>5.0</double> 
+            </void> 
+            <void index="5"> 
+             <double>0.1</double> 
+            </void> 
+            <void index="6"> 
+             <double>5.0</double> 
+            </void> 
+            <void index="7"> 
+             <double>0.15</double> 
+            </void> 
+            <void index="8"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="9"> 
+             <double>200.0</double> 
+            </void> 
+            <void index="10"> 
+             <double>0.05</double> 
+            </void> 
+            <void index="11"> 
+             <double>15.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void property="row"> 
+           <array class="double" length="5"> 
+            <void index="0"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="2"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="4"> 
+             <double>-1.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JTextField1"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>3</int> 
+            <int>2</int> 
+            <int>3</int> 
+            <int>2</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel1"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>5</int> 
+            <int>2</int> 
+            <int>5</int> 
+            <int>2</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JTextField0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>7</int> 
+            <int>2</int> 
+            <int>7</int> 
+            <int>2</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JButton0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>9</int> 
+            <int>2</int> 
+            <int>9</int> 
+            <int>2</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>MonthYearPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="NightsTablePanel0" class="org.strandz.view.wombatrescue.NightsTablePanel"> 
+        <void property="background"> 
+         <object idref="Color0"/> 
+        </void> 
+        <void method="add"> 
+         <object id="WhiteBgScrollPane0" class="org.strandz.lgpl.widgets.WhiteBgScrollPane"> 
+          <void property="background"> 
+           <object idref="Color0"/> 
+          </void> 
+          <void property="border"> 
+           <object class="javax.swing.border.BevelBorder"> 
+            <int>1</int> 
+            <null/> 
+            <null/> 
+            <null/> 
+            <null/> 
+           </object> 
+          </void> 
+          <void property="viewport"> 
+           <void method="add"> 
+            <object class="org.strandz.lgpl.view.ScrollPanel"> 
+             <void property="background"> 
+              <object idref="Color0"/> 
+             </void> 
+             <void method="add"> 
+              <object id="LargeBlueWhiteBgLabel0" class="org.strandz.lgpl.widgets.LargeBlueWhiteBgLabel"> 
+               <void property="name"> 
+                <string>lRoster</string> 
+               </void> 
+               <void property="text"> 
+                <string>Roster</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object idref="ComponentTableView0"/> 
+             </void> 
+             <void method="add"> 
+              <object id="LargeBlueWhiteBgLabel1" class="org.strandz.lgpl.widgets.LargeBlueWhiteBgLabel"> 
+               <void property="name"> 
+                <string>lClashedNights</string> 
+               </void> 
+               <void property="text"> 
+                <string>Clashed Nights</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object idref="ComponentTableView1"/> 
+             </void> 
+             <void method="add"> 
+              <object id="LargeBlueWhiteBgLabel2" class="org.strandz.lgpl.widgets.LargeBlueWhiteBgLabel"> 
+               <void property="name"> 
+                <string>lUnfilledNights</string> 
+               </void> 
+               <void property="text"> 
+                <string>Unfilled Nights</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object idref="ComponentTableView2"/> 
+             </void> 
+             <void method="add"> 
+              <object id="LargeBlueWhiteBgLabel3" class="org.strandz.lgpl.widgets.LargeBlueWhiteBgLabel"> 
+               <void property="name"> 
+                <string>lUnrosteredWorkers</string> 
+               </void> 
+               <void property="text"> 
+                <string>Unrostered Workers</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object idref="ComponentTableView3"/> 
+             </void> 
+             <void property="layout"> 
+              <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+               <void property="column"> 
+                <array class="double" length="1"> 
+                 <void index="0"> 
+                  <double>-1.0</double> 
+                 </void> 
+                </array> 
+               </void> 
+               <void property="row"> 
+                <array class="double" length="8"> 
+                 <void index="0"> 
+                  <double>-2.0</double> 
+                 </void> 
+                 <void index="1"> 
+                  <double>-2.0</double> 
+                 </void> 
+                 <void index="2"> 
+                  <double>-2.0</double> 
+                 </void> 
+                 <void index="3"> 
+                  <double>-2.0</double> 
+                 </void> 
+                 <void index="4"> 
+                  <double>-2.0</double> 
+                 </void> 
+                 <void index="5"> 
+                  <double>-2.0</double> 
+                 </void> 
+                 <void index="6"> 
+                  <double>-2.0</double> 
+                 </void> 
+                 <void index="7"> 
+                  <double>-2.0</double> 
+                 </void> 
+                </array> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="LargeBlueWhiteBgLabel0"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>0</int> 
+                 <int>0</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="ComponentTableView0"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>1</int> 
+                 <int>0</int> 
+                 <int>1</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="LargeBlueWhiteBgLabel1"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>0</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="ComponentTableView1"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>3</int> 
+                 <int>0</int> 
+                 <int>3</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="LargeBlueWhiteBgLabel2"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>4</int> 
+                 <int>0</int> 
+                 <int>4</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="ComponentTableView2"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>5</int> 
+                 <int>0</int> 
+                 <int>5</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="LargeBlueWhiteBgLabel3"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>6</int> 
+                 <int>0</int> 
+                 <int>6</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+               <void method="addLayoutComponent"> 
+                <object idref="ComponentTableView3"/> 
+                <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                 <int>0</int> 
+                 <int>7</int> 
+                 <int>0</int> 
+                 <int>7</int> 
+                 <int>2</int> 
+                 <int>2</int> 
+                </object> 
+               </void> 
+              </object> 
+             </void> 
+             <void property="name"> 
+              <string>ScrollPanel</string> 
+             </void> 
+            </object> 
+           </void> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="clashesComponentTable"> 
+         <object idref="ComponentTableView1"/> 
+        </void> 
+        <void property="layout"> 
+         <object class="java.awt.BorderLayout"> 
+          <void method="addLayoutComponent"> 
+           <object idref="WhiteBgScrollPane0"/> 
+           <string>Center</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>NightsTablePanel</string> 
+        </void> 
+        <void property="nightsComponentTable"> 
+         <object idref="ComponentTableView0"/> 
+        </void> 
+        <void property="unfilledNightsComponentTable"> 
+         <object idref="ComponentTableView2"/> 
+        </void> 
+        <void property="unrosteredComponentTable"> 
+         <object idref="ComponentTableView3"/> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="layout"> 
+       <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+        <void property="column"> 
+         <array class="double" length="1"> 
+          <void index="0"> 
+           <double>-1.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="row"> 
+         <array class="double" length="2"> 
+          <void index="0"> 
+           <double>-2.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>-1.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="MonthYearPanel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="NightsTablePanel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>0</int> 
+          <int>1</int> 
+          <int>0</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="monthYearPanel"> 
+       <object idref="MonthYearPanel0"/> 
+      </void> 
+      <void property="name"> 
+       <string>RosterTablePanel</string> 
+      </void> 
+      <void property="nightsTablePanel"> 
+       <object idref="NightsTablePanel0"/> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="physicalController"> 
+   <object class="org.strandz.core.applichousing.PictToolBarController"/> 
+  </void> 
+  <void property="statusBar"> 
+   <object class="org.strandz.core.applichousing.NodeStatusBar"/> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,2319 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_07" class="java.beans.XMLDecoder"> 
+ <object class="org.strandz.core.applichousing.SdzBag"> 
+  <void property="name"> 
+   <string>maintainSeason</string> 
+  </void> 
+  <void property="nodes"> 
+   <array class="org.strandz.core.interf.Node" length="3"> 
+    <void index="0"> 
+     <object id="Node0" class="org.strandz.core.interf.Node"> 
+      <void property="cascadeDelete"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="cell"> 
+       <object id="Cell0" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>dummy</string> 
+           </void> 
+           <void property="name"> 
+            <string>season dummy</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>endDate</string> 
+           </void> 
+           <void property="item"> 
+            <object id="MDateEntryField0" class="mseries.ui.MDateEntryField"> 
+             <void property="focusLostBehavior"> 
+              <int>0</int> 
+             </void> 
+             <void property="name"> 
+              <string>mdefEnd</string> 
+             </void> 
+             <void property="nullOnEmpty"> 
+              <boolean>true</boolean> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>season endDate</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.CollectionLinkAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>meets</string> 
+           </void> 
+           <void property="independent"> 
+            <object id="Independent0" class="org.strandz.core.domain.Independent"> 
+             <void property="masterNode"> 
+              <object idref="Node0"/> 
+             </void> 
+             <void property="masterOrDetailField"> 
+              <string>meets</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>season meets</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>startDate</string> 
+           </void> 
+           <void property="item"> 
+            <object id="MDateEntryField1" class="mseries.ui.MDateEntryField"> 
+             <void property="focusLostBehavior"> 
+              <int>0</int> 
+             </void> 
+             <void property="name"> 
+              <string>mdefStart</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>season startDate</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>seasonYear</string> 
+           </void> 
+           <void property="name"> 
+            <string>seasonYear</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="1"> 
+          <void index="0"> 
+           <object id="Cell1" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="item"> 
+                <object id="ROJLabel0" class="org.strandz.lgpl.widgets.ROJLabel"> 
+                 <void property="name"> 
+                  <string>lYear</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>seasonYear Name One</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="name"> 
+                <string>seasonYear pkId</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray0" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray0"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.SeasonYear</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>seasonYear Lookup Cell One</string> 
+            </void> 
+            <void property="refField"> 
+             <string>seasonYear</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.supersix.objects.CompetitionSeason</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>Season Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="editInsertsBeforeCommit"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="executeQuery"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="focusCausesNodeChange"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void id="IndependentArray0" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray0"/> 
+      </void> 
+      <void property="insert"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="name"> 
+       <string>Season Node</string> 
+      </void> 
+      <void property="next"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="previous"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="remove"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="title"> 
+       <string>Current Season</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="1"> 
+     <object id="Node1" class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell2" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell2"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>date</string> 
+           </void> 
+           <void property="item"> 
+            <object id="MDateEntryField2" class="mseries.ui.MDateEntryField"> 
+             <void property="focusLostBehavior"> 
+              <int>0</int> 
+             </void> 
+             <void property="name"> 
+              <string>mdefDate</string> 
+             </void> 
+             <void property="nullOnEmpty"> 
+              <boolean>true</boolean> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>meet date</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell2"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>dummy</string> 
+           </void> 
+           <void property="name"> 
+            <string>meet dummy</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.CollectionLinkAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell2"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>games</string> 
+           </void> 
+           <void property="independent"> 
+            <object id="Independent1" class="org.strandz.core.domain.Independent"> 
+             <void property="masterNode"> 
+              <object idref="Node1"/> 
+             </void> 
+             <void property="masterOrDetailField"> 
+              <string>games</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>meet games</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell2"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>ordinal</string> 
+           </void> 
+           <void property="item"> 
+            <object id="ROJLabel1" class="org.strandz.lgpl.widgets.ROJLabel"> 
+             <void property="name"> 
+              <string>lRound</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>meet Ordinal One</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell2"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>competitionSeason</string> 
+           </void> 
+           <void property="name"> 
+            <string>meet season</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="1"> 
+          <void index="0"> 
+           <object id="Cell3" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>dummy</string> 
+               </void> 
+               <void property="name"> 
+                <string>season dummy</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>endDate</string> 
+               </void> 
+               <void property="name"> 
+                <string>season endDate</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>meets</string> 
+               </void> 
+               <void property="name"> 
+                <string>season meets</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>nightPlayGames</string> 
+               </void> 
+               <void property="name"> 
+                <string>season nightPlayGames</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>seasonYear</string> 
+               </void> 
+               <void property="name"> 
+                <string>season seasonYear</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell3"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>startDate</string> 
+               </void> 
+               <void property="name"> 
+                <string>season startDate</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void property="cells"> 
+             <array class="org.strandz.core.interf.Cell" length="1"> 
+              <void index="0"> 
+               <object id="Cell4" class="org.strandz.core.interf.Cell"> 
+                <void property="attributes"> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.FieldAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell4"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>name</string> 
+                   </void> 
+                   <void property="item"> 
+                    <object id="ROJLabel2" class="org.strandz.lgpl.widgets.ROJLabel"> 
+                     <void property="name"> 
+                      <string>lSeason</string> 
+                     </void> 
+                    </object> 
+                   </void> 
+                   <void property="name"> 
+                    <string>seasonYear Name Two</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object class="org.strandz.core.interf.StemAttribute"> 
+                   <void property="cell"> 
+                    <object idref="Cell4"/> 
+                   </void> 
+                   <void property="DOField"> 
+                    <string>pkId</string> 
+                   </void> 
+                   <void property="name"> 
+                    <string>seasonYear pkId</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                </void> 
+                <void id="CellArray1" property="cells"/> 
+                <void property="cells"> 
+                 <object idref="CellArray1"/> 
+                </void> 
+                <void property="clazz"> 
+                 <object class="org.strandz.lgpl.util.Clazz"> 
+                  <void property="canFactory"> 
+                   <boolean>true</boolean> 
+                  </void> 
+                  <void property="classObject"> 
+                   <class>org.strandz.data.supersix.objects.SeasonYear</class> 
+                  </void> 
+                 </object> 
+                </void> 
+                <void property="name"> 
+                 <string>seasonYear Lookup Cell Two</string> 
+                </void> 
+                <void property="refField"> 
+                 <string>seasonYear</string> 
+                </void> 
+               </object> 
+              </void> 
+             </array> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.CompetitionSeason</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>season Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>competitionSeason</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.supersix.objects.Meet</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>meets Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="commitReload"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="independents"> 
+       <array class="org.strandz.core.domain.Independent" length="1"> 
+        <void index="0"> 
+         <object idref="Independent0"/> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="name"> 
+       <string>meets List Detail Node</string> 
+      </void> 
+      <void property="title"> 
+       <string>Rounds</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="2"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell5" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>division</string> 
+           </void> 
+           <void property="name"> 
+            <string>match division</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>dummy</string> 
+           </void> 
+           <void property="name"> 
+            <string>match dummy</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>kickOffTime</string> 
+           </void> 
+           <void property="name"> 
+            <string>match kickOffTime</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>meet</string> 
+           </void> 
+           <void property="name"> 
+            <string>match meet</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>pitch</string> 
+           </void> 
+           <void property="name"> 
+            <string>match pitch</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>teamOne</string> 
+           </void> 
+           <void property="name"> 
+            <string>match teamOne</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>teamOneGoals</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField0" class="javax.swing.JTextField"> 
+             <void property="background"> 
+              <object id="ColorUIResource0" class="javax.swing.plaf.ColorUIResource"> 
+               <int>235</int> 
+               <int>235</int> 
+               <int>228</int> 
+              </object> 
+             </void> 
+             <void property="editable"> 
+              <boolean>false</boolean> 
+             </void> 
+             <void property="name"> 
+              <string>tfTeamOneGoals</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>match teamOneGoals</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>teamTwo</string> 
+           </void> 
+           <void property="name"> 
+            <string>match teamTwo</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell5"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>teamTwoGoals</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField1" class="javax.swing.JTextField"> 
+             <void property="background"> 
+              <object idref="ColorUIResource0"/> 
+             </void> 
+             <void property="editable"> 
+              <boolean>false</boolean> 
+             </void> 
+             <void property="name"> 
+              <string>tfTeamTwoGoals</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>match teamTwoGoals</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="6"> 
+          <void index="0"> 
+           <object id="Cell6" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell6"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox0" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbDivision</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>division name</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell6"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="name"> 
+                <string>division pkId</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray2" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray2"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.Division</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>division Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>division</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="1"> 
+           <object id="Cell7" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell7"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox1" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbKickOffTime</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>kickOffTime name</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell7"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="name"> 
+                <string>kickOffTime pkId</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray3" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray3"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.KickOffTime</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>kickOffTime Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>kickOffTime</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="2"> 
+           <object id="Cell8" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell8"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>date</string> 
+               </void> 
+               <void property="name"> 
+                <string>meet date</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell8"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>dummy</string> 
+               </void> 
+               <void property="name"> 
+                <string>meet dummy</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell8"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>games</string> 
+               </void> 
+               <void property="name"> 
+                <string>meet games</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell8"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>ordinal</string> 
+               </void> 
+               <void property="item"> 
+                <object id="ROJLabel3" class="org.strandz.lgpl.widgets.ROJLabel"> 
+                 <void property="name"> 
+                  <string>lMeet</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>meet Ordinal Two</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell8"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>competitionSeason</string> 
+               </void> 
+               <void property="name"> 
+                <string>meet season</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray4" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray4"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.Meet</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>meet Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>meet</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="3"> 
+           <object id="Cell9" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell9"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox2" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbPitch</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>pitch name</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell9"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>pkId</string> 
+               </void> 
+               <void property="name"> 
+                <string>pitch pkId</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray5" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray5"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.Pitch</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>pitch Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>pitch</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="4"> 
+           <object id="Cell10" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>captain</string> 
+               </void> 
+               <void property="name"> 
+                <string>team captain</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>division</string> 
+               </void> 
+               <void property="name"> 
+                <string>team division</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>dummy</string> 
+               </void> 
+               <void property="name"> 
+                <string>team dummy</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="item"> 
+                <object id="DebugComboBox0" class="org.strandz.lgpl.widgets.DebugComboBox"> 
+                 <void property="name"> 
+                  <string>cbTeamOne</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>team Name One</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>paidForCurrentSeasonYear</string> 
+               </void> 
+               <void property="name"> 
+                <string>team paidForCurrentSeasonYear</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>players</string> 
+               </void> 
+               <void property="name"> 
+                <string>team players</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell10"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>slots</string> 
+               </void> 
+               <void property="name"> 
+                <string>team slots</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray6" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray6"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.TeamCompetitionSeason</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>teamOne Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>teamOne</string> 
+            </void> 
+           </object> 
+          </void> 
+          <void index="5"> 
+           <object id="Cell11" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>captain</string> 
+               </void> 
+               <void property="name"> 
+                <string>team captain</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>division</string> 
+               </void> 
+               <void property="name"> 
+                <string>team division</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>dummy</string> 
+               </void> 
+               <void property="name"> 
+                <string>team dummy</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="item"> 
+                <object id="JComboBox3" class="javax.swing.JComboBox"> 
+                 <void property="name"> 
+                  <string>cbTeamTwo</string> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>team Name Two</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>paidForCurrentSeasonYear</string> 
+               </void> 
+               <void property="name"> 
+                <string>team paidForCurrentSeasonYear</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>players</string> 
+               </void> 
+               <void property="name"> 
+                <string>team players</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell11"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>slots</string> 
+               </void> 
+               <void property="name"> 
+                <string>team slots</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray7" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray7"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>org.strandz.data.supersix.objects.TeamCompetitionSeason</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>teamTwo Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>teamTwo</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="canFactory"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="classObject"> 
+           <class>org.strandz.data.supersix.objects.Game</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>games Cell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="commitReload"> 
+       <boolean>false</boolean> 
+      </void> 
+      <void property="independents"> 
+       <array class="org.strandz.core.domain.Independent" length="1"> 
+        <void index="0"> 
+         <object idref="Independent1"/> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="name"> 
+       <string>games List Detail Node</string> 
+      </void> 
+      <void property="title"> 
+       <string>Games</string> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="panes"> 
+   <array class="javax.swing.JComponent" length="3"> 
+    <void index="0"> 
+     <object class="org.strandz.view.supersix.SeasonPanel"> 
+      <void method="add"> 
+       <object id="JLabel0" class="javax.swing.JLabel"> 
+        <void property="font"> 
+         <object class="java.awt.Font"> 
+          <string>Dialog</string> 
+          <int>1</int> 
+          <int>14</int> 
+         </object> 
+        </void> 
+        <void property="horizontalTextPosition"> 
+         <int>0</int> 
+        </void> 
+        <void property="opaque"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="text"> 
+         <string>CompetitionSeason</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel1" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Start</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="MDateEntryField1"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel2" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>End</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="MDateEntryField0"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel3" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Year</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="ROJLabel0"/> 
+      </void> 
+      <void property="LYear"> 
+       <object idref="ROJLabel0"/> 
+      </void> 
+      <void property="border"> 
+       <object class="javax.swing.border.BevelBorder"> 
+        <int>1</int> 
+        <null/> 
+        <null/> 
+        <null/> 
+        <null/> 
+       </object> 
+      </void> 
+      <void property="layout"> 
+       <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+        <void property="column"> 
+         <array class="double" length="10"> 
+          <void index="0"> 
+           <double>20.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>0.2</double> 
+          </void> 
+          <void index="2"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>0.3</double> 
+          </void> 
+          <void index="4"> 
+           <double>7.0</double> 
+          </void> 
+          <void index="5"> 
+           <double>0.2</double> 
+          </void> 
+          <void index="6"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="7"> 
+           <double>0.3</double> 
+          </void> 
+          <void index="8"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="9"> 
+           <double>20.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="row"> 
+         <array class="double" length="14"> 
+          <void index="0"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="2"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="4"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="5"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="6"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="7"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="8"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="9"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="10"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="11"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="12"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="13"> 
+           <double>-1.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel1"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="MDateEntryField1"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel2"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>5</int> 
+          <int>1</int> 
+          <int>5</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="MDateEntryField0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>5</int> 
+          <int>3</int> 
+          <int>5</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel3"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>7</int> 
+          <int>1</int> 
+          <int>7</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="ROJLabel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>7</int> 
+          <int>3</int> 
+          <int>7</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="mdefEnd"> 
+       <object idref="MDateEntryField0"/> 
+      </void> 
+      <void property="mdefStart"> 
+       <object idref="MDateEntryField1"/> 
+      </void> 
+      <void property="name"> 
+       <string>SeasonPanel</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="1"> 
+     <object class="org.strandz.view.supersix.MeetPanel"> 
+      <void method="add"> 
+       <object id="JLabel4" class="javax.swing.JLabel"> 
+        <void property="font"> 
+         <object id="Font0" class="java.awt.Font"> 
+          <string>Dialog</string> 
+          <int>1</int> 
+          <int>14</int> 
+         </object> 
+        </void> 
+        <void property="horizontalTextPosition"> 
+         <int>0</int> 
+        </void> 
+        <void property="opaque"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="text"> 
+         <string>Round</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel5" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Round</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="ROJLabel1"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel6" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Date</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="MDateEntryField2"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel7" class="javax.swing.JLabel"> 
+        <void property="horizontalAlignment"> 
+         <int>11</int> 
+        </void> 
+        <void property="text"> 
+         <string>Global CompetitionSeason is </string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="ROJLabel2"/> 
+      </void> 
+      <void property="border"> 
+       <object class="javax.swing.border.BevelBorder"> 
+        <int>1</int> 
+        <null/> 
+        <null/> 
+        <null/> 
+        <null/> 
+       </object> 
+      </void> 
+      <void property="layout"> 
+       <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+        <void property="column"> 
+         <array class="double" length="10"> 
+          <void index="0"> 
+           <double>20.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>0.2</double> 
+          </void> 
+          <void index="2"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>0.3</double> 
+          </void> 
+          <void index="4"> 
+           <double>7.0</double> 
+          </void> 
+          <void index="5"> 
+           <double>0.2</double> 
+          </void> 
+          <void index="6"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="7"> 
+           <double>0.3</double> 
+          </void> 
+          <void index="8"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="9"> 
+           <double>20.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="row"> 
+         <array class="double" length="12"> 
+          <void index="0"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="2"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="4"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="5"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="6"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="7"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="8"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="9"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="10"> 
+           <double>2.0</double> 
+          </void> 
+          <void index="11"> 
+           <double>-1.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel4"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel5"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="ROJLabel1"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel6"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>5</int> 
+          <int>1</int> 
+          <int>5</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="MDateEntryField2"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>5</int> 
+          <int>3</int> 
+          <int>5</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel7"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>7</int> 
+          <int>1</int> 
+          <int>7</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="ROJLabel2"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>2</int> 
+          <int>7</int> 
+          <int>3</int> 
+          <int>7</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="name"> 
+       <string>MeetPanel</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="2"> 
+     <object class="org.strandz.view.supersix.MainMatchPanel"> 
+      <void method="add"> 
+       <object id="OtherMatchDetailsPanel0" class="org.strandz.view.supersix.OtherMatchDetailsPanel"> 
+        <void method="add"> 
+         <object id="JLabel8" class="javax.swing.JLabel"> 
+          <void property="font"> 
+           <object idref="Font0"/> 
+          </void> 
+          <void property="horizontalTextPosition"> 
+           <int>0</int> 
+          </void> 
+          <void property="opaque"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="text"> 
+           <string>Match Details</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object id="JLabel9" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>Division</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JComboBox0"/> 
+        </void> 
+        <void method="add"> 
+         <object id="JLabel10" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>Kick-Off Time</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JComboBox1"/> 
+        </void> 
+        <void method="add"> 
+         <object id="JLabel11" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>Pitch</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JComboBox2"/> 
+        </void> 
+        <void method="add"> 
+         <object id="JLabel12" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>Round</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="ROJLabel3"/> 
+        </void> 
+        <void method="add"> 
+         <object id="JLabel13" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>First Team</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="DebugComboBox0"/> 
+        </void> 
+        <void method="add"> 
+         <object id="JLabel14" class="javax.swing.JLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="text"> 
+           <string>Second Team</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JComboBox3"/> 
+        </void> 
+        <void property="border"> 
+         <object class="javax.swing.border.BevelBorder"> 
+          <int>1</int> 
+          <null/> 
+          <null/> 
+          <null/> 
+          <null/> 
+         </object> 
+        </void> 
+        <void property="cbDivision"> 
+         <object idref="JComboBox0"/> 
+        </void> 
+        <void property="cbTeamOne"> 
+         <object idref="DebugComboBox0"/> 
+        </void> 
+        <void property="cbTeamTwo"> 
+         <object idref="JComboBox3"/> 
+        </void> 
+        <void property="layout"> 
+         <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+          <void property="column"> 
+           <array class="double" length="10"> 
+            <void index="0"> 
+             <double>20.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>0.2</double> 
+            </void> 
+            <void index="2"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>0.3</double> 
+            </void> 
+            <void index="4"> 
+             <double>7.0</double> 
+            </void> 
+            <void index="5"> 
+             <double>0.2</double> 
+            </void> 
+            <void index="6"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="7"> 
+             <double>0.3</double> 
+            </void> 
+            <void index="8"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="9"> 
+             <double>20.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void property="row"> 
+           <array class="double" length="14"> 
+            <void index="0"> 
+             <double>20.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="2"> 
+             <double>2.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="4"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="5"> 
+             <double>2.0</double> 
+            </void> 
+            <void index="6"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="7"> 
+             <double>2.0</double> 
+            </void> 
+            <void index="8"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="9"> 
+             <double>2.0</double> 
+            </void> 
+            <void index="10"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="11"> 
+             <double>2.0</double> 
+            </void> 
+            <void index="12"> 
+             <double>20.0</double> 
+            </void> 
+            <void index="13"> 
+             <double>-1.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel8"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>1</int> 
+            <int>1</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel9"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>4</int> 
+            <int>1</int> 
+            <int>4</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JComboBox0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>3</int> 
+            <int>4</int> 
+            <int>3</int> 
+            <int>4</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel10"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>6</int> 
+            <int>1</int> 
+            <int>6</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JComboBox1"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>3</int> 
+            <int>6</int> 
+            <int>3</int> 
+            <int>6</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel11"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>8</int> 
+            <int>1</int> 
+            <int>8</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JComboBox2"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>3</int> 
+            <int>8</int> 
+            <int>3</int> 
+            <int>8</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel12"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>10</int> 
+            <int>1</int> 
+            <int>10</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="ROJLabel3"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>3</int> 
+            <int>10</int> 
+            <int>3</int> 
+            <int>10</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel13"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>5</int> 
+            <int>6</int> 
+            <int>5</int> 
+            <int>6</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="DebugComboBox0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>7</int> 
+            <int>6</int> 
+            <int>7</int> 
+            <int>6</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel14"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>5</int> 
+            <int>8</int> 
+            <int>5</int> 
+            <int>8</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JComboBox3"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>7</int> 
+            <int>8</int> 
+            <int>7</int> 
+            <int>8</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>OtherMatchDetailsPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="MatchResultPanel0" class="org.strandz.view.supersix.MatchResultPanel"> 
+        <void method="add"> 
+         <object id="JLabel15" class="javax.swing.JLabel"> 
+          <void property="font"> 
+           <object idref="Font0"/> 
+          </void> 
+          <void property="horizontalTextPosition"> 
+           <int>0</int> 
+          </void> 
+          <void property="opaque"> 
+           <boolean>true</boolean> 
+          </void> 
+          <void property="text"> 
+           <string>Score</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object id="ROJLabel4" class="org.strandz.lgpl.widgets.ROJLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="name"> 
+           <string>lTeamOne</string> 
+          </void> 
+          <void property="text"> 
+           <string>First Team</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JTextField0"/> 
+        </void> 
+        <void method="add"> 
+         <object id="ROJLabel5" class="org.strandz.lgpl.widgets.ROJLabel"> 
+          <void property="horizontalAlignment"> 
+           <int>11</int> 
+          </void> 
+          <void property="name"> 
+           <string>lTeamTwo</string> 
+          </void> 
+          <void property="text"> 
+           <string>Second Team</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object idref="JTextField1"/> 
+        </void> 
+        <void property="LTeamOne"> 
+         <object idref="ROJLabel4"/> 
+        </void> 
+        <void property="LTeamTwo"> 
+         <object idref="ROJLabel5"/> 
+        </void> 
+        <void property="border"> 
+         <object class="javax.swing.border.BevelBorder"> 
+          <int>1</int> 
+          <null/> 
+          <null/> 
+          <null/> 
+          <null/> 
+         </object> 
+        </void> 
+        <void property="layout"> 
+         <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+          <void property="column"> 
+           <array class="double" length="9"> 
+            <void index="0"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>0.35</double> 
+            </void> 
+            <void index="2"> 
+             <double>5.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>25.0</double> 
+            </void> 
+            <void index="4"> 
+             <double>5.0</double> 
+            </void> 
+            <void index="5"> 
+             <double>0.35</double> 
+            </void> 
+            <void index="6"> 
+             <double>5.0</double> 
+            </void> 
+            <void index="7"> 
+             <double>25.0</double> 
+            </void> 
+            <void index="8"> 
+             <double>15.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void property="row"> 
+           <array class="double" length="8"> 
+            <void index="0"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="2"> 
+             <double>2.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="4"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="5"> 
+             <double>2.0</double> 
+            </void> 
+            <void index="6"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="7"> 
+             <double>-1.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JLabel15"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>1</int> 
+            <int>1</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="ROJLabel4"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>1</int> 
+            <int>4</int> 
+            <int>1</int> 
+            <int>4</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JTextField0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>3</int> 
+            <int>4</int> 
+            <int>3</int> 
+            <int>4</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="ROJLabel5"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>5</int> 
+            <int>4</int> 
+            <int>5</int> 
+            <int>4</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JTextField1"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>7</int> 
+            <int>4</int> 
+            <int>7</int> 
+            <int>4</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>MatchResultPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="layout"> 
+       <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+        <void property="column"> 
+         <array class="double" length="1"> 
+          <void index="0"> 
+           <double>-1.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="row"> 
+         <array class="double" length="2"> 
+          <void index="0"> 
+           <double>0.7</double> 
+          </void> 
+          <void index="1"> 
+           <double>0.3</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="OtherMatchDetailsPanel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>0</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="MatchResultPanel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>0</int> 
+          <int>1</int> 
+          <int>0</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="matchResultPanel"> 
+       <object idref="MatchResultPanel0"/> 
+      </void> 
+      <void property="name"> 
+       <string>MainMatchPanel</string> 
+      </void> 
+      <void property="otherMatchDetailsPanel"> 
+       <object idref="OtherMatchDetailsPanel0"/> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="physicalController"> 
+   <object class="org.strandz.core.applichousing.PictToolBarController"/> 
+  </void> 
+  <void property="statusBar"> 
+   <object class="org.strandz.core.applichousing.NodeStatusBar"/> 
+  </void> 
+ </object> 
+</java> 

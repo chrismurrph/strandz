@@ -1,0 +1,13 @@
+<project name="jar_help" default="jar-help" basedir=".">
+
+<property name="jar.directory" value="../../../lib"/>
+<property name="ss-help.jar.file" value="${jar.directory}/ss-help.jar"/>
+
+<target name="jar-help">
+  <delete file="${ss-help.jar.file}" quiet="true"/>
+  <jar destfile="${ss-help.jar.file}">
+    <zipfileset dir="." includes="**/*" excludes="build.xml,SSProject.xml" />
+  </jar>
+</target>
+
+</project>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_10" class="java.beans.XMLDecoder"> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.StreetAddress"> 
+    <void property="postcode"> 
+     <string>5068</string> 
+    </void> 
+    <void property="state"> 
+     <string>SA</string> 
+    </void> 
+    <void property="street"> 
+     <string>1 Philip Avenue</string> 
+    </void> 
+    <void property="suburb"> 
+     <string>Leabrook</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.StreetAddress"> 
+    <void property="postcode"> 
+     <string>5000</string> 
+    </void> 
+    <void property="state"> 
+     <string>SA</string> 
+    </void> 
+    <void property="street"> 
+     <string>348 Angas Street</string> 
+    </void> 
+    <void property="suburb"> 
+     <string>Adelaide</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.StreetAddress"> 
+    <void property="postcode"> 
+     <string>2031</string> 
+    </void> 
+    <void property="state"> 
+     <string>NSW</string> 
+    </void> 
+    <void property="street"> 
+     <string>4/8 Roberts Avenue</string> 
+    </void> 
+    <void property="suburb"> 
+     <string>Randwick</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object id="StreetAddress0" class="org.strandz.data.fishbowl.objects.StreetAddress"> 
+    <void property="postcode"> 
+     <string>2037</string> 
+    </void> 
+    <void property="state"> 
+     <string>NSW</string> 
+    </void> 
+    <void property="street"> 
+     <string>1/2 Victoria Road</string> 
+    </void> 
+    <void property="suburb"> 
+     <string>Glebe</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object id="PostalAddress0" class="org.strandz.data.fishbowl.objects.PostalAddress"> 
+    <void property="postcode"> 
+     <string>2046</string> 
+    </void> 
+    <void property="state"> 
+     <string>NSW</string> 
+    </void> 
+    <void property="street"> 
+     <string>8/2 Bortfield Drive</string> 
+    </void> 
+    <void property="suburb"> 
+     <string>Chiswick</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object id="Client0" class="org.strandz.data.fishbowl.objects.Client"> 
+    <void property="companyName"> 
+     <string>Holly</string> 
+    </void> 
+    <void property="contacts"> 
+     <object class="java.util.ArrayList"> 
+      <void method="add"> 
+       <object class="org.strandz.data.fishbowl.objects.Contact"> 
+        <void property="person"> 
+         <string>Andrew Curnow</string> 
+        </void> 
+        <void property="title"> 
+         <string>NT Systems Administrator</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="description"> 
+     <string>A small fishing company</string> 
+    </void> 
+    <void property="email"> 
+     <string>andrewc@walker.com.au</string> 
+    </void> 
+    <void property="fax"> 
+     <string>02 3333 3333</string> 
+    </void> 
+    <void property="phone"> 
+     <string>02 3333 3333</string> 
+    </void> 
+    <void property="postalAddress"> 
+     <object idref="PostalAddress0"/> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Client"> 
+    <void property="companyName"> 
+     <string>Holly</string> 
+    </void> 
+    <void property="contacts"> 
+     <object class="java.util.ArrayList"> 
+      <void method="add"> 
+       <object class="org.strandz.data.fishbowl.objects.Contact"> 
+        <void property="person"> 
+         <string>Andrew Curnow</string> 
+        </void> 
+        <void property="title"> 
+         <string>NT Systems Administrator</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="description"> 
+     <string>A small fishing company</string> 
+    </void> 
+    <void property="email"> 
+     <string>andrewc@walker.com.au</string> 
+    </void> 
+    <void property="fax"> 
+     <string>02 3333 3333</string> 
+    </void> 
+    <void property="phone"> 
+     <string>02 3333 3333</string> 
+    </void> 
+    <void property="postalAddress"> 
+     <object class="org.strandz.data.fishbowl.objects.PostalAddress"> 
+      <void property="postcode"> 
+       <string>2046</string> 
+      </void> 
+      <void property="state"> 
+       <string>NSW</string> 
+      </void> 
+      <void property="street"> 
+       <string>8/2 Bortfield Drive</string> 
+      </void> 
+      <void property="suburb"> 
+       <string>Chiswick</string> 
+      </void> 
+     </object> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"/> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Job"> 
+    <void property="client"> 
+     <object id="Client1" class="org.strandz.data.fishbowl.objects.Client"/> 
+    </void> 
+    <void property="description"> 
+     <string>Dusting 1</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Job"> 
+    <void property="client"> 
+     <object idref="Client1"/> 
+    </void> 
+    <void property="description"> 
+     <string>Dusting 2</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Job"> 
+    <void property="client"> 
+     <object idref="Client0"/> 
+    </void> 
+    <void property="description"> 
+     <string>William</string> 
+    </void> 
+    <void property="endingInstructions"> 
+     <string>close the lid on the toilet once</string> 
+    </void> 
+    <void property="startingInstructions"> 
+     <string>open the lid on the toilet once</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Job"> 
+    <void property="client"> 
+     <object idref="Client0"/> 
+    </void> 
+    <void property="description"> 
+     <string>William</string> 
+    </void> 
+    <void property="endingInstructions"> 
+     <string>close the lid on the toilet once</string> 
+    </void> 
+    <void property="jobType"> 
+     <object id="JobType0" class="org.strandz.data.fishbowl.objects.JobType"> 
+      <void property="description"> 
+       <string>Blue collar</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="startingInstructions"> 
+     <string>open the lid on the toilet once</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Job"> 
+    <void property="client"> 
+     <object idref="Client0"/> 
+    </void> 
+    <void property="description"> 
+     <string>Give management advice</string> 
+    </void> 
+    <void property="endingInstructions"> 
+     <string>close the lid on the toilet twice</string> 
+    </void> 
+    <void property="jobType"> 
+     <object id="JobType1" class="org.strandz.data.fishbowl.objects.JobType"> 
+      <void property="description"> 
+       <string>White collar</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="startingInstructions"> 
+     <string>open the lid on the toilet twice</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.JobRequirement"> 
+    <void property="confirmed"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="job"> 
+     <object class="org.strandz.data.fishbowl.objects.Job"> 
+      <void property="address"> 
+       <object class="org.strandz.data.fishbowl.objects.StreetAddress"> 
+        <void property="postcode"> 
+         <string>2000</string> 
+        </void> 
+        <void property="state"> 
+         <string>NSW</string> 
+        </void> 
+        <void property="street"> 
+         <string>12a Illawarah Drive</string> 
+        </void> 
+        <void property="suburb"> 
+         <string>Glebe</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="client"> 
+       <object id="Client2" class="org.strandz.data.fishbowl.objects.Client"> 
+        <void property="address"> 
+         <object idref="StreetAddress0"/> 
+        </void> 
+        <void property="clientIndustry"> 
+         <object id="ClientIndustry0" class="org.strandz.data.fishbowl.objects.ClientIndustry"> 
+          <void property="description"> 
+           <string>Retail</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="clientType"> 
+         <object id="ClientType0" class="org.strandz.data.fishbowl.objects.ClientType"> 
+          <void property="description"> 
+           <string>Need to be very price competitive with</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="companyName"> 
+         <string>StingRay Bay</string> 
+        </void> 
+        <void property="contacts"> 
+         <object class="java.util.ArrayList"> 
+          <void method="add"> 
+           <object class="org.strandz.data.fishbowl.objects.Contact"> 
+            <void property="person"> 
+             <string>Gov Phillip</string> 
+            </void> 
+            <void property="title"> 
+             <string>CEO</string> 
+            </void> 
+           </object> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="description"> 
+         <string>Gov of the First Fleet</string> 
+        </void> 
+        <void property="email"> 
+         <string>gov@seaweedsoftware.com.au</string> 
+        </void> 
+        <void property="endClient"> 
+         <object idref="Client0"/> 
+        </void> 
+        <void property="fax"> 
+         <string>02 9326 3664</string> 
+        </void> 
+        <void property="phone"> 
+         <string>02 9326 3664</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="contact"> 
+       <string>Kate</string> 
+      </void> 
+      <void property="description"> 
+       <string>Writing a spec</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="timespace"> 
+     <object class="org.strandz.lgpl.data.objects.Timespace"/> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"/> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object idref="ClientIndustry0"/> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.ClientIndustry"> 
+    <void property="description"> 
+     <string>Manufacturing</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.ClientIndustry"> 
+    <void property="description"> 
+     <string>Information Technology</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object idref="ClientType0"/> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.ClientType"> 
+    <void property="description"> 
+     <string>Need to give speedy response to</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.ClientType"> 
+    <void property="description"> 
+     <string>Needs us to be very technical up front</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object id="PromotionType0" class="org.strandz.data.fishbowl.objects.PromotionType"> 
+    <void property="description"> 
+     <string>Christmas cards 1999</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object id="PromotionType1" class="org.strandz.data.fishbowl.objects.PromotionType"> 
+    <void property="description"> 
+     <string>Beer mats July 1999</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.PromotionType"> 
+    <void property="description"> 
+     <string>Cold calling 20th June 1999</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Promotion"> 
+    <void property="client"> 
+     <object idref="Client2"/> 
+    </void> 
+    <void property="promotionType"> 
+     <object idref="PromotionType0"/> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="org.strandz.data.fishbowl.objects.Promotion"> 
+    <void property="client"> 
+     <object idref="Client2"/> 
+    </void> 
+    <void property="promotionType"> 
+     <object idref="PromotionType1"/> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object idref="JobType1"/> 
+  </void> 
+  <void method="add"> 
+   <object idref="JobType0"/> 
+  </void> 
+ </object> 
+</java> 

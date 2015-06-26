@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+ Don't want all-permissions, just want to be able to Beans.setDesignTime()
+-->
+<jnlp spec="1.0+" codebase="$$codebase">
+   <security>
+      <all-permissions/>
+   </security>   
+   <information>
+      <title>Wombat Rescue Rosterer</title>
+      <vendor>Strandz.org/Chris Murphy</vendor>
+      <homepage href="http://www.strandz.org/index.html"/>
+      <icon kind="splash" href="http://www.strandz.org/strandz_img.gif"/>
+   </information>
+   <resources>
+      <property name="jnlp.publish-url" value="$$context/publish"/>
+      <property name="user.timezone" value="Australia/Sydney"/>
+      <!-- http://java.sun.com/j2se/1.5.0/docs/guide/javaws/developersguide/faq.html#304 -->
+      <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+      <jar href="lib/wombat.jar" main="true" />
+      <jar href="lib/strandz.jar" download="eager" />
+      <jar href="lib/wr-sdz-dt-files.jar" download="lazy" />
+      <jar href="lib/TableLayout.jar" download="lazy" />
+      <jar href="lib/activation.jar" download="lazy" />
+      <jar href="lib/mail.jar" download="lazy" />
+      <jar href="lib/app-images.jar" download="lazy" />
+      <jar href="lib/wr-demo-properties.jar" download="lazy" /> 
+      <jar href="lib/foxtrot.jar" download="lazy" /> 
+      <jar href="lib/MDateSelector-mine.jar" download="lazy" /> 
+      <jar href="lib/wr-help.jar" download="lazy" /> 
+      <jar href="lib/jh.jar" download="lazy" />    
+   </resources>
+   <application-desc main-class="org.strandz.applic.wombatrescue.StartupMemoryDemo"/>
+</jnlp>

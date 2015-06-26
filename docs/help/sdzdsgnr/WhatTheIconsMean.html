@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<link rel="stylesheet" type="text/css" href="global.css">
+
+<html>
+
+<span class="titletext">What the icons mean</span><br>
+
+<P>
+<img src="images/blueCircle.gif" border=0/><br>
+Represents a <code>Node</code>.
+</P>
+
+<P>
+<img src="images/yellowCircle.gif" border=0/><br>
+Represents a <code>Cell</code>.
+</P>
+
+<P>
+<img src="images/redCircle.gif" border=0/><br>
+A <code>StemAttribute</code> is one that has the potential to become any other type of Attribute. It is associated with a DO field but is not yet bound to an item.
+</P>
+
+<P>
+<img src="images/greenCircle.gif" border=0/><br>
+A <code>FieldAttribute</code> that has been bound to a field (rather than a table) item.
+</P>
+
+<P>
+<img src="images/DatePicker.gif" border=0/><br>
+A <code>TableAttribute</code> that has been bound to a table (rather than a field) item.
+</P>
+
+<P>
+<img src="images/badGreenCircle.gif" border=0/><br>
+A <code>FieldAttribute</code> that was previously bound to a field item, but is now no longer associated with an item. In this case you should delete the attribute or set it back to be a StemAttribute. This  situation can only be arrived at by doing something unknown to the Designer. For example removing a TextField control and then importing its panel (by pressing the <span class="SCN">Update</span> button). If for instance you did something within the Designer such as removing the panel then the attributes would all change to be StemAttributes.
+</P>
+
+<P>
+<img src="images/badDatePicker.gif" border=0/><br>
+A <code>TableAttribute</code> that was previously bound to a table item.
+</P>
+
+<P>
+<img src="images/Reply.gif" border=0/><br>
+A <code>ReferenceLookupAttribute</code> does not bind to an item but represents a lookup link from one DO to another. Having a DO field behind this attribute means that the DO can be 'sucked into' the current <code>Node</code>, and thereafter more <code>StemAttributes</code> will be available for binding.
+</P>
+
+<P>
+<img src="images/Undo.gif" border=0/><br>
+A <code>ReferenceLinkAttribute</code> can be thought of as representing the 'foreign key' column of the detail table in a Master/Detail relationship between two DOs. As far as the relationship between DOs goes it is the same as a <code>ReferenceLookupAttribute</code>, but it is used to say 'all the DO items that are in the list that I am part of that refer to the same DO that I do are the details of the DO master'.
+</P>
+
+<P>
+<img src="images/blackCircle.gif" border=0/><br>
+A <code>CollectionLinkAttribute</code> is also used for a Master/Detail relationship, but one where the master DO has a list of the collection DO.
+</P>
+
+
+</html>

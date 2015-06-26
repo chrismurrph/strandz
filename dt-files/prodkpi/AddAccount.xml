@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_10" class="java.beans.XMLDecoder"> 
+ <object class="org.strandz.core.applichousing.SdzBag"> 
+  <void property="name"> 
+   <string>AddAccount</string> 
+  </void> 
+  <void property="nodes"> 
+   <array class="org.strandz.core.interf.Node" length="1"> 
+    <void index="0"> 
+     <object class="org.strandz.core.interf.Node"> 
+      <void property="cell"> 
+       <object id="Cell0" class="org.strandz.core.interf.Cell"> 
+        <void property="attributes"> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.ReferenceLookupAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>accountType</string> 
+           </void> 
+           <void property="name"> 
+            <string>AccountDOI accountType</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.StemAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>propertyGroupDO</string> 
+           </void> 
+           <void property="name"> 
+            <string>AccountDOI propertyGroupDO</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>dateCreated</string> 
+           </void> 
+           <void property="item"> 
+            <object id="ROJLabel0" class="org.strandz.lgpl.widgets.ROJLabel"> 
+             <void property="name"> 
+              <string>lCreatedDateRO</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>dateCreated</string> 
+           </void> 
+          </object> 
+         </void> 
+         <void method="add"> 
+          <object class="org.strandz.core.interf.FieldAttribute"> 
+           <void property="cell"> 
+            <object idref="Cell0"/> 
+           </void> 
+           <void property="DOField"> 
+            <string>name</string> 
+           </void> 
+           <void property="item"> 
+            <object id="JTextField0" class="javax.swing.JTextField"> 
+             <void property="name"> 
+              <string>tfName</string> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="name"> 
+            <string>name</string> 
+           </void> 
+          </object> 
+         </void> 
+        </void> 
+        <void property="cells"> 
+         <array class="org.strandz.core.interf.Cell" length="1"> 
+          <void index="0"> 
+           <object id="Cell1" class="org.strandz.core.interf.Cell"> 
+            <void property="attributes"> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.StemAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>id</string> 
+               </void> 
+               <void property="name"> 
+                <string>accountTypeEnum id</string> 
+               </void> 
+              </object> 
+             </void> 
+             <void method="add"> 
+              <object class="org.strandz.core.interf.FieldAttribute"> 
+               <void property="cell"> 
+                <object idref="Cell1"/> 
+               </void> 
+               <void property="DOField"> 
+                <string>name</string> 
+               </void> 
+               <void property="item"> 
+                <object id="AccountTypeRadioButtons0" class="com.seasoft.widgets.data.prodkpi.AccountTypeRadioButtons"> 
+                 <void method="add"> 
+                  <object id="JRadioButton0" class="javax.swing.JRadioButton"> 
+                   <void property="actionCommand"> 
+                    <string>Income</string> 
+                   </void> 
+                   <void property="label"> 
+                    <string>Income</string> 
+                   </void> 
+                   <void property="model"> 
+                    <void property="actionCommand"> 
+                     <null/> 
+                    </void> 
+                    <void property="group"> 
+                     <object id="ButtonGroup0" class="javax.swing.ButtonGroup"/> 
+                    </void> 
+                   </void> 
+                   <void property="name"> 
+                    <string>rbIncome</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object id="JRadioButton1" class="javax.swing.JRadioButton"> 
+                   <void property="actionCommand"> 
+                    <string>Expense</string> 
+                   </void> 
+                   <void property="label"> 
+                    <string>Expense</string> 
+                   </void> 
+                   <void property="model"> 
+                    <void property="actionCommand"> 
+                     <null/> 
+                    </void> 
+                    <void property="group"> 
+                     <object idref="ButtonGroup0"/> 
+                    </void> 
+                   </void> 
+                   <void property="name"> 
+                    <string>rbExpense</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object id="JRadioButton2" class="javax.swing.JRadioButton"> 
+                   <void property="actionCommand"> 
+                    <string>Asset</string> 
+                   </void> 
+                   <void property="label"> 
+                    <string>Asset</string> 
+                   </void> 
+                   <void property="model"> 
+                    <void property="actionCommand"> 
+                     <null/> 
+                    </void> 
+                    <void property="group"> 
+                     <object idref="ButtonGroup0"/> 
+                    </void> 
+                   </void> 
+                   <void property="name"> 
+                    <string>rbAsset</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object id="JRadioButton3" class="javax.swing.JRadioButton"> 
+                   <void property="actionCommand"> 
+                    <string>N/A</string> 
+                   </void> 
+                   <void property="label"> 
+                    <string>N/A</string> 
+                   </void> 
+                   <void property="model"> 
+                    <void property="actionCommand"> 
+                     <null/> 
+                    </void> 
+                    <void property="group"> 
+                     <object idref="ButtonGroup0"/> 
+                    </void> 
+                   </void> 
+                   <void property="name"> 
+                    <string>rbNot</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object id="JLabel0" class="javax.swing.JLabel"> 
+                   <void property="icon"> 
+                    <object class="org.strandz.lgpl.widgets.PortableImageIcon"> 
+                     <void property="description"> 
+                      <string>Income</string> 
+                     </void> 
+                     <void property="location"> 
+                      <string>images/MoneyPig.png</string> 
+                     </void> 
+                    </object> 
+                   </void> 
+                   <void property="name"> 
+                    <string>lIncome</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object id="JLabel1" class="javax.swing.JLabel"> 
+                   <void property="icon"> 
+                    <object class="org.strandz.lgpl.widgets.PortableImageIcon"> 
+                     <void property="description"> 
+                      <string>Expense</string> 
+                     </void> 
+                     <void property="location"> 
+                      <string>images/MoneyCalc.png</string> 
+                     </void> 
+                    </object> 
+                   </void> 
+                   <void property="name"> 
+                    <string>lExpense</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object id="JLabel2" class="javax.swing.JLabel"> 
+                   <void property="icon"> 
+                    <object class="org.strandz.lgpl.widgets.PortableImageIcon"> 
+                     <void property="description"> 
+                      <string>Asset</string> 
+                     </void> 
+                     <void property="location"> 
+                      <string>images/MoneyBox.png</string> 
+                     </void> 
+                    </object> 
+                   </void> 
+                   <void property="name"> 
+                    <string>lAsset</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void method="add"> 
+                  <object id="JLabel3" class="javax.swing.JLabel"> 
+                   <void property="icon"> 
+                    <object class="org.strandz.lgpl.widgets.PortableImageIcon"> 
+                     <void property="description"> 
+                      <string>N/A</string> 
+                     </void> 
+                     <void property="location"> 
+                      <string>images/DoesNotExist.png</string> 
+                     </void> 
+                    </object> 
+                   </void> 
+                   <void property="name"> 
+                    <string>lNot</string> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void property="LAsset"> 
+                  <object idref="JLabel2"/> 
+                 </void> 
+                 <void property="LExpense"> 
+                  <object idref="JLabel1"/> 
+                 </void> 
+                 <void property="LIncome"> 
+                  <object idref="JLabel0"/> 
+                 </void> 
+                 <void property="LNot"> 
+                  <object idref="JLabel3"/> 
+                 </void> 
+                 <void property="accountTypeGroup"> 
+                  <object class="org.strandz.lgpl.widgets.OneOnlyGroup"> 
+                   <void property="radioGroup"> 
+                    <object idref="ButtonGroup0"/> 
+                   </void> 
+                   <void property="rbNone"> 
+                    <object idref="JRadioButton3"/> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void property="layout"> 
+                  <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+                   <void property="column"> 
+                    <array class="double" length="2"> 
+                     <void index="0"> 
+                      <double>80.0</double> 
+                     </void> 
+                     <void index="1"> 
+                      <double>32.0</double> 
+                     </void> 
+                    </array> 
+                   </void> 
+                   <void property="row"> 
+                    <array class="double" length="7"> 
+                     <void index="0"> 
+                      <double>30.0</double> 
+                     </void> 
+                     <void index="1"> 
+                      <double>8.0</double> 
+                     </void> 
+                     <void index="2"> 
+                      <double>30.0</double> 
+                     </void> 
+                     <void index="3"> 
+                      <double>8.0</double> 
+                     </void> 
+                     <void index="4"> 
+                      <double>30.0</double> 
+                     </void> 
+                     <void index="5"> 
+                      <double>8.0</double> 
+                     </void> 
+                     <void index="6"> 
+                      <double>30.0</double> 
+                     </void> 
+                    </array> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JRadioButton0"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>0</int> 
+                     <int>0</int> 
+                     <int>0</int> 
+                     <int>0</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JRadioButton1"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>0</int> 
+                     <int>2</int> 
+                     <int>0</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JRadioButton2"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>0</int> 
+                     <int>4</int> 
+                     <int>0</int> 
+                     <int>4</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JRadioButton3"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>0</int> 
+                     <int>6</int> 
+                     <int>0</int> 
+                     <int>6</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JLabel0"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>1</int> 
+                     <int>0</int> 
+                     <int>1</int> 
+                     <int>0</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JLabel1"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>1</int> 
+                     <int>2</int> 
+                     <int>1</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JLabel2"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>1</int> 
+                     <int>4</int> 
+                     <int>1</int> 
+                     <int>4</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                   <void method="addLayoutComponent"> 
+                    <object idref="JLabel3"/> 
+                    <object class="info.clearthought.layout.TableLayoutConstraints"> 
+                     <int>1</int> 
+                     <int>6</int> 
+                     <int>1</int> 
+                     <int>6</int> 
+                     <int>2</int> 
+                     <int>2</int> 
+                    </object> 
+                   </void> 
+                  </object> 
+                 </void> 
+                 <void property="name"> 
+                  <string>frbAccountTypeRadioButtons</string> 
+                 </void> 
+                 <void property="rbAsset"> 
+                  <object idref="JRadioButton2"/> 
+                 </void> 
+                 <void property="rbExpense"> 
+                  <object idref="JRadioButton1"/> 
+                 </void> 
+                 <void property="rbIncome"> 
+                  <object idref="JRadioButton0"/> 
+                 </void> 
+                 <void property="rbNot"> 
+                  <object idref="JRadioButton3"/> 
+                 </void> 
+                </object> 
+               </void> 
+               <void property="name"> 
+                <string>accountTypeEnum name</string> 
+               </void> 
+              </object> 
+             </void> 
+            </void> 
+            <void id="CellArray0" property="cells"/> 
+            <void property="cells"> 
+             <object idref="CellArray0"/> 
+            </void> 
+            <void property="clazz"> 
+             <object class="org.strandz.lgpl.util.Clazz"> 
+              <void property="canFactory"> 
+               <boolean>true</boolean> 
+              </void> 
+              <void property="classObject"> 
+               <class>com.seasoft.data.prodkpi.objects.AccountTypeEnum</class> 
+              </void> 
+             </object> 
+            </void> 
+            <void property="name"> 
+             <string>accountType Lookup Cell</string> 
+            </void> 
+            <void property="refField"> 
+             <string>accountType</string> 
+            </void> 
+           </object> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="clazz"> 
+         <object class="org.strandz.lgpl.util.Clazz"> 
+          <void property="classObject"> 
+           <class>com.seasoft.data.prodkpi.objects.AccountDOI</class> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>AccountCell</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void id="IndependentArray0" property="independents"/> 
+      <void property="independents"> 
+       <object idref="IndependentArray0"/> 
+      </void> 
+      <void property="name"> 
+       <string>AccountNode</string> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="panes"> 
+   <array class="javax.swing.JComponent" length="1"> 
+    <void index="0"> 
+     <object class="com.seasoft.view.prodkpi.AddAsAccountPanel"> 
+      <void method="add"> 
+       <object id="BlueLabelField0" class="org.strandz.lgpl.widgets.BlueLabelField"> 
+        <void property="horizontalAlignment"> 
+         <int>0</int> 
+        </void> 
+        <void property="name"> 
+         <string>lAccountTitle</string> 
+        </void> 
+        <void property="text"> 
+         <string>Account</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel4" class="javax.swing.JLabel"> 
+        <void property="name"> 
+         <string>lNameTitle</string> 
+        </void> 
+        <void property="text"> 
+         <string>Name</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel5" class="javax.swing.JLabel"> 
+        <void property="name"> 
+         <string>lCreatedTitle</string> 
+        </void> 
+        <void property="text"> 
+         <string>Created</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="ROJLabel0"/> 
+      </void> 
+      <void method="add"> 
+       <object id="JLabel6" class="javax.swing.JLabel"> 
+        <void property="name"> 
+         <string>lTypeTitle</string> 
+        </void> 
+        <void property="text"> 
+         <string>Type</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="AccountTypeRadioButtons0"/> 
+      </void> 
+      <void method="add"> 
+       <object id="TwoButtonPanel0" class="org.strandz.lgpl.view.TwoButtonPanel"> 
+        <void method="add"> 
+         <object id="JButton0" class="javax.swing.JButton"> 
+          <string>OK</string> 
+          <void property="name"> 
+           <string>bOne</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object id="JButton1" class="javax.swing.JButton"> 
+          <string>Cancel</string> 
+          <void property="name"> 
+           <string>bTwo</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="BOne"> 
+         <object idref="JButton0"/> 
+        </void> 
+        <void property="BTwo"> 
+         <object idref="JButton1"/> 
+        </void> 
+        <void property="buttonWidth"> 
+         <int>90</int> 
+        </void> 
+        <void property="layout"> 
+         <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+          <void property="column"> 
+           <array class="double" length="7"> 
+            <void index="0"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="2"> 
+             <double>90.0</double> 
+            </void> 
+            <void index="3"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="4"> 
+             <double>90.0</double> 
+            </void> 
+            <void index="5"> 
+             <double>15.0</double> 
+            </void> 
+            <void index="6"> 
+             <double>-1.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void property="row"> 
+           <array class="double" length="3"> 
+            <void index="0"> 
+             <double>-1.0</double> 
+            </void> 
+            <void index="1"> 
+             <double>23.0</double> 
+            </void> 
+            <void index="2"> 
+             <double>-1.0</double> 
+            </void> 
+           </array> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JButton0"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>2</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+          <void method="addLayoutComponent"> 
+           <object idref="JButton1"/> 
+           <object class="info.clearthought.layout.TableLayoutConstraints"> 
+            <int>4</int> 
+            <int>1</int> 
+            <int>4</int> 
+            <int>1</int> 
+            <int>2</int> 
+            <int>2</int> 
+           </object> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="name"> 
+         <string>TwoButtonPanel</string> 
+        </void> 
+        <void property="titles"> 
+         <array class="java.lang.String" length="2"> 
+          <void index="0"> 
+           <string>OK</string> 
+          </void> 
+          <void index="1"> 
+           <string>Cancel</string> 
+          </void> 
+         </array> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object idref="JTextField0"/> 
+      </void> 
+      <void property="layout"> 
+       <object class="org.strandz.lgpl.tablelayout.ModernTableLayout"> 
+        <void property="column"> 
+         <array class="double" length="5"> 
+          <void index="0"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="2"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>112.0</double> 
+          </void> 
+          <void index="4"> 
+           <double>15.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void property="row"> 
+         <array class="double" length="12"> 
+          <void index="0"> 
+           <double>15.0</double> 
+          </void> 
+          <void index="1"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="2"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="3"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="4"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="5"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="6"> 
+           <double>23.0</double> 
+          </void> 
+          <void index="7"> 
+           <double>-1.0</double> 
+          </void> 
+          <void index="8"> 
+           <double>14.0</double> 
+          </void> 
+          <void index="9"> 
+           <double>14.0</double> 
+          </void> 
+          <void index="10"> 
+           <double>30.0</double> 
+          </void> 
+          <void index="11"> 
+           <double>15.0</double> 
+          </void> 
+         </array> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="BlueLabelField0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel4"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>1</int> 
+          <int>2</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel5"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>8</int> 
+          <int>1</int> 
+          <int>8</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="ROJLabel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>9</int> 
+          <int>1</int> 
+          <int>9</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JLabel6"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="AccountTypeRadioButtons0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>3</int> 
+          <int>9</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="TwoButtonPanel0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>0</int> 
+          <int>10</int> 
+          <int>4</int> 
+          <int>10</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+        <void method="addLayoutComponent"> 
+         <object idref="JTextField0"/> 
+         <object class="info.clearthought.layout.TableLayoutConstraints"> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>1</int> 
+          <int>3</int> 
+          <int>2</int> 
+          <int>2</int> 
+         </object> 
+        </void> 
+       </object> 
+      </void> 
+      <void property="name"> 
+       <string>AddAsAccountPanel</string> 
+      </void> 
+      <void property="twoButton"> 
+       <object idref="TwoButtonPanel0"/> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="physicalController"> 
+   <object class="org.strandz.core.applichousing.PictToolBarController"/> 
+  </void> 
+  <void property="statusBar"> 
+   <object class="org.strandz.core.applichousing.NodeStatusBar"/> 
+  </void> 
+ </object> 
+</java> 

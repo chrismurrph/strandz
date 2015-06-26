@@ -1,0 +1,24 @@
+
+Welcome to this demonstration of a Strandz application.
+
+The purpose of this application is to roster volunteers every month for the purpose of helping Wombats cross the road. There are two shifts that need to be filled: dinner and overnight.
+
+There is a pool of volunters that the rosterer chooses from. Each volunteer has preferences for how they want to be allocated in the coming month - these are called 'roster slots'. The rosterer's job is to use these roster slots to 'fill up' the forthcoming month.
+
+Let's take a look at the application now. 
+
+HIDE CAMERA
+
+There are two main screens we work with all the time. One of them is the 'Rosterable Workers' screen which we get to via the menu selection [Maintain/Rosterable Workers]. You can simply click thru them all. Each one of them will have zero to any number of roster slots. Each roster slot makes up a sentence. So this person <Blah> is doing ...
+
+The other screen is for actually displaying the roster for the forthcoming month. We are now in June so we can do the roster for July. All of the roster slot business rules we looked at are used to give us a roster for any month we pick.
+
+Here you can see that there are clashes where the rules are conflicting with one another - with the result that more people are working together than are needed. 
+
+And also unfilled nights that could do with more people.
+
+We will just go thru the help section now.
+
+
+
+It is important to save changes to the database, and when you do press save

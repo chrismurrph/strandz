@@ -1,0 +1,135 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+<link rel="stylesheet" type="text/css" href="global.css">
+
+<html>
+
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Strandz - Quick Manual</title>
+
+</head>
+
+<body>
+
+<table width="99%" bgcolor="#F0F0FF">
+<tr>
+<td width="40%" valign="top">
+<a href="index.html"><img SRC="strandz_img.gif" border=0></a>
+</td>
+<td width="59%">
+  <P>
+  <!--
+  <img src="m_quick_manual.gif" border=0/>
+  -->
+  <span class="titleitem">Quick Manual</span>
+  </P>
+</td>
+</tr>
+</table>
+
+<table width="99%" border="0" cellspacing="0" cellpadding="0" height="36">
+  <tr>
+    <td background="tab_bg.gif" align="left"><span class="BRD">Home.In Depth.Example.Quick Manual</span></td>
+    <!--#include virtual="home_tab_selected.html" -->
+  </tr>
+</table>
+<!--#include virtual="bar.html" -->
+
+<table width="99%">
+
+
+<td width="220px" valign="top" >
+  <!--
+  <br/>
+  <a href="example.html"><img src="m_example.gif" border=0/></a><a href="example.html" class="navitem">Example</a>
+  <br/>
+  -->
+  <div id="navigation">
+  <ul>
+      <li><a href="example.html" tabindex="1">Example</a></li>
+  </ul>
+  </div>
+</td>
+
+<!--
+Hmm - could use these but I like the way the appear just textually - used SCN
+<span class="NDO">Worker</span> - the "N" means nothing. This is a manual for END users
+<span class="BUT">Enter</span>
+<span class="SCN">ENTER QUERY</span>
+-->
+<td BGCOLOR="#F0F0FF" valign="top" class="generaltext">
+<br/>
+<br/>
+<span class="titletext">Rostering by Business Rules</span>
+<P>
+Wombat Rosterer is an application that allows the user to manipulate <span class="NDO">Worker</span>s and their <span class="NDO">RosterSlot</span>s, and then generate rosters based on these manipulations. A <span class="NDO">RosterSlot</span> provides a rule as to how a <span class="NDO">Worker</span> is to be rostered. There are many <span class="NDO">RosterSlot</span>s for each <span class="NDO">Worker</span>. Together these rules describe how a <span class="NDO">Worker</span> will be slotted into any monthly rosters that are generated. Using the supplied data any generated roster will come out with every night being filled. Some examples of rules that can be created are:
+<ul>
+<li>
+Saturday dinner shift on the third Monday of every month except December
+</li>
+<li>
+Particular dinner shift on 22nd April
+</li>
+<li>
+NOT to do a shift at all on 22nd April
+</li>
+<li>
+Overnight shift every two weeks, where the first ever shift was on 5th November 2004
+</li>
+</ul>
+</P>
+<P>
+The rest of this short manual is task driven, and thus each of the following headings can be thought of as its own <em>How To</em>. Fire up Wombat Rescue, have a bit of a play with it, and see if any of your "How do I do that" questions match these:
+</P>
+<span class="titletext">Save the changes to the database</span>
+<P>
+When you press <span class="SCN">[Commit]</span> the changes you have made will be committed to the database and all the data will be re-queried, so that you can pick up changes that might have been made by other users.
+</P>
+<span class="titletext">Goto a Worker by the first letter of his surname</span>
+<P>
+Just click on a letter on the 'alphabet bar'. If no user with that surname exists then nothing will happen. Pressing 'G' will navigate you to Derek Granleese
+</P>
+<span class="titletext">Goto a Worker with his first name as input</span>
+<P>
+You can navigate to any worker using query by example. This works for any field. Press the <span class="SCN">[Enter]</span> button and you will notice that the status pane at the bottom of the screen indicates <span class="SCN">ENTER QUERY</span>. Now type "Noreen" in the <span class="SCN">First Name</span> field, and then press the <span class="SCN">[Search]</span> button. You will be navigated to Noreen Neve.
+</P>
+<span class="titletext">Enter a badly formatted date</span>
+<P>
+You can't! Field validation will kick into place. Try entering anything into the <span class="SCN">Birthday</span> field and tabbing or clicking away. Note that the fact that you must tab twice is not a bug. When you have tabbed once you are on a button that brings up a calendar when the enter key is typed. To actually get out of the 'whole calendar control' you have to press the tab key a second time.
+</P>
+
+<span class="titletext">Enter a Worker's holiday dates</span>
+<P>
+Two 'unavailability periods' can be entered for each <span class="DO">Worker</span>. See <span class="SCN">Away 1 Start</span> and its friends. You must specify both a start and an end date. If you don't specify both then record validation kicks in when you try to navigate to another <span class="DO">Worker</span>. It is impossible to roster someone during one of their unavailability periods.
+</P>
+
+<span class="titletext">Generate this month's roster</span>
+<P>
+<span class="SCN">Roster/THIS - <em>Month Name</em></span>. You need to change <span class="DO">Worker</span>s and their <span class="DO">RosterSlot</span>s to get more interesting rosters. If you just tab to an already generated roster then re-generation does not take place. When you have made changes you normally use the menu so that re-generation takes place.
+</P>
+
+<span class="titletext">Set Naba to work the third Saturday of every month only</span>
+<P>
+Go to the <span class="SCN">Roster Slots</span> tab. Naba has only one roster slot anyway so we can alter it. Click the <span class="SCN">Monthly Restart</span> checkbox and set the <span class="SCN">Week In Month</span> to be the third.
+</P>
+
+<span class="titletext">Give Joshua Naba's RosterSlot</span>
+<P>
+Go to the <span class="SCN">Roster Slots</span> tab. Click the <span class="SCN">[Copy]</span> button to save this <span class="NDO">RosterSlot</span> to the clipboard. You can then <span class="SCN">[Delete]</span> the current record, go to the <span class="SCN">Worker</span> tab, <span class="SCN">[Next]</span> to Joshua, go to the <span class="SCN">Roster Slots</span> tab, click <span class="SCN">[Insert]</span> to create a new <span class="NDO">RosterSlot</span> and finally click the <span class="SCN">[Paste]</span> button.
+</P>
+
+</td>
+
+<td width="15%" valign="top" >
+</td>
+
+</table>
+
+
+
+</body>
+
+</html>
+

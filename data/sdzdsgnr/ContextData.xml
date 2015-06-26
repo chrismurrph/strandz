@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_10" class="java.beans.XMLDecoder"> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\prodkpi</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>EditMap.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>com.seasoft.applic.prodkpi</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>com.seasoft.data.prodkpi.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>com.seasoft.store.money</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\com\seasoft\applic\prodkpi\EditMapDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>com.seasoft.view.prodkpi.EditMapPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>EditMapPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object id="ControllerType0" class="com.seasoft.data.sdzdsgnr.objects.ControllerType"> 
+      <void property="name"> 
+       <string>org.strandz.core.applichousing.SdzBag</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>com.seasoft.view.prodkpi</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\prodkpi</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>Metric.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>com.seasoft.applic.prodkpi</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>com.seasoft.data.prodkpi.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>com.seasoft.store.money</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\com\seasoft\applic\prodkpi\MetricDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>com.seasoft.view.prodkpi.MetricPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>EditMetricPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.ControllerType"> 
+      <void property="name"> 
+       <string>org.strandz.core.applichousing.SdzBag</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>com.seasoft.view.prodkpi</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\prodkpi</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>Account.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>com.seasoft.applic.prodkpi</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>com.seasoft.data.prodkpi.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>com.seasoft.store.money</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\com\seasoft\applic\prodkpi\AccountDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>com.seasoft.view.prodkpi.AsAccountPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>AsAccountPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.ControllerType"> 
+      <void property="name"> 
+       <string>org.strandz.core.applichousing.SdzBag</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>com.seasoft.view.prodkpi</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\prodkpi</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>AddAccount.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>com.seasoft.applic.prodkpi</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>com.seasoft.data.prodkpi.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>com.seasoft.store.money</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\com\seasoft\applic\prodkpi\AddAccountDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>com.seasoft.view.prodkpi.AddAsAccountPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>AddAsAccountPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType0"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>com.seasoft.view.prodkpi</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\prodkpi</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>Carbon.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>com.seasoft.applic.prodkpi</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>com.seasoft.data.carbon.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>com.seasoft.store.carbon</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\com\seasoft\applic\prodkpi\DepartmentDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"/> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType0"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>com.seasoft.view.prodkpi</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\wombatrescue</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>RosterWorkers_NEW_FORMAT.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.wombatrescue</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.wombatrescue.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.wombatrescue</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\wombatrescue\RosterWorkers_NEW_FORMATDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>NarrowWorkerPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>NarrowWorkerPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>RosterSlotPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>RosterSlotPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType0"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.wombatrescue</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\wombatrescue</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>BuddyManagers_NEW_FORMAT.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.wombatrescue</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.wombatrescue.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.wombatrescue</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\wombatrescue\BuddyManagerDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>ShiftManagersPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>ShiftManagersPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType0"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.wombatrescue</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\wombatrescue</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>TheRoster.xml</string> 
+    </void> 
+    <void property="calculatedObjectsPackage"> 
+     <string>org.strandz.data.wombatrescue.calculated</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.wombatrescue</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.wombatrescue.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.wombatrescue</string> 
+    </void> 
+    <void property="domainPackage"> 
+     <string>org.strandz.data.wombatrescue.domain</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\wombatrescue\TheRosterDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.wombatrescue.RosterTablePanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>RosterTablePanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object id="ControllerType1" class="com.seasoft.data.sdzdsgnr.objects.ControllerType"> 
+      <void property="name"> 
+       <string>org.strandz.core.applichousing.SdzBag</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.wombatrescue</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\supersix</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>maintainSeason.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.supersix</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.supersix.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.supersix</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\supersix\MaintainSeasonDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.supersix.SeasonPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>SeasonPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.supersix.MeetPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>MeetPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.supersix.MainMatchPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>MainMatchPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType1"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.supersix</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\supersix</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>maintainGlobal.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.supersix</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.supersix.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.supersix</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\supersix\MaintainGlobalDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.supersix.GlobalPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>GlobalPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType1"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.supersix</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\supersix</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>maintainTeam.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.supersix</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.supersix.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.supersix</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\supersix\MaintainTeamDT.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.supersix.TeamPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>TeamPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.supersix.PlayerPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>PlayerPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType1"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.supersix</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\books</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>exampleExpenses.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.books</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.books.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.books</string> 
+    </void> 
+    <void property="genStrand"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genTriggers"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\books\ExampleExpensesDT.java</string> 
+     </void> 
+     <void property="runnerName"> 
+      <string>C:\dev\org\strandz\applic\books\RunExampleExpenses.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.books.MainExpensePanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>MainExpensePanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType1"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.books</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\books</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>listExpenses.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.books</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.books.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.books</string> 
+    </void> 
+    <void property="genStrand"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genTriggers"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\books\ListExpensesDT.java</string> 
+     </void> 
+     <void property="runnerName"> 
+      <string>C:\dev\org\strandz\applic\books\RunListExpenses.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.books.ExpenseTablePanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>ExpensePanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType1"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.books</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\books</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>expenses.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.books</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.books.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.books</string> 
+    </void> 
+    <void property="genStrand"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genTriggers"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\books\ExpensesDT.java</string> 
+     </void> 
+     <void property="runnerName"> 
+      <string>C:\dev\org\strandz\applic\books\RunExpenses.java</string> 
+     </void> 
+     <void property="strandName"> 
+      <string>C:\dev\org\strandz\applic\books\ExpensesStrand.java</string> 
+     </void> 
+     <void property="triggersName"> 
+      <string>C:\dev\org\strandz\applic\books\ExpensesTriggers.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>org.strandz.view.books.ExpensePanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>ExpensePanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType1"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.books</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\fault</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>DebugFault.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.fault</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.fault.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.fault</string> 
+    </void> 
+    <void property="genStrand"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genTriggers"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\fault\DebugFaultDT.java</string> 
+     </void> 
+     <void property="runnerName"> 
+      <string>C:\dev\org\strandz\applic\fault\RunDebugFault.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>MainSupportPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>MainSupportPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object id="ControllerType2" class="com.seasoft.data.sdzdsgnr.objects.ControllerType"> 
+      <void property="name"> 
+       <string>org.strandz.core.applichousing.SdzBag</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.fault</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\sdzdsgnr</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>Trial.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>com.seasoft.applic.sdzdsgnr</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>com.seasoft.data.sdzdsgnr.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>com.seasoft.store.sdzdsgnr</string> 
+    </void> 
+    <void property="genStrand"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genTriggers"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\com\seasoft\applic\sdzdsgnr\TrialDT.java</string> 
+     </void> 
+     <void property="runnerName"> 
+      <string>C:\dev\com\seasoft\applic\sdzdsgnr\RunTrial.java</string> 
+     </void> 
+     <void property="strandName"> 
+      <string>C:\dev\com\seasoft\applic\sdzdsgnr\TrialStrand.java</string> 
+     </void> 
+     <void property="triggersName"> 
+      <string>C:\dev\com\seasoft\applic\sdzdsgnr\TrialTriggers.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>ContextPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>ContextPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType2"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>com.seasoft.view.sdzdsgnr</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\fishbowl</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>doubleheader.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.wombatrescue</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.fishbowl.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.fishbowl</string> 
+    </void> 
+    <void property="genedFileNames"> 
+     <void property="designTimeName"> 
+      <string>C:\dev\org\strandz\applic\wombatrescue\Double HeaderDT.java</string> 
+     </void> 
+     <void property="queriesName"> 
+      <string>C:\dev\org\strandz\data\wombatrescue\WombatrescueQueries.java</string> 
+     </void> 
+     <void property="runnerName"> 
+      <string>C:\dev\org\strandz\applic\wombatrescue\RunDouble Header.java</string> 
+     </void> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>DoubleHeaderPanel</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>DoubleHeaderPanel</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType0"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.fishbowl</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.Context"> 
+    <void property="beansDirectory"> 
+     <string>C:\sdz-zone\dt-files\fishbowl</string> 
+    </void> 
+    <void property="beansFile"> 
+     <string>masterdetail.xml</string> 
+    </void> 
+    <void property="controlDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="controlPackage"> 
+     <string>org.strandz.applic.fishbowl</string> 
+    </void> 
+    <void property="dataDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="dataObjectsPackage"> 
+     <string>org.strandz.data.fishbowl.objects</string> 
+    </void> 
+    <void property="dataStorePackage"> 
+     <string>org.strandz.store.fishbowl</string> 
+    </void> 
+    <void property="guiClasses"> 
+     <object class="com.seasoft.data.sdzdsgnr.objects.GuiClassArrayList"> 
+      <void method="add"> 
+       <object class="com.seasoft.data.sdzdsgnr.objects.GuiClass"> 
+        <void property="className"> 
+         <string>ClientUI</string> 
+        </void> 
+        <void property="initialiser"> 
+         <string>init</string> 
+        </void> 
+        <void property="name"> 
+         <string>ClientUI</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="preferredControllerInterface"> 
+     <object idref="ControllerType0"/> 
+    </void> 
+    <void property="viewDirectory"> 
+     <string>C:\dev</string> 
+    </void> 
+    <void property="viewPackage"> 
+     <string>org.strandz.view.fishbowl</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+ <object class="java.util.ArrayList"> 
+  <void method="add"> 
+   <object class="com.seasoft.data.sdzdsgnr.objects.ControllerType"/> 
+  </void> 
+  <void method="add"> 
+   <object idref="ControllerType0"/> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,145 @@
+How to apply database changes to the PROD Teresa Application
+
+The tack we will take is to already know that there are changes (to java classes) that will cause us problems, and to forge ahead and correct them whilst pointing to a local demo database, and then more formally repeat everything on the real server. The DB change in question for this example is a change to UserDetails to give it an extra field - emailAddress.
+
+1./ 
+StartupKodo to talk to local tomcat: WombatConnectionEnum.REMOTE_DEMO_WOMBAT_KODO. Follow 1,2,3 instructions there. You will end up with the Spring and exposed domain remote services both being served by the local tomcat server.
+
+2./ 
+Start StartupKodo:
+org.springframework.remoting.RemoteConnectFailureException: Cannot connect to HTTP invoker remote service at [http://localhost:8080/teresaSpring/acegihttpinvoker/userDetails]; nested exception is java.net.ConnectException: Connection refused: connect
+
+3./
+Under the Action folder press 'Startup Local Tomcat' and try again.
+org.springframework.remoting.RemoteAccessException: Cannot access HTTP invoker remote service at [http://localhost:8080/teresaSpring/acegihttpinvoker/userDetails]; nested exception is java.io.InvalidClassException: org.strandz.lgpl.data.objects.UserDetails; local class incompatible: stream classdesc serialVersionUID = -7505685087256758830, local class serialVersionUID = -3777275521885186210
+
+4./
+We need to deploy a new set of jar files to both spring and remoteservice. 
+%SDZ%/bin/deployTeresaSpring.bat (on the server there is an equivalent %SDZ%/deployTeresaSpring.sh) does this job, so run it from the command line. (On real server this is where we will be stuffing things up for the current users).
+
+5./
+Start StartupKodo. You will get an exception in your IDE something like:
+
+Exception occurred during event dispatching:
+java.lang.Error: First time connecting for Wombat KODO on localhost for Spring services (MySql), All Workers
+OTHER DESC: <No metadata was found for type "class org.strandz.data.wombatrescue.objects.Worker".  Ensure that the class is enhanced (if necessary), that the class has appropriate metadata, and that if you list your persistent classes, the class is included in your list.>
+
+Look in the tomcat log (just tomcat console on windows) for the nested exception. 
+
+kodo.jdo.FatalUserException: The type "class org.strandz.data.wombatrescue.objects.WhichShift" has not been enhanced.
+
+So we should have enhanced before jarring it all up and deploying on server.
+
+6./
+To enhance, under the Action folder press 'Enhance DOs', which points to C:\sdz-zone\bin-jdo\enhance.bat. You may want to alter this file as there are many ORM providers and many application domains that could be enhanced. UserDetails (the class we have altered) gets enhanced no problem. We added a field which will not exist in the DB - so we should still expect a problem.
+
+7./
+cd %SB% and run
+(Note - if on server will want to have pushed wombat.jar and strandz.jar onto the server first (ie enhance, jar them up and ftp them across to chris's scratch directory where they will be picked up))
+%SDZ%/bin/deployTeresaSpring.bat again.
+
+8./
+Start StartupKodo. Nested exception comes to IDE and is:
+
+kodo.jdo.FatalUserException: For "org.strandz.lgpl.data.objects.UserDetails.emailAddress", expected 1 column(s), but found 0.
+
+9./
+Now we need to create the DB again with an ORM provider script and hope we don't trash our data. To simulate our real environment we will import the latest backup from the server. As we have not yet altered our database and we always keep the two (local machine and server machine) databases structurally the same (in a data definition language sense) then this import ought to be problem free.
+
+10./
+Backups are kept at /var/backups/teresadb on the server so pick the latest and ftp it across to your local machine (at in-out). Remember to start the inet daemon first.
+
+11./
+Restoring a mysql DB is documented in the forum at:
+
+http://www.strandz.org/mvnforum/mvnforum/viewthread?thread=29
+
+This is the property file for the demo DB:
+
+C:\sdz-zone\property-files\wombatrescue\remote_demo_wombat_kodo_mysql.properties
+
+But the above doesn't tell us much because it is to setup the remote PM. See:
+
+C:\sdz-zone\property-files\wombatrescue\local_demo_wombat_kodo_mysql.properties
+
+(which is WOMBAT_KODO in the code)
+
+Thus the name of the DB is kodo and the user is root
+
+12./
+Before importing check what there already using:
+
+org.strandz.task.data.wombatrescue.Display
+
+You should be able to exclude the class that is problematic and get the rest to be displayed
+
+13./
+Follow the instructions from the Forum.
+
+drop_tables.sql (for mysql - usually just copy and paste)
+drop_tables.bat (for postgresql)
+
+Before running the import look at the .sql file - for instance in our case we need to change the name of the DB to 'kodo' from 'teresa_prod' - as the DB that is dropped as well as one used.
+
+14./
+cd %SBJ%
+C:\sdz-zone\bin-jdo
+In here from command line do 'ant create-db-kodo'
+
+15./
+Using Display check that DB looks the same - it does.
+
+16./
+Now that the metadata is correct...
+
+Start StartupKodo
+
+(Restart tomcat if can't see all stack traces)
+
+Still same problem as at 8./ This time actually look at metadeta file to see if it needs changed for the new field.
+
+package.mapping that was generated does indeed have EMAILADDRESS
+
+The database itself also has that column.
+
+Error comes from Spring. Spring will have its meta file in a jar and will still have the old version, so we need to deployTeresaSpring.bat again. Note that this looks after the exposed domain model service as well.
+
+17./
+Tried again and it didn't work, but restarted tomcat (to try to see the nested exception) and found that it did work.
+
+
+Given all above, what is strategy for updating PROD?
+
+A./ Make sure no users online
+B./ Bring down tomcat on server to stop all new accesses
+    (Ideally would change a value in a file so user gets message 'Application being upgraded')
+C./ Do a backup of the current DB ($BIN/backup_teresa.sh)
+D./ Deploy the latest version of the software to the server
+    -> commit everything
+    -> pre-deploy.sh (will create the new meta file jar)
+    -> Always push across the jar files wombat.jar and strandz.jar before deployTeresaSpring.sh
+    -> deployTeresaSpring.sh (distributes new meta file jar to both services)
+    -> all-sf.sh (mose well update training version and sourceforge)
+/* Does not work - creates uppercase problem
+E./ /usr/local/sdz-zone/bin-jdo/build.xml 
+    cd $SBJ
+    ant create-db-kodo
+*/
+E./ Apply latest backup to desktop, then once checked it works fine export whole
+    DB and put it on the server. This way can get lowercase tables which is what
+    is in the mapping and used at runtime. JDO_SEQUENCE is extra table that it
+    seems must be in uppercase on the server, so create it from scratch (prolly
+    using the statements from the last backup) and drop the lowercase one.
+    
+mysqldump --databases -u root -p kodo > kodo_export.sql --add-drop-table
+
+F./ Check what has happened to the DB. For instance are there copies of all
+    the tables? If problems drop all the tables and do E./ again, then can import
+    the backup made at C./. Look at the import file first - there may well be
+    things that need to be altered for it to work.
+Note: On server Kodo schema tool creates uppercase table names - so easiest to do
+everything on the client
+
+G./ Bring up tomcat on server again
+H./ As per 1./, re-orientate back to REMOTE_DEMO_WOMBAT_KODO and test
+I./ Test JWS version that everyone else uses.

@@ -1,0 +1,33 @@
+
+<!--
+This ant build file will only need to be used after have manually
+altered an xml file, as the Designer will automatically do the jarring
+ie. basically do the same thing as is done here.
+Of course whenever deploy this will be called as well.
+-->
+<project name="jar_dt_files" default="jar-dt-files" basedir=".">
+
+<property name="jar.directory" value="../../lib"/>
+<property name="dt1.file" value="Account.xml"/>
+<property name="dt2.file" value="EditMap.xml"/>
+<property name="dt3.file" value="TwoLevelMoney.xml"/>
+<property name="dt4.file" value="AddAccount.xml"/>
+<property name="dt5.file" value="Metric.xml"/>
+<property name="dt6.file" value="TwoLevelHome.xml"/>
+
+<property name="dt.jar.file.name" value="money-sdz-dt-files.jar"/>
+<property name="dt.jar.file" value="${jar.directory}/${dt.jar.file.name}"/>
+
+<target name="jar-dt-files">
+  <delete file="${dt.jar.file}" quiet="true"/>
+  <jar destfile="${dt.jar.file}">
+    <zipfileset dir="." includes="${dt1.file}" prefix="dt-files"/>
+    <zipfileset dir="." includes="${dt2.file}" prefix="dt-files"/>
+    <zipfileset dir="." includes="${dt3.file}" prefix="dt-files"/>
+    <zipfileset dir="." includes="${dt4.file}" prefix="dt-files"/>
+    <zipfileset dir="." includes="${dt5.file}" prefix="dt-files"/>
+    <zipfileset dir="." includes="${dt6.file}" prefix="dt-files"/>
+  </jar>
+</target>
+
+</project>
